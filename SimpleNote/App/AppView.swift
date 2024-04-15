@@ -14,8 +14,8 @@ struct AppView: View {
   
   var body: some View {
     SwitchStore(store) { state in
-      CaseLet(/AppStore.State.home, action: AppStore.Action.home) {
-        HomeView(store: $0)
+      CaseLet(/AppStore.State.root, action: AppStore.Action.root) {
+        RootView(store: $0)
       }
     }
   }
