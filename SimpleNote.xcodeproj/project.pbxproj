@@ -7,22 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F15427262BCD0C6C0070D22C /* SimpleNoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15427252BCD0C6C0070D22C /* SimpleNoteApp.swift */; };
-		F15427282BCD0C6C0070D22C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15427272BCD0C6C0070D22C /* ContentView.swift */; };
-		F154272A2BCD0C6C0070D22C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15427292BCD0C6C0070D22C /* Item.swift */; };
 		F154272C2BCD0C6E0070D22C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F154272B2BCD0C6E0070D22C /* Assets.xcassets */; };
 		F154272F2BCD0C6E0070D22C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F154272E2BCD0C6E0070D22C /* Preview Assets.xcassets */; };
+		F15427392BCD0F060070D22C /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = F15427382BCD0F060070D22C /* ComposableArchitecture */; };
+		F154273C2BCD0F310070D22C /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F154273B2BCD0F310070D22C /* AppStore.swift */; };
+		F154273E2BCD200B0070D22C /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F154273D2BCD200B0070D22C /* AppView.swift */; };
+		F1DBBD562BCD3F0700D1A58E /* HomeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD552BCD3F0700D1A58E /* HomeStore.swift */; };
+		F1DBBD582BCD41F700D1A58E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD572BCD41F600D1A58E /* HomeView.swift */; };
+		F1DBBD5A2BCD42F900D1A58E /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD592BCD42F900D1A58E /* App.swift */; };
+		F1DBBD5D2BCD436700D1A58E /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD5C2BCD436700D1A58E /* Database.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F15427222BCD0C6C0070D22C /* SimpleNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F15427252BCD0C6C0070D22C /* SimpleNoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleNoteApp.swift; sourceTree = "<group>"; };
-		F15427272BCD0C6C0070D22C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		F15427292BCD0C6C0070D22C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		F154272B2BCD0C6E0070D22C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F154272E2BCD0C6E0070D22C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F15427302BCD0C6E0070D22C /* SimpleNote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SimpleNote.entitlements; sourceTree = "<group>"; };
 		F15427312BCD0C6E0070D22C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F154273B2BCD0F310070D22C /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
+		F154273D2BCD200B0070D22C /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		F1DBBD552BCD3F0700D1A58E /* HomeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStore.swift; sourceTree = "<group>"; };
+		F1DBBD572BCD41F600D1A58E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F1DBBD592BCD42F900D1A58E /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		F1DBBD5C2BCD436700D1A58E /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F15427392BCD0F060070D22C /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,9 +63,9 @@
 		F15427242BCD0C6C0070D22C /* SimpleNote */ = {
 			isa = PBXGroup;
 			children = (
-				F15427252BCD0C6C0070D22C /* SimpleNoteApp.swift */,
-				F15427272BCD0C6C0070D22C /* ContentView.swift */,
-				F15427292BCD0C6C0070D22C /* Item.swift */,
+				F1DBBD5B2BCD435F00D1A58E /* Database */,
+				F1DBBD542BCD3EFB00D1A58E /* Home */,
+				F154273A2BCD0F260070D22C /* App */,
 				F154272B2BCD0C6E0070D22C /* Assets.xcassets */,
 				F15427302BCD0C6E0070D22C /* SimpleNote.entitlements */,
 				F15427312BCD0C6E0070D22C /* Info.plist */,
@@ -72,6 +80,33 @@
 				F154272E2BCD0C6E0070D22C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F154273A2BCD0F260070D22C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F154273B2BCD0F310070D22C /* AppStore.swift */,
+				F154273D2BCD200B0070D22C /* AppView.swift */,
+				F1DBBD592BCD42F900D1A58E /* App.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F1DBBD542BCD3EFB00D1A58E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F1DBBD552BCD3F0700D1A58E /* HomeStore.swift */,
+				F1DBBD572BCD41F600D1A58E /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F1DBBD5B2BCD435F00D1A58E /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				F1DBBD5C2BCD436700D1A58E /* Database.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -90,6 +125,9 @@
 			dependencies = (
 			);
 			name = SimpleNote;
+			packageProductDependencies = (
+				F15427382BCD0F060070D22C /* ComposableArchitecture */,
+			);
 			productName = SimpleNote;
 			productReference = F15427222BCD0C6C0070D22C /* SimpleNote.app */;
 			productType = "com.apple.product-type.application";
@@ -118,6 +156,9 @@
 				Base,
 			);
 			mainGroup = F15427192BCD0C6C0070D22C;
+			packageReferences = (
+				F15427372BCD0F060070D22C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = F15427232BCD0C6C0070D22C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -144,9 +185,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F15427282BCD0C6C0070D22C /* ContentView.swift in Sources */,
-				F154272A2BCD0C6C0070D22C /* Item.swift in Sources */,
-				F15427262BCD0C6C0070D22C /* SimpleNoteApp.swift in Sources */,
+				F1DBBD582BCD41F700D1A58E /* HomeView.swift in Sources */,
+				F154273C2BCD0F310070D22C /* AppStore.swift in Sources */,
+				F1DBBD5A2BCD42F900D1A58E /* App.swift in Sources */,
+				F1DBBD562BCD3F0700D1A58E /* HomeStore.swift in Sources */,
+				F1DBBD5D2BCD436700D1A58E /* Database.swift in Sources */,
+				F154273E2BCD200B0070D22C /* AppView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +400,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F15427372BCD0F060070D22C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F15427382BCD0F060070D22C /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F15427372BCD0F060070D22C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F154271A2BCD0C6C0070D22C /* Project object */;
 }
