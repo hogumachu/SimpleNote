@@ -17,6 +17,7 @@
 		F1DBBD5A2BCD42F900D1A58E /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD592BCD42F900D1A58E /* App.swift */; };
 		F1DBBD5D2BCD436700D1A58E /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD5C2BCD436700D1A58E /* Database.swift */; };
 		F1DBBD612BCD47A400D1A58E /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD602BCD47A400D1A58E /* Folder.swift */; };
+		F1DBBD632BCD494F00D1A58E /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD622BCD494F00D1A58E /* Todo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		F1DBBD592BCD42F900D1A58E /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		F1DBBD5C2BCD436700D1A58E /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		F1DBBD602BCD47A400D1A58E /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
+		F1DBBD622BCD494F00D1A58E /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				F1DBBD602BCD47A400D1A58E /* Folder.swift */,
+				F1DBBD622BCD494F00D1A58E /* Todo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				F1DBBD582BCD41F700D1A58E /* HomeView.swift in Sources */,
 				F154273C2BCD0F310070D22C /* AppStore.swift in Sources */,
 				F1DBBD5A2BCD42F900D1A58E /* App.swift in Sources */,
+				F1DBBD632BCD494F00D1A58E /* Todo.swift in Sources */,
 				F1DBBD562BCD3F0700D1A58E /* HomeStore.swift in Sources */,
 				F1DBBD5D2BCD436700D1A58E /* Database.swift in Sources */,
 				F1DBBD612BCD47A400D1A58E /* Folder.swift in Sources */,

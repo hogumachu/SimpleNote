@@ -15,6 +15,9 @@ final class Folder {
   var title: String
   var hexColor: String
   
+  @Relationship(deleteRule: .cascade)
+  var todos: [Todo] = []
+  
   init(id: UUID, title: String, hexColor: String) {
     self.id = id
     self.title = title
