@@ -18,6 +18,8 @@
 		F1DBBD5D2BCD436700D1A58E /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD5C2BCD436700D1A58E /* Database.swift */; };
 		F1DBBD612BCD47A400D1A58E /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD602BCD47A400D1A58E /* Folder.swift */; };
 		F1DBBD632BCD494F00D1A58E /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD622BCD494F00D1A58E /* Todo.swift */; };
+		F1DBBD652BCD4A9A00D1A58E /* FolderDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD642BCD4A9A00D1A58E /* FolderDatabase.swift */; };
+		F1DBBD692BCD4BDF00D1A58E /* TodoDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD682BCD4BDF00D1A58E /* TodoDatabase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		F1DBBD5C2BCD436700D1A58E /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		F1DBBD602BCD47A400D1A58E /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
 		F1DBBD622BCD494F00D1A58E /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		F1DBBD642BCD4A9A00D1A58E /* FolderDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderDatabase.swift; sourceTree = "<group>"; };
+		F1DBBD682BCD4BDF00D1A58E /* TodoDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDatabase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,8 @@
 			isa = PBXGroup;
 			children = (
 				F1DBBD5C2BCD436700D1A58E /* Database.swift */,
+				F1DBBD642BCD4A9A00D1A58E /* FolderDatabase.swift */,
+				F1DBBD682BCD4BDF00D1A58E /* TodoDatabase.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -199,6 +205,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1DBBD692BCD4BDF00D1A58E /* TodoDatabase.swift in Sources */,
+				F1DBBD652BCD4A9A00D1A58E /* FolderDatabase.swift in Sources */,
 				F1DBBD582BCD41F700D1A58E /* HomeView.swift in Sources */,
 				F154273C2BCD0F310070D22C /* AppStore.swift in Sources */,
 				F1DBBD5A2BCD42F900D1A58E /* App.swift in Sources */,
