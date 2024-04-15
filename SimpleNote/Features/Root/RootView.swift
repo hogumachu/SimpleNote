@@ -22,10 +22,21 @@ struct RootView: View {
 private extension RootView {
   
   func tabView(_ viewStore: ViewStoreOf<RootViewStore>) -> some View {
-    switch viewStore.state.tab {
-    case .home:
-      IfLetStore(store.scope(state: \.home, action: \.home)) {
-        HomeView(store: $0)
+    TabView {
+      let title = viewStore.state.tab.title
+      let image = viewStore.state.tab.image
+      
+      switch viewStore.state.tab {
+      case .home:
+        IfLetStore(store.scope(state: \.home, action: \.home)) {
+          HomeView(store: $0)
+            .tabItem {
+              Label(
+                title: { Text(title) },
+                icon: { Image(systemName: image) }
+              )
+            }
+        }
       }
     }
   }
