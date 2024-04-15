@@ -21,23 +21,22 @@ struct RootView: View {
 
 private extension RootView {
   
+  @ViewBuilder
   func tabView(_ viewStore: ViewStoreOf<RootViewStore>) -> some View {
-    TabView {
-      let title = viewStore.state.tab.title
-      let image = viewStore.state.tab.image
+    TabView(
+      selection: viewStore.binding(
+        get: \.selectedTab,
+        send: RootViewStore.Action.tabSelected
+      )
+    ) {
+      HomeView(store: store.scope(state: \.home, action: \.home))
+        .tabItem { RootTab.home.tabItem }
+        .tag(RootTab.home)
       
-      switch viewStore.state.tab {
-      case .home:
-        IfLetStore(store.scope(state: \.home, action: \.home)) {
-          HomeView(store: $0)
-            .tabItem {
-              Label(
-                title: { Text(title) },
-                icon: { Image(systemName: image) }
-              )
-            }
-        }
-      }
+      FolderHomeView(store: store.scope(state: \.folder, action: \.folder))
+        .tabItem { RootTab.folder.tabItem }
+        .tag(RootTab.folder)
+      
     }
   }
   
