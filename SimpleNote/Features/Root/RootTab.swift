@@ -5,7 +5,7 @@
 //  Created by 홍성준 on 4/15/24.
 //
 
-import Foundation
+import SwiftUI
 
 enum RootTab {
   case home
@@ -23,6 +23,13 @@ enum RootTab {
     case .home: return "house"
     case .folder: return "folder"
     }
+  }
+  
+  var tabItem: some View {
+    return Label(
+      title: { Text(title) },
+      icon: { Image(systemName: image) }
+    )
   }
   
 }
