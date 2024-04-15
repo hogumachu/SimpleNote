@@ -15,7 +15,10 @@ struct Database {
 extension Database: DependencyKey {
   static let liveValue = Database(context: {
     do {
-      let schema = Schema([])
+      let schema = Schema([
+        Folder.self,
+        Todo.self
+      ])
       let configuration = ModelConfiguration(
         schema: schema,
         isStoredInMemoryOnly: false
