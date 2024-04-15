@@ -12,23 +12,23 @@ import Foundation
 struct AppStore {
   
   enum State: Equatable {
-    case home(HomeStore.State)
+    case root(RootViewStore.State)
     
     init() {
-      self = .home(.init())
+      self = .root(.init())
     }
   }
   
   enum Action: Equatable {
-    case home(HomeStore.Action)
+    case root(RootViewStore.Action)
   }
   
   var body: some ReducerOf<Self> {
     Reduce { state, action in
       return .none
     }
-    .ifCaseLet(\.home, action: \.home) {
-      HomeStore()
+    .ifCaseLet(\.root, action: \.root) {
+      RootViewStore()
     }
   }
   
