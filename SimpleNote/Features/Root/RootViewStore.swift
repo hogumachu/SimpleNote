@@ -12,12 +12,14 @@ import Foundation
 struct RootViewStore: Reducer {
   
   struct State: Equatable {
-    var tab: RootTab = .home
+    var tabs: [RootTab] = [.home, .folder]
     var home: HomeStore.State? = .init()
+    var folder: FolderHomeViewStore.State? = .init()
   }
   
-  enum Action: Equatable {
+  enum Action {
     case home(HomeStore.Action)
+    case folder(FolderHomeViewStore.Action)
   }
   
   var body: some ReducerOf<Self> {
@@ -25,11 +27,15 @@ struct RootViewStore: Reducer {
       switch action {
       case .home:
         return .none
-        
+      case .folder:
+        return .none
       }
     }
     .ifLet(\.home, action: /Action.home) {
       HomeStore()
+    }
+    .ifLet(\.folder, action: /Action.folder) {
+      FolderHomeViewStore()
     }
   }
   

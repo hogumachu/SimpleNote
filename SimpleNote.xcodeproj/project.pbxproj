@@ -23,6 +23,10 @@
 		F1DBBD6D2BCD4F5600D1A58E /* RootViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD6C2BCD4F5600D1A58E /* RootViewStore.swift */; };
 		F1DBBD6F2BCD4F6F00D1A58E /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD6E2BCD4F6F00D1A58E /* RootView.swift */; };
 		F1DBBD712BCD500F00D1A58E /* RootTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD702BCD500F00D1A58E /* RootTab.swift */; };
+		F1DBBD742BCD564800D1A58E /* FolderHomeViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD732BCD564800D1A58E /* FolderHomeViewStore.swift */; };
+		F1DBBD762BCD567B00D1A58E /* FolderHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD752BCD567B00D1A58E /* FolderHomeView.swift */; };
+		F1DBBD792BCD606700D1A58E /* FolderDetailViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD782BCD606700D1A58E /* FolderDetailViewStore.swift */; };
+		F1DBBD7B2BCD607B00D1A58E /* FolderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD7A2BCD607B00D1A58E /* FolderDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +48,10 @@
 		F1DBBD6C2BCD4F5600D1A58E /* RootViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewStore.swift; sourceTree = "<group>"; };
 		F1DBBD6E2BCD4F6F00D1A58E /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		F1DBBD702BCD500F00D1A58E /* RootTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTab.swift; sourceTree = "<group>"; };
+		F1DBBD732BCD564800D1A58E /* FolderHomeViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderHomeViewStore.swift; sourceTree = "<group>"; };
+		F1DBBD752BCD567B00D1A58E /* FolderHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderHomeView.swift; sourceTree = "<group>"; };
+		F1DBBD782BCD606700D1A58E /* FolderDetailViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderDetailViewStore.swift; sourceTree = "<group>"; };
+		F1DBBD7A2BCD607B00D1A58E /* FolderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +146,8 @@
 		F1DBBD6A2BCD4F3800D1A58E /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				F1DBBD772BCD605900D1A58E /* FolderDetail */,
+				F1DBBD722BCD563500D1A58E /* FolderHome */,
 				F1DBBD6B2BCD4F4800D1A58E /* Root */,
 				F1DBBD542BCD3EFB00D1A58E /* Home */,
 			);
@@ -152,6 +162,24 @@
 				F1DBBD702BCD500F00D1A58E /* RootTab.swift */,
 			);
 			path = Root;
+			sourceTree = "<group>";
+		};
+		F1DBBD722BCD563500D1A58E /* FolderHome */ = {
+			isa = PBXGroup;
+			children = (
+				F1DBBD732BCD564800D1A58E /* FolderHomeViewStore.swift */,
+				F1DBBD752BCD567B00D1A58E /* FolderHomeView.swift */,
+			);
+			path = FolderHome;
+			sourceTree = "<group>";
+		};
+		F1DBBD772BCD605900D1A58E /* FolderDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F1DBBD782BCD606700D1A58E /* FolderDetailViewStore.swift */,
+				F1DBBD7A2BCD607B00D1A58E /* FolderDetailView.swift */,
+			);
+			path = FolderDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,10 +265,14 @@
 				F1DBBD712BCD500F00D1A58E /* RootTab.swift in Sources */,
 				F154273C2BCD0F310070D22C /* AppStore.swift in Sources */,
 				F1DBBD5A2BCD42F900D1A58E /* App.swift in Sources */,
+				F1DBBD742BCD564800D1A58E /* FolderHomeViewStore.swift in Sources */,
 				F1DBBD632BCD494F00D1A58E /* Todo.swift in Sources */,
+				F1DBBD762BCD567B00D1A58E /* FolderHomeView.swift in Sources */,
 				F1DBBD562BCD3F0700D1A58E /* HomeStore.swift in Sources */,
 				F1DBBD6F2BCD4F6F00D1A58E /* RootView.swift in Sources */,
+				F1DBBD7B2BCD607B00D1A58E /* FolderDetailView.swift in Sources */,
 				F1DBBD5D2BCD436700D1A58E /* Database.swift in Sources */,
+				F1DBBD792BCD606700D1A58E /* FolderDetailViewStore.swift in Sources */,
 				F1DBBD612BCD47A400D1A58E /* Folder.swift in Sources */,
 				F154273E2BCD200B0070D22C /* AppView.swift in Sources */,
 			);

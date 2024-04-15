@@ -19,7 +19,7 @@ struct AppStore {
     }
   }
   
-  enum Action: Equatable {
+  enum Action {
     case root(RootViewStore.Action)
   }
   
