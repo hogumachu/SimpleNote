@@ -27,6 +27,7 @@
 		F1DBBD762BCD567B00D1A58E /* FolderHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD752BCD567B00D1A58E /* FolderHomeView.swift */; };
 		F1DBBD792BCD606700D1A58E /* FolderDetailViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD782BCD606700D1A58E /* FolderDetailViewStore.swift */; };
 		F1DBBD7B2BCD607B00D1A58E /* FolderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD7A2BCD607B00D1A58E /* FolderDetailView.swift */; };
+		F1DBBD7F2BCD7DCA00D1A58E /* Color+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD7E2BCD7DC900D1A58E /* Color+Init.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		F1DBBD752BCD567B00D1A58E /* FolderHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderHomeView.swift; sourceTree = "<group>"; };
 		F1DBBD782BCD606700D1A58E /* FolderDetailViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderDetailViewStore.swift; sourceTree = "<group>"; };
 		F1DBBD7A2BCD607B00D1A58E /* FolderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderDetailView.swift; sourceTree = "<group>"; };
+		F1DBBD7E2BCD7DC900D1A58E /* Color+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Init.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 		F15427242BCD0C6C0070D22C /* SimpleNote */ = {
 			isa = PBXGroup;
 			children = (
+				F1DBBD7D2BCD7DBD00D1A58E /* Extensions */,
 				F1DBBD6A2BCD4F3800D1A58E /* Features */,
 				F1DBBD5F2BCD479800D1A58E /* Model */,
 				F1DBBD5B2BCD435F00D1A58E /* Database */,
@@ -108,8 +111,8 @@
 		F154273A2BCD0F260070D22C /* App */ = {
 			isa = PBXGroup;
 			children = (
-				F154273B2BCD0F310070D22C /* AppStore.swift */,
 				F154273D2BCD200B0070D22C /* AppView.swift */,
+				F154273B2BCD0F310070D22C /* AppStore.swift */,
 				F1DBBD592BCD42F900D1A58E /* App.swift */,
 			);
 			path = App;
@@ -180,6 +183,14 @@
 				F1DBBD7A2BCD607B00D1A58E /* FolderDetailView.swift */,
 			);
 			path = FolderDetail;
+			sourceTree = "<group>";
+		};
+		F1DBBD7D2BCD7DBD00D1A58E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F1DBBD7E2BCD7DC900D1A58E /* Color+Init.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +280,7 @@
 				F1DBBD632BCD494F00D1A58E /* Todo.swift in Sources */,
 				F1DBBD762BCD567B00D1A58E /* FolderHomeView.swift in Sources */,
 				F1DBBD562BCD3F0700D1A58E /* HomeStore.swift in Sources */,
+				F1DBBD7F2BCD7DCA00D1A58E /* Color+Init.swift in Sources */,
 				F1DBBD6F2BCD4F6F00D1A58E /* RootView.swift in Sources */,
 				F1DBBD7B2BCD607B00D1A58E /* FolderDetailView.swift in Sources */,
 				F1DBBD5D2BCD436700D1A58E /* Database.swift in Sources */,
