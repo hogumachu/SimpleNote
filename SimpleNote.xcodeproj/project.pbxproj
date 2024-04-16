@@ -28,6 +28,9 @@
 		F1DBBD792BCD606700D1A58E /* FolderDetailViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD782BCD606700D1A58E /* FolderDetailViewStore.swift */; };
 		F1DBBD7B2BCD607B00D1A58E /* FolderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD7A2BCD607B00D1A58E /* FolderDetailView.swift */; };
 		F1DBBD7F2BCD7DCA00D1A58E /* Color+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD7E2BCD7DC900D1A58E /* Color+Init.swift */; };
+		F1DBBD822BCE791F00D1A58E /* FolderCreateViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD812BCE791F00D1A58E /* FolderCreateViewStore.swift */; };
+		F1DBBD842BCE793100D1A58E /* FolderCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD832BCE793100D1A58E /* FolderCreateView.swift */; };
+		F1DBBD862BCE87C300D1A58E /* UIDevice+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD852BCE87C300D1A58E /* UIDevice+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		F1DBBD782BCD606700D1A58E /* FolderDetailViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderDetailViewStore.swift; sourceTree = "<group>"; };
 		F1DBBD7A2BCD607B00D1A58E /* FolderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderDetailView.swift; sourceTree = "<group>"; };
 		F1DBBD7E2BCD7DC900D1A58E /* Color+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Init.swift"; sourceTree = "<group>"; };
+		F1DBBD812BCE791F00D1A58E /* FolderCreateViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCreateViewStore.swift; sourceTree = "<group>"; };
+		F1DBBD832BCE793100D1A58E /* FolderCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCreateView.swift; sourceTree = "<group>"; };
+		F1DBBD852BCE87C300D1A58E /* UIDevice+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +155,7 @@
 		F1DBBD6A2BCD4F3800D1A58E /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				F1DBBD802BCE791500D1A58E /* FolderCreate */,
 				F1DBBD772BCD605900D1A58E /* FolderDetail */,
 				F1DBBD722BCD563500D1A58E /* FolderHome */,
 				F1DBBD6B2BCD4F4800D1A58E /* Root */,
@@ -189,8 +196,18 @@
 			isa = PBXGroup;
 			children = (
 				F1DBBD7E2BCD7DC900D1A58E /* Color+Init.swift */,
+				F1DBBD852BCE87C300D1A58E /* UIDevice+.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F1DBBD802BCE791500D1A58E /* FolderCreate */ = {
+			isa = PBXGroup;
+			children = (
+				F1DBBD812BCE791F00D1A58E /* FolderCreateViewStore.swift */,
+				F1DBBD832BCE793100D1A58E /* FolderCreateView.swift */,
+			);
+			path = FolderCreate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,15 +294,18 @@
 				F154273C2BCD0F310070D22C /* AppStore.swift in Sources */,
 				F1DBBD5A2BCD42F900D1A58E /* App.swift in Sources */,
 				F1DBBD742BCD564800D1A58E /* FolderHomeViewStore.swift in Sources */,
+				F1DBBD842BCE793100D1A58E /* FolderCreateView.swift in Sources */,
 				F1DBBD632BCD494F00D1A58E /* Todo.swift in Sources */,
 				F1DBBD762BCD567B00D1A58E /* FolderHomeView.swift in Sources */,
 				F1DBBD562BCD3F0700D1A58E /* HomeStore.swift in Sources */,
 				F1DBBD7F2BCD7DCA00D1A58E /* Color+Init.swift in Sources */,
 				F1DBBD6F2BCD4F6F00D1A58E /* RootView.swift in Sources */,
 				F1DBBD7B2BCD607B00D1A58E /* FolderDetailView.swift in Sources */,
+				F1DBBD822BCE791F00D1A58E /* FolderCreateViewStore.swift in Sources */,
 				F1DBBD5D2BCD436700D1A58E /* Database.swift in Sources */,
 				F1DBBD792BCD606700D1A58E /* FolderDetailViewStore.swift in Sources */,
 				F1DBBD612BCD47A400D1A58E /* Folder.swift in Sources */,
+				F1DBBD862BCE87C300D1A58E /* UIDevice+.swift in Sources */,
 				F154273E2BCD200B0070D22C /* AppView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
