@@ -10,7 +10,7 @@ import SwiftUI
 
 struct FolderDetailView: View {
   
-  let store: StoreOf<FolderDetailViewStore>
+  @Bindable var store: StoreOf<FolderDetailViewStore>
   
   var body: some View {
     WithViewStore(store, observe: { $0 }) { viewStore in

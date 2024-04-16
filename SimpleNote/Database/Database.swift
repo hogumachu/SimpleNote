@@ -13,25 +13,27 @@ struct Database {
 }
 
 extension Database: DependencyKey {
-  static let liveValue = Database(context: {
-    do {
-      let schema = Schema([
-        Folder.self,
-        Todo.self
-      ])
-      let configuration = ModelConfiguration(
-        schema: schema,
-        isStoredInMemoryOnly: false
-      )
-      let container = try ModelContainer(
-        for: schema,
-        configurations: [configuration]
-      )
-      return ModelContext(container)
-    } catch {
-      throw error
+  static let liveValue = Database(
+    context: {
+      do {
+        let schema = Schema([
+          Folder.self,
+          Todo.self
+        ])
+        let configuration = ModelConfiguration(
+          schema: schema,
+          isStoredInMemoryOnly: false
+        )
+        let container = try ModelContainer(
+          for: schema,
+          configurations: [configuration]
+        )
+        return ModelContext(container)
+      } catch {
+        throw error
+      }
     }
-  })
+  )
 }
 
 extension DependencyValues {

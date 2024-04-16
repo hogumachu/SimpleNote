@@ -11,31 +11,29 @@ import Foundation
 @Reducer
 struct FolderHomeViewStore: Reducer {
   
-  @Reducer(state: .equatable)
-  enum Path {
-    case detail(FolderDetailViewStore)
-  }
-  
   @ObservableState
   struct State: Equatable {
-    var path = StackState<Path.State>()
+    var path = StackState<FolderDetailViewStore.State>()
+    var folders = [Folder]()
   }
   
   enum Action {
-    case path(StackAction<Path.State, Path.Action>)
+    case path(StackAction<FolderDetailViewStore.State, FolderDetailViewStore.Action>)
+    case addButtonTapped
   }
   
   var body: some ReducerOf<Self> {
     Reduce { state, action in
       switch action {
-      case let .path(.element(id, .detail(detailAction))):
-        state.path.append(.detail(FolderDetailViewStore.State()))
+      case .path:
         return .none
         
-      default:
+      case .addButtonTapped:
         return .none
       }
     }
-    .forEach(\.path, action: \.path)
+    .forEach(\.path, action: \.path) {
+      FolderDetailViewStore()
+    }
   }
 }
