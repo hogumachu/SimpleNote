@@ -11,6 +11,7 @@ import Foundation
 @Reducer
 struct AppStore {
   
+  @ObservableState
   enum State: Equatable {
     case root(RootViewStore.State)
     

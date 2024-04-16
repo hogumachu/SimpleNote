@@ -12,27 +12,29 @@ struct Database {
   var context: () throws -> ModelContext
 }
 
+private let appContext: ModelContext = {
+  do {
+    let schema = Schema([
+      Folder.self,
+      Todo.self
+    ])
+    let configuration = ModelConfiguration(
+      schema: schema,
+      isStoredInMemoryOnly: false
+    )
+    let container = try ModelContainer(
+      for: schema,
+      configurations: [configuration]
+    )
+    return ModelContext(container)
+  } catch {
+    fatalError("Could not create ModelContainer: \(error)")
+  }
+}()
+
 extension Database: DependencyKey {
   static let liveValue = Database(
-    context: {
-      do {
-        let schema = Schema([
-          Folder.self,
-          Todo.self
-        ])
-        let configuration = ModelConfiguration(
-          schema: schema,
-          isStoredInMemoryOnly: false
-        )
-        let container = try ModelContainer(
-          for: schema,
-          configurations: [configuration]
-        )
-        return ModelContext(container)
-      } catch {
-        throw error
-      }
-    }
+    context: { appContext }
   )
 }
 

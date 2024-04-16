@@ -13,20 +13,25 @@ struct FolderHomeView: View {
   @Bindable var store: StoreOf<FolderHomeViewStore>
   
   var body: some View {
-    WithViewStore(store, observe: { $0 }) { viewStore in
-      NavigationStack(
-        path: $store.scope(state: \.path, action: \.path)
-      ) {
-        VStack(alignment: .leading) {
-          navigationBar
-            .padding(.horizontal, 10)
-          
-          listView(viewStore)
-        }
-        .frame(maxHeight: .infinity, alignment: .top)
-      } destination: { store in
-        destination(store)
+    NavigationStack(
+      path: $store.scope(state: \.path, action: \.path)
+    ) {
+      VStack(alignment: .leading) {
+        navigationBar
+          .padding(.horizontal, 10)
+        
+        listView
       }
+      .frame(maxHeight: .infinity, alignment: .top)
+    } destination: {
+      FolderDetailView(store: $0)
+        .toolbar(.hidden, for: .tabBar)
+    }
+    .fullScreenCover(item: $store.scope(state: \.folderCreate, action: \.folderCreate)) {
+      FolderCreateView(store: $0)
+    }
+    .onAppear {
+      store.send(.onAppeared)
     }
   }
   
@@ -44,10 +49,10 @@ private extension FolderHomeView {
     .frame(height: 50)
   }
   
-  func listView(_ viewStore: ViewStoreOf<FolderHomeViewStore>) -> some View {
+  var listView: some View {
     ScrollView {
       LazyVGrid(
-        columns: [GridItem(spacing: 5), GridItem(spacing: 5)],
+        columns: listGridItems(),
         spacing: 10
       ) {
         Button {
@@ -73,7 +78,7 @@ private extension FolderHomeView {
         .padding(.horizontal, 10)
         .padding(.vertical, 5)
         
-        ForEach(viewStore.folders, id: \.id) { folder in
+        ForEach(store.folders) { folder in
           NavigationLink(state: FolderDetailViewStore.State(folder: folder)) {
             HStack {
               VStack(spacing: 10) {
@@ -107,8 +112,12 @@ private extension FolderHomeView {
     }
   }
   
-  func destination(_ store: StoreOf<FolderDetailViewStore>) -> some View {
-    return FolderDetailView(store: store)
+  func listGridItems() -> [GridItem] {
+    if UIDevice.current.isPhone {
+      return [GridItem(spacing: 5), GridItem(spacing: 5)]
+    } else {
+      return [GridItem(spacing: 5), GridItem(spacing: 5), GridItem(spacing: 5)]
+    }
   }
   
 }

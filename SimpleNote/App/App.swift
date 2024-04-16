@@ -12,19 +12,7 @@ import SwiftUI
 @main
 struct SimpleNoteApp: App {
   
-  private let database: Database
-  private let context: ModelContext
-  
-  /// SwiftData의 Context는 initialize에서 설정해야 함
-  /// ref: https://forums.developer.apple.com/forums/thread/734212
-  init() {
-    self.database = .liveValue
-    do {
-      self.context = try database.context()
-    } catch {
-      fatalError("Could not create ModelContainer: \(error)")
-    }
-  }
+  @Dependency(\.database) var database
   
   var body: some Scene {
     WindowGroup {
@@ -32,7 +20,7 @@ struct SimpleNoteApp: App {
         AppStore()
       })
     }
-    .modelContext(context)
+    .modelContext(try! database.context())
   }
   
 }
