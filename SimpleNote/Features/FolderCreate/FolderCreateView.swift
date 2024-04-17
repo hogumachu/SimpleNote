@@ -107,7 +107,7 @@ private extension FolderCreateView {
       .padding(10)
       .background(
         RoundedRectangle(cornerRadius: 20, style: .circular)
-          .fill(.white)
+          .fill(.background)
           .stroke(color, lineWidth: 1)
       )
     }
