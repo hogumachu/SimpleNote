@@ -27,8 +27,10 @@ struct FolderCreateView: View {
         .padding(.horizontal, 20)
       
       ColorView(
-        hexColor: $store.hexColor,
-        tap: { store.send(.colorChangeTapped) }
+        color: $store.color,
+        tap: {
+          store.send(.colorChangeTapped)
+        }
       )
       .padding(.top, 10)
       .padding(.horizontal, 20)
@@ -38,7 +40,7 @@ struct FolderCreateView: View {
       
       createButton
         .padding(.horizontal, 10)
-        .safeAreaPadding(.bottom, 10)
+        .safeAreaPadding(.bottom, 20)
     }
     .onAppear {
       isFocused = true
@@ -87,30 +89,27 @@ private extension FolderCreateView {
   }
   
   struct ColorView: View {
-    
-    @Binding var hexColor: String
+  
+    @Binding var color: Color
     
     var tap: () -> Void
     
     var body: some View {
-      Button {
-        tap()
-      } label: {
-        HStack {
-          Circle()
-            .fill(Color(hex: hexColor))
-            .frame(width: 20, height: 20)
-          
-          Text("Change Color")
-            .foregroundStyle(Color(hex: hexColor))
-        }
-        .padding(10)
-        .background(
-          RoundedRectangle(cornerRadius: 20, style: .circular)
-            .fill(.white)
-            .stroke(Color(hex: hexColor), lineWidth: 1)
+      HStack {
+        ColorPicker(
+          selection: $color,
+          label: {
+            Text("Change Color")
+              .foregroundStyle(color)
+          }
         )
       }
+      .padding(10)
+      .background(
+        RoundedRectangle(cornerRadius: 20, style: .circular)
+          .fill(.white)
+          .stroke(color, lineWidth: 1)
+      )
     }
   }
   

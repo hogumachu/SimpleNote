@@ -6,7 +6,7 @@
 //
 
 import ComposableArchitecture
-import Foundation
+import SwiftUI
 
 @Reducer
 struct FolderCreateViewStore {
@@ -14,11 +14,11 @@ struct FolderCreateViewStore {
   @ObservableState
   struct State: Equatable {
     var title: String
-    var hexColor: String
+    var color: Color
     
     init(title: String, hexColor: String) {
       self.title = title
-      self.hexColor = hexColor
+      self.color = Color(hex: hexColor)
     }
   }
   
@@ -48,9 +48,9 @@ struct FolderCreateViewStore {
       case .createTapped:
         return .run { [
           title = state.title,
-          hexColor = state.hexColor
+          color = state.color
         ] send in
-          let folder = Folder(id: .init(), title: title, hexColor: hexColor)
+          let folder = Folder(id: .init(), title: title, hexColor: color.hex())
           await send(.delegate(.create(folder)))
           await dismiss()
         }
