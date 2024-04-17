@@ -13,6 +13,7 @@ struct FolderDetailViewStore {
   
   @ObservableState
   struct State: Equatable {
+    @Presents var todoCreate: TodoCreateViewStore.State?
     var folder: Folder
     
     init(folder: Folder) {
@@ -23,9 +24,11 @@ struct FolderDetailViewStore {
   enum Action {
     case closeTapped
     case editTapped
+    case createTapped
     case checkTapped(Todo)
     case deleteTapped(Todo)
     case delegate(Delegate)
+    case todoCreate(PresentationAction<TodoCreateViewStore.Action>)
     
     enum Delegate {
       case close
@@ -46,6 +49,10 @@ struct FolderDetailViewStore {
       case .editTapped:
         return .none
         
+      case .createTapped:
+        state.todoCreate = .init(todo: "", targetDate: .now)
+        return .none
+        
       case let .checkTapped(todo):
         todo.isComplete.toggle()
         return .none
@@ -61,7 +68,20 @@ struct FolderDetailViewStore {
         
       case .delegate:
         return .none
+        
+      case let .todoCreate(.presented(.delegate(.create(todo)))):
+        todo.folder = state.folder
+        state.folder.todos.append(todo)
+        return .run { send in
+          try todoDatabase.add(todo)
+        }
+        
+      case .todoCreate:
+        return .none
       }
+    }
+    .ifLet(\.$todoCreate, action: \.todoCreate) {
+      TodoCreateViewStore()
     }
   }
   

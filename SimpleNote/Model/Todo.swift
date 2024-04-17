@@ -16,6 +16,8 @@ final class Todo {
   var targetDate: Date
   var isComplete: Bool
   
+  var folder: Folder?
+  
   init(id: UUID, todo: String, targetDate: Date, isComplete: Bool) {
     self.id = id
     self.todo = todo
