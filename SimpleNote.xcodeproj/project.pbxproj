@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F1023CD72BCF8A750050B0F2 /* SwiftData+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1023CD62BCF8A750050B0F2 /* SwiftData+Preview.swift */; };
 		F154272C2BCD0C6E0070D22C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F154272B2BCD0C6E0070D22C /* Assets.xcassets */; };
 		F154272F2BCD0C6E0070D22C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F154272E2BCD0C6E0070D22C /* Preview Assets.xcassets */; };
 		F15427392BCD0F060070D22C /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = F15427382BCD0F060070D22C /* ComposableArchitecture */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F1023CD62BCF8A750050B0F2 /* SwiftData+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftData+Preview.swift"; sourceTree = "<group>"; };
 		F15427222BCD0C6C0070D22C /* SimpleNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F154272B2BCD0C6E0070D22C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F154272E2BCD0C6E0070D22C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				F1DBBD5C2BCD436700D1A58E /* Database.swift */,
 				F1DBBD642BCD4A9A00D1A58E /* FolderDatabase.swift */,
 				F1DBBD682BCD4BDF00D1A58E /* TodoDatabase.swift */,
+				F1023CD62BCF8A750050B0F2 /* SwiftData+Preview.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			files = (
 				F1DBBD692BCD4BDF00D1A58E /* TodoDatabase.swift in Sources */,
 				F1DBBD652BCD4A9A00D1A58E /* FolderDatabase.swift in Sources */,
+				F1023CD72BCF8A750050B0F2 /* SwiftData+Preview.swift in Sources */,
 				F1DBBD6D2BCD4F5600D1A58E /* RootViewStore.swift in Sources */,
 				F1DBBD582BCD41F700D1A58E /* HomeView.swift in Sources */,
 				F1DBBD712BCD500F00D1A58E /* RootTab.swift in Sources */,
