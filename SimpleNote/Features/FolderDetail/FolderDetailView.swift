@@ -12,21 +12,40 @@ import SwiftUI
 struct FolderDetailView: View {
   
   @Bindable var store: StoreOf<FolderDetailViewStore>
+  @Query private var todos: [Todo]
+  
+  init(store: StoreOf<FolderDetailViewStore>) {
+    self.store = store
+    let folderID = store.folder.id
+    self._todos = Query(filter: #Predicate {
+      $0.folder?.id == folderID
+    })
+  }
   
   var body: some View {
-    VStack {
-      navigationBar
-      
-      ScrollView {
-        folderView
-          .padding()
+    ZStack {
+      VStack {
+        navigationBar
         
-        listView
-        .padding(.horizontal, 20)
+        ScrollView {
+          folderView
+            .padding()
+          
+          listView
+            .padding(.horizontal, 20)
+        }
       }
+      .background(.background)
+      .frame(maxHeight: .infinity, alignment: .top)
+      .sheet(item: $store.scope(state: \.todoCreate, action: \.todoCreate)) {
+        TodoCreateView(store: $0)
+      }
+      
+      createView
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+        .safeAreaPadding(.bottom, 20)
+        .safeAreaPadding(.trailing, 20)
     }
-    .background(.background)
-    .frame(maxHeight: .infinity, alignment: .top)
   }
   
 }
@@ -63,7 +82,7 @@ private extension FolderDetailView {
   
   var folderView: some View {
     VStack {
-      Text("\(store.folder.todos.filter { $0.isComplete }.count)/\(store.folder.todos.count) task done")
+      Text("\(todos.filter { $0.isComplete }.count)/\(todos.count) task done")
         .padding(.top, 20)
         .padding(.horizontal, 20)
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -72,15 +91,15 @@ private extension FolderDetailView {
       
       Text(store.folder.title)
         .padding(.horizontal, 20)
-        .padding(.bottom, store.folder.todos.isEmpty ? 20 : 10)
+        .padding(.bottom, todos.isEmpty ? 20 : 10)
         .frame(maxWidth: .infinity, alignment: .leading)
         .font(.headline)
         .foregroundStyle(.primary)
       
-      if !store.folder.todos.isEmpty {
+      if !todos.isEmpty {
         ProgressView(
-          value: Float(store.folder.todos.filter { $0.isComplete }.count),
-          total: Float(store.folder.todos.count)
+          value: Float(todos.filter { $0.isComplete }.count),
+          total: Float(todos.count)
         )
         .tint(Color(hex: store.folder.hexColor))
         .padding(.horizontal, 20)
@@ -93,30 +112,10 @@ private extension FolderDetailView {
   
   var listView: some View {
     LazyVStack {
-      Text("Todo")
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .font(.headline)
-      
-      if store.folder.todos.filter({ !$0.isComplete }).isEmpty {
+      if todos.isEmpty {
         emptyTodoView
       } else {
-        ForEach(store.folder.todos.filter { !$0.isComplete }) { todo in
-          todoView(todo)
-            .frame(maxWidth: .infinity)
-            .padding(.vertical, 10)
-        }
-      }
-      
-      Spacer(minLength: 40)
-      
-      Text("Done")
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .font(.headline)
-      
-      if store.folder.todos.filter({ $0.isComplete }).isEmpty {
-        emptyDoneView
-      } else {
-        ForEach(store.folder.todos.filter { $0.isComplete }) { todo in
+        ForEach(todos) { todo in
           todoView(todo)
             .frame(maxWidth: .infinity)
             .padding(.vertical, 10)
@@ -132,17 +131,22 @@ private extension FolderDetailView {
       .padding()
   }
   
-  var emptyDoneView: some View {
-    Text("Done is empty")
-      .font(.body)
-      .foregroundStyle(.gray)
-      .padding()
+  var createView: some View {
+    Button {
+      store.send(.createTapped)
+    } label: {
+      Image(systemName: "plus.circle.fill")
+        .resizable()
+        .aspectRatio(contentMode: .fit)
+        .frame(width: 50, height: 50)
+    }
+    .foregroundStyle(Color(hex: store.folder.hexColor))
   }
   
   func todoView(_ todo: Todo) -> some View {
     HStack {
       Button {
-        _ = withAnimation(.easeInOut) {
+        _ = withAnimation {
           store.send(.checkTapped(todo))
         }
       } label: {
@@ -158,7 +162,7 @@ private extension FolderDetailView {
       VStack(alignment: .leading) {
         Text(todo.todo)
           .font(.body)
-          .foregroundStyle(.primary)
+          .foregroundStyle(todo.isComplete ? .secondary : .primary)
         
         Text("\(todo.targetDate)")
           .font(.caption)
@@ -166,7 +170,6 @@ private extension FolderDetailView {
       }
       
       Spacer()
-      
       
       Button {
         _ = withAnimation(.easeInOut) {
