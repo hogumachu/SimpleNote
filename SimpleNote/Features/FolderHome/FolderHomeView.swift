@@ -7,6 +7,7 @@
 
 import ComposableArchitecture
 import SwiftUI
+import SwiftData
 
 struct FolderHomeView: View {
   
@@ -26,6 +27,7 @@ struct FolderHomeView: View {
     } destination: {
       FolderDetailView(store: $0)
         .toolbar(.hidden, for: .tabBar)
+        .toolbar(.hidden, for: .navigationBar)
     }
     .fullScreenCover(item: $store.scope(state: \.folderCreate, action: \.folderCreate)) {
       FolderCreateView(store: $0)
@@ -123,7 +125,9 @@ private extension FolderHomeView {
 }
 
 #Preview {
-  FolderHomeView(
+  let container = ModelContainer.preview()
+  
+  return FolderHomeView(
     store: Store(
       initialState: FolderHomeViewStore.State(
         folders: [
@@ -151,4 +155,5 @@ private extension FolderHomeView {
       FolderHomeViewStore()
     }
   )
+  .modelContainer(container)
 }
