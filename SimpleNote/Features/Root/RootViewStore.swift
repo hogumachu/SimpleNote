@@ -14,12 +14,12 @@ struct RootViewStore: Reducer {
   @ObservableState
   struct State: Equatable {
     var selectedTab: RootTab = .home
-    var home: HomeStore.State = .init()
+    var home: HomeViewStore.State = .init()
     var folder: FolderHomeViewStore.State = .init()
   }
   
   enum Action {
-    case home(HomeStore.Action)
+    case home(HomeViewStore.Action)
     case folder(FolderHomeViewStore.Action)
     
     case tabSelected(RootTab)
@@ -27,7 +27,7 @@ struct RootViewStore: Reducer {
   
   var body: some ReducerOf<Self> {
     Scope(state: \.home, action: \.home) {
-      HomeStore()
+      HomeViewStore()
     }
     Scope(state: \.folder, action: \.folder) {
       FolderHomeViewStore()

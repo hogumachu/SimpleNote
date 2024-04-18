@@ -2,7 +2,20 @@
   "sourceLanguage" : "en",
   "strings" : {
     "%@" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@"
+          }
+        }
+      }
     },
     "%lld todos" : {
       "localizations" : {
@@ -80,6 +93,17 @@
         }
       }
     },
+    "Empty" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "비어있어요"
+          }
+        }
+      }
+    },
     "Folder" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -93,6 +117,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "폴더"
+          }
+        }
+      }
+    },
+    "Home" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "홈"
           }
         }
       }
@@ -117,6 +152,16 @@
         }
       }
     },
+    "Please enter a search term" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "검색어를 입력해 주세요"
+          }
+        }
+      }
+    },
     "Select Color" : {
       "localizations" : {
         "ko" : {
@@ -137,12 +182,34 @@
         }
       }
     },
-    "Todo is empty" : {
+    "There are no todos for today" : {
+      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "할 일이 비어있어요"
+            "value" : "오늘 할 일이 없어요"
+          }
+        }
+      }
+    },
+    "There is nothing to do" : {
+      "extractionState" : "stale",
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "할 일이 없어요"
+          }
+        }
+      }
+    },
+    "Today's todos" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "오늘의 할 일"
           }
         }
       }
@@ -152,7 +219,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "제목을 입력해주세요"
+            "value" : "제목을 입력해 주세요"
           }
         }
       }
@@ -163,6 +230,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "할 일을 입력하세요"
+          }
+        }
+      }
+    },
+    "Uncompleted previous todos" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "완료하지 않은 지난 할 일"
           }
         }
       }
