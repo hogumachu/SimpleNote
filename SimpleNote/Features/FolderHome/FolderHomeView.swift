@@ -73,25 +73,25 @@ private extension FolderHomeView {
           .padding(.horizontal, 20)
           .padding(.vertical, 20)
           .background(
-            RoundedRectangle(cornerRadius: 8, style: .continuous)
-              .fill(Color.blue.opacity(0.1))
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+              .fill(Color.blue.opacity(0.2))
           )
         }
-        .padding(.horizontal, 10)
-        .padding(.vertical, 5)
         
         ForEach(store.folders) { folder in
           NavigationLink(state: FolderDetailViewStore.State(folder: folder)) {
             HStack {
-              VStack(spacing: 10) {
-                Circle()
-                  .fill(Color(hex: folder.hexColor))
-                  .frame(width: 50, height: 50)
+              VStack(spacing: 12) {
+                Image(systemName: "folder.fill")
+                  .resizable()
+                  .aspectRatio(contentMode: .fit)
+                  .frame(width: 30, height: 30)
+                  .foregroundStyle(Color(hex: folder.hexColor))
                 
-                VStack(spacing: 0) {
+                VStack(spacing: 3) {
                   Text(folder.title)
-                    .font(.body)
-                    .foregroundStyle(Color(hex: folder.hexColor))
+                    .font(.headline)
+                    .foregroundStyle(Color(uiColor: .label))
                   
                   Text("\(folder.todos.count) todos")
                     .font(.caption)
@@ -103,22 +103,21 @@ private extension FolderHomeView {
             .padding(.horizontal, 20)
             .padding(.vertical, 20)
             .background(
-              RoundedRectangle(cornerRadius: 8, style: .continuous)
-                .fill(Color(hex: folder.hexColor).opacity(0.1))
+              RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .fill(.thinMaterial)
             )
           }
-          .padding(.horizontal, 10)
-          .padding(.vertical, 5)
         }
       }
+      .padding(.horizontal, 10)
     }
   }
   
   func listGridItems() -> [GridItem] {
     if UIDevice.current.isPhone {
-      return [GridItem(spacing: 5), GridItem(spacing: 5)]
+      return [GridItem(spacing: 10), GridItem(spacing: 10)]
     } else {
-      return [GridItem(spacing: 5), GridItem(spacing: 5), GridItem(spacing: 5)]
+      return [GridItem(spacing: 10), GridItem(spacing: 10), GridItem(spacing: 10)]
     }
   }
   

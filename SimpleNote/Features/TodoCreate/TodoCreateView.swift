@@ -93,12 +93,12 @@ private extension TodoCreateView {
     } label: {
       Text("Create")
         .frame(maxWidth: .infinity)
-        .foregroundStyle(.white)
+        .foregroundStyle(.background)
         .font(.headline)
     }
     .background(
       RoundedRectangle(cornerRadius: 20, style: .circular)
-        .fill(.blue)
+        .fill(.foreground)
         .frame(height: 50)
     )
   }

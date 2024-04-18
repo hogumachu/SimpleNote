@@ -82,18 +82,18 @@ private extension FolderDetailView {
   
   var folderView: some View {
     VStack {
-      Text("\(todos.filter { $0.isComplete }.count)/\(todos.count) task done")
+      Text(store.folder.title)
         .padding(.top, 20)
         .padding(.horizontal, 20)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .font(.callout)
-        .foregroundStyle(.secondary)
+        .font(.headline)
+        .foregroundStyle(.primary)
       
-      Text(store.folder.title)
+      Text("\(todos.filter { $0.isComplete }.count)/\(todos.count) task done")
         .padding(.horizontal, 20)
         .padding(.bottom, todos.isEmpty ? 20 : 10)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .font(.headline)
+        .font(.caption)
         .foregroundStyle(.primary)
       
       if !todos.isEmpty {
@@ -106,7 +106,7 @@ private extension FolderDetailView {
         .padding(.bottom, 20)
       }
     }
-    .background(.ultraThinMaterial)
+    .background(Color(hex: store.folder.hexColor).opacity(0.1))
     .clipShape(RoundedRectangle(cornerRadius: 16))
   }
   

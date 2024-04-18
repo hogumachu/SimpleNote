@@ -61,7 +61,7 @@ private extension FolderCreateView {
         Image(systemName: "xmark")
           .resizable()
           .frame(width: 20, height: 20)
-          .foregroundStyle(Color.black)
+          .foregroundStyle(.foreground)
       }
     }
     .frame(height: 50)
@@ -78,12 +78,12 @@ private extension FolderCreateView {
     } label: {
       Text("Create")
         .frame(maxWidth: .infinity)
-        .foregroundStyle(.white)
+        .foregroundStyle(.background)
         .font(.headline)
     }
     .background(
       RoundedRectangle(cornerRadius: 20, style: .circular)
-        .fill(.blue)
+        .fill(.foreground)
         .frame(height: 50)
     )
   }
@@ -99,16 +99,15 @@ private extension FolderCreateView {
         ColorPicker(
           selection: $color,
           label: {
-            Text("Change Color")
-              .foregroundStyle(color)
+            Text("Select Color")
+              .foregroundStyle(.foreground)
           }
         )
       }
       .padding(10)
       .background(
         RoundedRectangle(cornerRadius: 20, style: .circular)
-          .fill(.background)
-          .stroke(color, lineWidth: 1)
+          .fill(.ultraThinMaterial)
       )
     }
   }
