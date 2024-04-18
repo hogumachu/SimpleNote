@@ -17,6 +17,7 @@
 		F154273E2BCD200B0070D22C /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F154273D2BCD200B0070D22C /* AppView.swift */; };
 		F1C8425A2BD0E348006E3789 /* FolderEditViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C842592BD0E348006E3789 /* FolderEditViewStore.swift */; };
 		F1C8425C2BD0E8F8006E3789 /* FolderEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C8425B2BD0E8F8006E3789 /* FolderEditView.swift */; };
+		F1C842652BD0FB46006E3789 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F1C842642BD0FB46006E3789 /* Localizable.xcstrings */; };
 		F1DBBD562BCD3F0700D1A58E /* HomeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD552BCD3F0700D1A58E /* HomeStore.swift */; };
 		F1DBBD582BCD41F700D1A58E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD572BCD41F600D1A58E /* HomeView.swift */; };
 		F1DBBD5A2BCD42F900D1A58E /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD592BCD42F900D1A58E /* App.swift */; };
@@ -51,6 +52,7 @@
 		F154273D2BCD200B0070D22C /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		F1C842592BD0E348006E3789 /* FolderEditViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderEditViewStore.swift; sourceTree = "<group>"; };
 		F1C8425B2BD0E8F8006E3789 /* FolderEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderEditView.swift; sourceTree = "<group>"; };
+		F1C842642BD0FB46006E3789 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F1DBBD552BCD3F0700D1A58E /* HomeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStore.swift; sourceTree = "<group>"; };
 		F1DBBD572BCD41F600D1A58E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F1DBBD592BCD42F900D1A58E /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 		F15427242BCD0C6C0070D22C /* SimpleNote */ = {
 			isa = PBXGroup;
 			children = (
+				F1C842632BD0FB39006E3789 /* Shared */,
 				F1DBBD7D2BCD7DBD00D1A58E /* Extensions */,
 				F1DBBD6A2BCD4F3800D1A58E /* Features */,
 				F1DBBD5F2BCD479800D1A58E /* Model */,
@@ -150,6 +153,14 @@
 				F1C8425B2BD0E8F8006E3789 /* FolderEditView.swift */,
 			);
 			path = FolderEdit;
+			sourceTree = "<group>";
+		};
+		F1C842632BD0FB39006E3789 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				F1C842642BD0FB46006E3789 /* Localizable.xcstrings */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		F1DBBD542BCD3EFB00D1A58E /* Home */ = {
@@ -286,6 +297,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = F15427192BCD0C6C0070D22C;
 			packageReferences = (
@@ -307,6 +319,7 @@
 			files = (
 				F154272F2BCD0C6E0070D22C /* Preview Assets.xcassets in Resources */,
 				F154272C2BCD0C6E0070D22C /* Assets.xcassets in Resources */,
+				F1C842652BD0FB46006E3789 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
