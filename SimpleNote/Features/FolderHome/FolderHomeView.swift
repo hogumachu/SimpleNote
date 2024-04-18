@@ -41,7 +41,7 @@ private extension FolderHomeView {
   
   var navigationBar: some View {
     HStack {
-      Text("Folders")
+      Text("Folder")
         .font(.headline)
       
       Spacer()
