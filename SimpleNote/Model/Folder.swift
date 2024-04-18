@@ -25,3 +25,17 @@ final class Folder {
   }
   
 }
+
+extension Folder {
+  
+  static func predicate(searchText: String) -> Predicate<Folder> {
+    return #Predicate {
+      searchText.isEmpty && $0.title.contains(searchText)
+    }
+  }
+  
+  static func totalFolders(context: ModelContext) -> Int {
+    (try? context.fetchCount(FetchDescriptor<Folder>())) ?? 0
+  }
+  
+}
