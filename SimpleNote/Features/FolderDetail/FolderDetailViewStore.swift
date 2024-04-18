@@ -14,6 +14,7 @@ struct FolderDetailViewStore {
   @ObservableState
   struct State: Equatable {
     @Presents var todoCreate: TodoCreateViewStore.State?
+    @Presents var folderEdit: FolderEditViewStore.State?
     var folder: Folder
     
     init(folder: Folder) {
@@ -29,6 +30,7 @@ struct FolderDetailViewStore {
     case deleteTapped(Todo)
     case delegate(Delegate)
     case todoCreate(PresentationAction<TodoCreateViewStore.Action>)
+    case folderEdit(PresentationAction<FolderEditViewStore.Action>)
     
     enum Delegate {
       case close
@@ -37,6 +39,7 @@ struct FolderDetailViewStore {
   
   @Dependency(\.dismiss) var dismiss
   @Dependency(\.todoDatabase) var todoDatabase
+  @Dependency(\.folderDatabase) var folderDatabase
   
   var body: some ReducerOf<Self> {
     Reduce { state, action in
@@ -47,6 +50,7 @@ struct FolderDetailViewStore {
         }
         
       case .editTapped:
+        state.folderEdit = .init(folder: state.folder)
         return .none
         
       case .createTapped:
@@ -78,10 +82,29 @@ struct FolderDetailViewStore {
         
       case .todoCreate:
         return .none
+        
+      case let .folderEdit(.presented(.delegate(.edit(title, hexColor)))):
+        state.folder.title = title
+        state.folder.hexColor = hexColor
+        state.folderEdit = nil
+        return .none
+        
+      case let .folderEdit(.presented(.delegate(.delete(folder)))):
+        state.folderEdit = nil
+        
+        return .run { send in
+          try folderDatabase.delete(folder)
+          await dismiss()
+        }
+      case .folderEdit:
+        return .none
       }
     }
     .ifLet(\.$todoCreate, action: \.todoCreate) {
       TodoCreateViewStore()
+    }
+    .ifLet(\.$folderEdit, action: \.folderEdit) {
+      FolderEditViewStore()
     }
   }
   

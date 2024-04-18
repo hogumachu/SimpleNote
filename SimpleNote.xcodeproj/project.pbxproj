@@ -15,6 +15,8 @@
 		F15427392BCD0F060070D22C /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = F15427382BCD0F060070D22C /* ComposableArchitecture */; };
 		F154273C2BCD0F310070D22C /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F154273B2BCD0F310070D22C /* AppStore.swift */; };
 		F154273E2BCD200B0070D22C /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F154273D2BCD200B0070D22C /* AppView.swift */; };
+		F1C8425A2BD0E348006E3789 /* FolderEditViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C842592BD0E348006E3789 /* FolderEditViewStore.swift */; };
+		F1C8425C2BD0E8F8006E3789 /* FolderEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C8425B2BD0E8F8006E3789 /* FolderEditView.swift */; };
 		F1DBBD562BCD3F0700D1A58E /* HomeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD552BCD3F0700D1A58E /* HomeStore.swift */; };
 		F1DBBD582BCD41F700D1A58E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD572BCD41F600D1A58E /* HomeView.swift */; };
 		F1DBBD5A2BCD42F900D1A58E /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD592BCD42F900D1A58E /* App.swift */; };
@@ -47,6 +49,8 @@
 		F15427312BCD0C6E0070D22C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F154273B2BCD0F310070D22C /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
 		F154273D2BCD200B0070D22C /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		F1C842592BD0E348006E3789 /* FolderEditViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderEditViewStore.swift; sourceTree = "<group>"; };
+		F1C8425B2BD0E8F8006E3789 /* FolderEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderEditView.swift; sourceTree = "<group>"; };
 		F1DBBD552BCD3F0700D1A58E /* HomeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStore.swift; sourceTree = "<group>"; };
 		F1DBBD572BCD41F600D1A58E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F1DBBD592BCD42F900D1A58E /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -139,6 +143,15 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		F1C842582BD0E33C006E3789 /* FolderEdit */ = {
+			isa = PBXGroup;
+			children = (
+				F1C842592BD0E348006E3789 /* FolderEditViewStore.swift */,
+				F1C8425B2BD0E8F8006E3789 /* FolderEditView.swift */,
+			);
+			path = FolderEdit;
+			sourceTree = "<group>";
+		};
 		F1DBBD542BCD3EFB00D1A58E /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +184,7 @@
 		F1DBBD6A2BCD4F3800D1A58E /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				F1C842582BD0E33C006E3789 /* FolderEdit */,
 				F1023CDD2BCFE4DB0050B0F2 /* TodoCreate */,
 				F1DBBD802BCE791500D1A58E /* FolderCreate */,
 				F1DBBD772BCD605900D1A58E /* FolderDetail */,
@@ -303,11 +317,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1C8425A2BD0E348006E3789 /* FolderEditViewStore.swift in Sources */,
 				F1DBBD692BCD4BDF00D1A58E /* TodoDatabase.swift in Sources */,
 				F1DBBD652BCD4A9A00D1A58E /* FolderDatabase.swift in Sources */,
 				F1023CD72BCF8A750050B0F2 /* SwiftData+Preview.swift in Sources */,
 				F1DBBD6D2BCD4F5600D1A58E /* RootViewStore.swift in Sources */,
 				F1DBBD582BCD41F700D1A58E /* HomeView.swift in Sources */,
+				F1C8425C2BD0E8F8006E3789 /* FolderEditView.swift in Sources */,
 				F1DBBD712BCD500F00D1A58E /* RootTab.swift in Sources */,
 				F154273C2BCD0F310070D22C /* AppStore.swift in Sources */,
 				F1023CDF2BCFE4EB0050B0F2 /* TodoCreateViewStore.swift in Sources */,

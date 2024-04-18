@@ -46,6 +46,9 @@ struct FolderDetailView: View {
         .safeAreaPadding(.bottom, 20)
         .safeAreaPadding(.trailing, 20)
     }
+    .fullScreenCover(item: $store.scope(state: \.folderEdit, action: \.folderEdit)) {
+      FolderEditView(store: $0)
+    }
   }
   
 }
