@@ -6,12 +6,13 @@
 //
 
 import ComposableArchitecture
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct FolderHomeView: View {
   
   @Bindable var store: StoreOf<FolderHomeViewStore>
+  @Query private var folders: [Folder]
   
   var body: some View {
     NavigationStack(
@@ -31,9 +32,6 @@ struct FolderHomeView: View {
     }
     .fullScreenCover(item: $store.scope(state: \.folderCreate, action: \.folderCreate)) {
       FolderCreateView(store: $0)
-    }
-    .onAppear {
-      store.send(.onAppeared)
     }
   }
   
@@ -73,25 +71,25 @@ private extension FolderHomeView {
           .padding(.horizontal, 20)
           .padding(.vertical, 20)
           .background(
-            RoundedRectangle(cornerRadius: 8, style: .continuous)
-              .fill(Color.blue.opacity(0.1))
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+              .fill(Color.blue.opacity(0.2))
           )
         }
-        .padding(.horizontal, 10)
-        .padding(.vertical, 5)
         
-        ForEach(store.folders) { folder in
+        ForEach(folders) { folder in
           NavigationLink(state: FolderDetailViewStore.State(folder: folder)) {
             HStack {
-              VStack(spacing: 10) {
-                Circle()
-                  .fill(Color(hex: folder.hexColor))
-                  .frame(width: 50, height: 50)
+              VStack(spacing: 12) {
+                Image(systemName: "folder.fill")
+                  .resizable()
+                  .aspectRatio(contentMode: .fit)
+                  .frame(width: 30, height: 30)
+                  .foregroundStyle(Color(hex: folder.hexColor))
                 
-                VStack(spacing: 0) {
+                VStack(spacing: 3) {
                   Text(folder.title)
-                    .font(.body)
-                    .foregroundStyle(Color(hex: folder.hexColor))
+                    .font(.headline)
+                    .foregroundStyle(Color(uiColor: .label))
                   
                   Text("\(folder.todos.count) todos")
                     .font(.caption)
@@ -103,22 +101,21 @@ private extension FolderHomeView {
             .padding(.horizontal, 20)
             .padding(.vertical, 20)
             .background(
-              RoundedRectangle(cornerRadius: 8, style: .continuous)
-                .fill(Color(hex: folder.hexColor).opacity(0.1))
+              RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .fill(.thinMaterial)
             )
           }
-          .padding(.horizontal, 10)
-          .padding(.vertical, 5)
         }
       }
+      .padding(.horizontal, 10)
     }
   }
   
   func listGridItems() -> [GridItem] {
     if UIDevice.current.isPhone {
-      return [GridItem(spacing: 5), GridItem(spacing: 5)]
+      return [GridItem(spacing: 10), GridItem(spacing: 10)]
     } else {
-      return [GridItem(spacing: 5), GridItem(spacing: 5), GridItem(spacing: 5)]
+      return [GridItem(spacing: 10), GridItem(spacing: 10), GridItem(spacing: 10)]
     }
   }
   
@@ -129,28 +126,7 @@ private extension FolderHomeView {
   
   return FolderHomeView(
     store: Store(
-      initialState: FolderHomeViewStore.State(
-        folders: [
-          .init(id: .init(), title: "Foloder1", hexColor: "#000000"),
-          .init(id: .init(), title: "Foloder2", hexColor: "#3369FF"),
-          .init(id: .init(), title: "Foloder3", hexColor: "#1E315F"),
-          .init(id: .init(), title: "Foloder4", hexColor: "F05138"),
-          .init(id: .init(), title: "Foloder5", hexColor: "00000040"),
-          .init(id: .init(), title: "Foloder6", hexColor: "00000050"),
-          .init(id: .init(), title: "Foloder7", hexColor: "00000060"),
-          .init(id: .init(), title: "Foloder8", hexColor: "00000070"),
-          .init(id: .init(), title: "Foloder9", hexColor: "00000080"),
-          .init(id: .init(), title: "Foloder10", hexColor: "00000090"),
-          .init(id: .init(), title: "Foloder10111123123123123", hexColor: "00000090"),
-          .init(id: .init(), title: "Foloder10", hexColor: "00000090"),
-          .init(id: .init(), title: "Foloder10", hexColor: "00000090"),
-          .init(id: .init(), title: "Foloder10", hexColor: "00000090"),
-          .init(id: .init(), title: "Foloder10", hexColor: "00000090"),
-          .init(id: .init(), title: "Foloder10", hexColor: "00000090"),
-          .init(id: .init(), title: "Foloder10", hexColor: "00000090"),
-          .init(id: .init(), title: "Foloder10", hexColor: "00000090"),
-        ]
-      )
+      initialState: FolderHomeViewStore.State()
     ) {
       FolderHomeViewStore()
     }

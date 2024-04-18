@@ -1,19 +1,20 @@
 //
-//  FolderCreateView.swift
+//  FolderEditView.swift
 //  SimpleNote
 //
-//  Created by 홍성준 on 4/16/24.
+//  Created by 홍성준 on 4/18/24.
 //
 
 import ComposableArchitecture
+import SwiftData
 import SwiftUI
 
-struct FolderCreateView: View {
+struct FolderEditView: View {
   
-  @Bindable private var store: StoreOf<FolderCreateViewStore>
+  @Bindable private var store: StoreOf<FolderEditViewStore>
   @FocusState private var isFocused: Bool
   
-  init(store: StoreOf<FolderCreateViewStore>) {
+  init(store: StoreOf<FolderEditViewStore>) {
     self.store = store
   }
   
@@ -26,30 +27,29 @@ struct FolderCreateView: View {
         .focused($isFocused)
         .padding(.horizontal, 20)
       
-      ColorView(
-        color: $store.color,
-        tap: {
-          store.send(.colorChangeTapped)
-        }
-      )
+      ColorView(color: $store.color)
       .padding(.top, 10)
       .padding(.horizontal, 20)
       .frame(maxWidth: .infinity, alignment: .leading)
       
       Spacer()
       
-      createButton
-        .padding(.horizontal, 10)
-        .safeAreaPadding(.bottom, 20)
+      HStack {
+        deleteButton
+        editButton
+      }
+      .padding(.horizontal, 10)
+      .safeAreaPadding(.bottom, 20)
     }
     .onAppear {
       isFocused = true
     }
     .frame(maxHeight: .infinity, alignment: .top)
+    .alert($store.scope(state: \.alert, action: \.alert))
   }
 }
 
-private extension FolderCreateView {
+private extension FolderEditView {
   
   var navigationBar: some View {
     HStack {
@@ -72,11 +72,27 @@ private extension FolderCreateView {
       .font(.largeTitle)
   }
   
-  var createButton: some View {
+  var deleteButton: some View {
     Button {
-      store.send(.createTapped)
+      store.send(.deleteTapped)
     } label: {
-      Text("Create")
+      Text("Delete")
+        .frame(maxWidth: .infinity)
+        .foregroundStyle(.background)
+        .font(.headline)
+    }
+    .background(
+      RoundedRectangle(cornerRadius: 20, style: .circular)
+        .fill(.red)
+        .frame(height: 50)
+    )
+  }
+  
+  var editButton: some View {
+    Button {
+      store.send(.editTapped)
+    } label: {
+      Text("Edit")
         .frame(maxWidth: .infinity)
         .foregroundStyle(.background)
         .font(.headline)
@@ -91,8 +107,6 @@ private extension FolderCreateView {
   struct ColorView: View {
   
     @Binding var color: Color
-    
-    var tap: () -> Void
     
     var body: some View {
       HStack {
@@ -115,12 +129,16 @@ private extension FolderCreateView {
 }
 
 #Preview {
-  FolderCreateView(
+  let container = ModelContainer.preview()
+  let folder = Folder(id: .init(), title: "Simple note app develop", hexColor: "#A0E022")
+  
+  return FolderEditView(
     store: Store(
-      initialState: FolderCreateViewStore.State(title: "", hexColor: "F05138"),
+      initialState: FolderEditViewStore.State(folder: folder),
       reducer: {
-        FolderCreateViewStore()
+        FolderEditViewStore()
       }
     )
   )
+  .modelContainer(container)
 }
