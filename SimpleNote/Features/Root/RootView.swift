@@ -30,14 +30,15 @@ private extension RootView {
       )
     ) {
       HomeView(store: store.scope(state: \.home, action: \.home))
-        .tabItem { RootTab.home.tabItem }
+        .tabItem { RootTab.home.tabItem(isSelected: viewStore.selectedTab == .home) }
         .tag(RootTab.home)
       
       FolderHomeView(store: store.scope(state: \.folder, action: \.folder))
-        .tabItem { RootTab.folder.tabItem }
+        .tabItem { RootTab.folder.tabItem(isSelected: viewStore.selectedTab == .folder) }
         .tag(RootTab.folder)
       
     }
+    .tint(.primary)
   }
   
 }

@@ -18,17 +18,34 @@ enum RootTab {
     }
   }
   
-  var image: String {
+  var image: Image {
     switch self {
-    case .home: return "house"
-    case .folder: return "folder"
+    case .home: 
+      return Image(.house)
+        .renderingMode(.template)
+      
+    case .folder:
+      return Image(.folders)
+        .renderingMode(.template)
     }
   }
   
-  var tabItem: some View {
+  var selectedImage: Image {
+    switch self {
+    case .home:
+      return Image(.houseFill)
+        .renderingMode(.template)
+      
+    case .folder:
+      return Image(.foldersFill)
+        .renderingMode(.template)
+    }
+  }
+  
+  func tabItem(isSelected: Bool) -> some View {
     return Label(
       title: { Text(title) },
-      icon: { Image(systemName: image) }
+      icon: { isSelected ? selectedImage : image }
     )
   }
   
