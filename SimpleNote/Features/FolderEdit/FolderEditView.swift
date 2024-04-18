@@ -58,9 +58,10 @@ private extension FolderEditView {
       Button {
         store.send(.closeTapped)
       } label: {
-        Image(systemName: "xmark")
+        Image(.X)
           .resizable()
-          .frame(width: 20, height: 20)
+          .renderingMode(.template)
+          .frame(width: 30, height: 30)
           .foregroundStyle(.foreground)
       }
     }
@@ -121,7 +122,7 @@ private extension FolderEditView {
       .padding(10)
       .background(
         RoundedRectangle(cornerRadius: 20, style: .circular)
-          .fill(.ultraThinMaterial)
+          .fill(Color.secondarySystemBackground)
       )
     }
   }

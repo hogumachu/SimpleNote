@@ -55,10 +55,11 @@ private extension TodoCreateView {
       Button {
         store.send(.closeTapped)
       } label: {
-        Image(systemName: "xmark")
+        Image(.X)
           .resizable()
+          .renderingMode(.template)
           .aspectRatio(contentMode: .fit)
-          .frame(width: 20, height: 20)
+          .frame(width: 30, height: 30)
           .foregroundStyle(.foreground)
       }
     }
@@ -83,7 +84,7 @@ private extension TodoCreateView {
     .padding(10)
     .background(
       RoundedRectangle(cornerRadius: 20, style: .circular)
-        .fill(.ultraThinMaterial)
+        .fill(Color.secondarySystemBackground)
     )
   }
   

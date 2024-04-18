@@ -59,13 +59,15 @@ private extension FolderHomeView {
           store.send(.addButtonTapped)
         } label: {
           VStack(spacing: 10) {
-            Image(systemName: "plus")
+            Image(.plus)
               .resizable()
+              .renderingMode(.template)
               .frame(width: 30, height: 30)
-              .foregroundStyle(Color.blue)
+              .foregroundStyle(.blue)
             
             Text("New folder")
               .font(.body)
+              .foregroundStyle(.blue)
           }
           .frame(maxWidth: .infinity, minHeight: 100)
           .padding(.horizontal, 20)
@@ -80,10 +82,11 @@ private extension FolderHomeView {
           NavigationLink(state: FolderDetailViewStore.State(folder: folder)) {
             HStack {
               VStack(spacing: 12) {
-                Image(systemName: "folder.fill")
+                Image(.folderFill)
                   .resizable()
+                  .renderingMode(.template)
                   .aspectRatio(contentMode: .fit)
-                  .frame(width: 30, height: 30)
+                  .frame(width: 45, height: 45)
                   .foregroundStyle(Color(hex: folder.hexColor))
                 
                 VStack(spacing: 3) {
@@ -102,7 +105,7 @@ private extension FolderHomeView {
             .padding(.vertical, 20)
             .background(
               RoundedRectangle(cornerRadius: 16, style: .continuous)
-                .fill(.thinMaterial)
+                .fill(Color.secondarySystemBackground)
             )
           }
         }

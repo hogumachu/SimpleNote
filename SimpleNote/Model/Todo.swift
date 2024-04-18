@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftData
+import SwiftDate
 
 @Model
 final class Todo {
@@ -23,6 +24,39 @@ final class Todo {
     self.todo = todo
     self.targetDate = targetDate
     self.isComplete = isComplete
+  }
+  
+}
+
+extension Todo {
+  
+  static func predicate(searchText: String) -> Predicate<Todo> {
+    return #Predicate {
+      !searchText.isEmpty && $0.todo.contains(searchText)
+    }
+  }
+  
+  static func predicate(isSameDayAs date: Date) -> Predicate<Todo> {
+    let calendar = Calendar.autoupdatingCurrent
+    let start = calendar.startOfDay(for: date)
+    let end = calendar.date(byAdding: .day, value: 1, to: start) ?? start
+    return #Predicate {
+      $0.targetDate > start && $0.targetDate < end
+    }
+  }
+  
+  static func predicate(folderID: UUID) -> Predicate<Todo> {
+    return #Predicate {
+      $0.folder?.id == folderID
+    }
+  }
+  
+  static func predicate(lessThan date: Date, isComplete: Bool = false) -> Predicate<Todo> {
+    let calendar = Calendar.autoupdatingCurrent
+    let start = calendar.startOfDay(for: date)
+    return #Predicate {
+      $0.targetDate < start && $0.isComplete == isComplete
+    }
   }
   
 }

@@ -10,6 +10,10 @@
 		F1023CD72BCF8A750050B0F2 /* SwiftData+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1023CD62BCF8A750050B0F2 /* SwiftData+Preview.swift */; };
 		F1023CDF2BCFE4EB0050B0F2 /* TodoCreateViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1023CDE2BCFE4EB0050B0F2 /* TodoCreateViewStore.swift */; };
 		F1023CE12BCFE5360050B0F2 /* TodoCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1023CE02BCFE5360050B0F2 /* TodoCreateView.swift */; };
+		F15403212BD129EB00FAF7E3 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = F15403202BD129EB00FAF7E3 /* SwiftDate */; };
+		F15403232BD135E900FAF7E3 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15403222BD135E900FAF7E3 /* Color+.swift */; };
+		F15403292BD145AB00FAF7E3 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F15403282BD145AB00FAF7E3 /* Lottie */; };
+		F154032B2BD15AE400FAF7E3 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F154032A2BD15AE400FAF7E3 /* EmptyView.swift */; };
 		F154272C2BCD0C6E0070D22C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F154272B2BCD0C6E0070D22C /* Assets.xcassets */; };
 		F154272F2BCD0C6E0070D22C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F154272E2BCD0C6E0070D22C /* Preview Assets.xcassets */; };
 		F15427392BCD0F060070D22C /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = F15427382BCD0F060070D22C /* ComposableArchitecture */; };
@@ -18,7 +22,7 @@
 		F1C8425A2BD0E348006E3789 /* FolderEditViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C842592BD0E348006E3789 /* FolderEditViewStore.swift */; };
 		F1C8425C2BD0E8F8006E3789 /* FolderEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C8425B2BD0E8F8006E3789 /* FolderEditView.swift */; };
 		F1C842652BD0FB46006E3789 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F1C842642BD0FB46006E3789 /* Localizable.xcstrings */; };
-		F1DBBD562BCD3F0700D1A58E /* HomeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD552BCD3F0700D1A58E /* HomeStore.swift */; };
+		F1DBBD562BCD3F0700D1A58E /* HomeViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD552BCD3F0700D1A58E /* HomeViewStore.swift */; };
 		F1DBBD582BCD41F700D1A58E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD572BCD41F600D1A58E /* HomeView.swift */; };
 		F1DBBD5A2BCD42F900D1A58E /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD592BCD42F900D1A58E /* App.swift */; };
 		F1DBBD5D2BCD436700D1A58E /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD5C2BCD436700D1A58E /* Database.swift */; };
@@ -43,6 +47,8 @@
 		F1023CD62BCF8A750050B0F2 /* SwiftData+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftData+Preview.swift"; sourceTree = "<group>"; };
 		F1023CDE2BCFE4EB0050B0F2 /* TodoCreateViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCreateViewStore.swift; sourceTree = "<group>"; };
 		F1023CE02BCFE5360050B0F2 /* TodoCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCreateView.swift; sourceTree = "<group>"; };
+		F15403222BD135E900FAF7E3 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
+		F154032A2BD15AE400FAF7E3 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		F15427222BCD0C6C0070D22C /* SimpleNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F154272B2BCD0C6E0070D22C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F154272E2BCD0C6E0070D22C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -53,7 +59,7 @@
 		F1C842592BD0E348006E3789 /* FolderEditViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderEditViewStore.swift; sourceTree = "<group>"; };
 		F1C8425B2BD0E8F8006E3789 /* FolderEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderEditView.swift; sourceTree = "<group>"; };
 		F1C842642BD0FB46006E3789 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
-		F1DBBD552BCD3F0700D1A58E /* HomeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStore.swift; sourceTree = "<group>"; };
+		F1DBBD552BCD3F0700D1A58E /* HomeViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewStore.swift; sourceTree = "<group>"; };
 		F1DBBD572BCD41F600D1A58E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F1DBBD592BCD42F900D1A58E /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		F1DBBD5C2BCD436700D1A58E /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
@@ -79,7 +85,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F15403212BD129EB00FAF7E3 /* SwiftDate in Frameworks */,
 				F15427392BCD0F060070D22C /* ComposableArchitecture in Frameworks */,
+				F15403292BD145AB00FAF7E3 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				F1C842642BD0FB46006E3789 /* Localizable.xcstrings */,
+				F154032A2BD15AE400FAF7E3 /* EmptyView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -166,7 +175,7 @@
 		F1DBBD542BCD3EFB00D1A58E /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				F1DBBD552BCD3F0700D1A58E /* HomeStore.swift */,
+				F1DBBD552BCD3F0700D1A58E /* HomeViewStore.swift */,
 				F1DBBD572BCD41F600D1A58E /* HomeView.swift */,
 			);
 			path = Home;
@@ -239,6 +248,7 @@
 			children = (
 				F1DBBD7E2BCD7DC900D1A58E /* Color+Init.swift */,
 				F1DBBD852BCE87C300D1A58E /* UIDevice+.swift */,
+				F15403222BD135E900FAF7E3 /* Color+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -270,6 +280,8 @@
 			name = SimpleNote;
 			packageProductDependencies = (
 				F15427382BCD0F060070D22C /* ComposableArchitecture */,
+				F15403202BD129EB00FAF7E3 /* SwiftDate */,
+				F15403282BD145AB00FAF7E3 /* Lottie */,
 			);
 			productName = SimpleNote;
 			productReference = F15427222BCD0C6C0070D22C /* SimpleNote.app */;
@@ -302,6 +314,8 @@
 			mainGroup = F15427192BCD0C6C0070D22C;
 			packageReferences = (
 				F15427372BCD0F060070D22C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				F154031F2BD129EB00FAF7E3 /* XCRemoteSwiftPackageReference "SwiftDate" */,
+				F15403272BD145AB00FAF7E3 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = F15427232BCD0C6C0070D22C /* Products */;
 			projectDirPath = "";
@@ -340,13 +354,15 @@
 				F1DBBD712BCD500F00D1A58E /* RootTab.swift in Sources */,
 				F154273C2BCD0F310070D22C /* AppStore.swift in Sources */,
 				F1023CDF2BCFE4EB0050B0F2 /* TodoCreateViewStore.swift in Sources */,
+				F15403232BD135E900FAF7E3 /* Color+.swift in Sources */,
 				F1DBBD5A2BCD42F900D1A58E /* App.swift in Sources */,
+				F154032B2BD15AE400FAF7E3 /* EmptyView.swift in Sources */,
 				F1DBBD742BCD564800D1A58E /* FolderHomeViewStore.swift in Sources */,
 				F1DBBD842BCE793100D1A58E /* FolderCreateView.swift in Sources */,
 				F1DBBD632BCD494F00D1A58E /* Todo.swift in Sources */,
 				F1023CE12BCFE5360050B0F2 /* TodoCreateView.swift in Sources */,
 				F1DBBD762BCD567B00D1A58E /* FolderHomeView.swift in Sources */,
-				F1DBBD562BCD3F0700D1A58E /* HomeStore.swift in Sources */,
+				F1DBBD562BCD3F0700D1A58E /* HomeViewStore.swift in Sources */,
 				F1DBBD7F2BCD7DCA00D1A58E /* Color+Init.swift in Sources */,
 				F1DBBD6F2BCD4F6F00D1A58E /* RootView.swift in Sources */,
 				F1DBBD7B2BCD607B00D1A58E /* FolderDetailView.swift in Sources */,
@@ -567,6 +583,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F154031F2BD129EB00FAF7E3 /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/SwiftDate";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		F15403272BD145AB00FAF7E3 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.3;
+			};
+		};
 		F15427372BCD0F060070D22C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
@@ -578,6 +610,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F15403202BD129EB00FAF7E3 /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F154031F2BD129EB00FAF7E3 /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
+		};
+		F15403282BD145AB00FAF7E3 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F15403272BD145AB00FAF7E3 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		F15427382BCD0F060070D22C /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F15427372BCD0F060070D22C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;

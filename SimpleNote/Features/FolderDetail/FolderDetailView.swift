@@ -17,9 +17,7 @@ struct FolderDetailView: View {
   init(store: StoreOf<FolderDetailViewStore>) {
     self.store = store
     let folderID = store.folder.id
-    self._todos = Query(filter: #Predicate {
-      $0.folder?.id == folderID
-    })
+    self._todos = Query(filter: Todo.predicate(folderID: folderID))
   }
   
   var body: some View {
@@ -60,10 +58,11 @@ private extension FolderDetailView {
       Button {
         store.send(.closeTapped)
       } label: {
-        Image(systemName: "arrow.left")
+        Image(.arrowLeft)
           .resizable()
+          .renderingMode(.template)
           .aspectRatio(contentMode: .fit)
-          .frame(width: 20, height: 20)
+          .frame(width: 30, height: 30)
           .foregroundStyle(.foreground)
       }
       
@@ -72,10 +71,11 @@ private extension FolderDetailView {
       Button {
         store.send(.editTapped)
       } label: {
-        Image(systemName: "pencil")
+        Image(.pencilSimple)
           .resizable()
+          .renderingMode(.template)
           .aspectRatio(contentMode: .fit)
-          .frame(width: 16, height: 16)
+          .frame(width: 30, height: 30)
           .foregroundStyle(.foreground)
       }
     }
@@ -116,7 +116,7 @@ private extension FolderDetailView {
   var listView: some View {
     LazyVStack {
       if todos.isEmpty {
-        emptyTodoView
+        EmptyView(subtitle: "There is nothing to do")
       } else {
         ForEach(todos) { todo in
           todoView(todo)
@@ -127,19 +127,13 @@ private extension FolderDetailView {
     }
   }
   
-  var emptyTodoView: some View {
-    Text("Todo is empty")
-      .font(.body)
-      .foregroundStyle(.gray)
-      .padding()
-  }
-  
   var createView: some View {
     Button {
       store.send(.createTapped)
     } label: {
-      Image(systemName: "plus.circle.fill")
+      Image(.plusCircleFill)
         .resizable()
+        .renderingMode(.template)
         .aspectRatio(contentMode: .fit)
         .frame(width: 50, height: 50)
     }
@@ -153,9 +147,10 @@ private extension FolderDetailView {
           store.send(.checkTapped(todo))
         }
       } label: {
-        Image(systemName: todo.isComplete ? "checkmark.circle.fill" : "circle")
+        Image(todo.isComplete ? .checkCircleFill : .circle)
           .resizable()
-          .frame(width: 25, height: 25)
+          .renderingMode(.template)
+          .frame(width: 30, height: 30)
           .foregroundStyle(Color(hex: store.folder.hexColor))
       }
       
@@ -167,7 +162,7 @@ private extension FolderDetailView {
           .font(.body)
           .foregroundStyle(todo.isComplete ? .secondary : .primary)
         
-        Text("\(todo.targetDate)")
+        Text("\(todo.targetDate.formatted(date: .complete, time: .omitted))")
           .font(.caption)
           .foregroundStyle(.secondary)
       }
@@ -179,7 +174,10 @@ private extension FolderDetailView {
           store.send(.deleteTapped(todo))
         }
       } label: {
-        Image(systemName: "trash")
+        Image(.trash)
+          .resizable()
+          .renderingMode(.template)
+          .frame(width: 25, height: 25)
           .foregroundStyle(.red)
       }
     }
