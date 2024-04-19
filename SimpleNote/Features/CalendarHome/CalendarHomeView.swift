@@ -19,37 +19,47 @@ struct CalendarHomeView: View {
   }
   
   var body: some View {
-    VStack(spacing: 0) {
-      navigationBar
-        .padding(.horizontal, 20)
-      
-      weekView
-      
-      Divider()
-        .padding(.top, 10)
-      
-      QueryView(isSameDayAs: store.focusDate) { todos in
-        if todos.isEmpty {
-          Spacer()
-          
-          EmptyView(subtitle: "There is nothing todo")
-          
-          Spacer()
-        } else {
-          ScrollView {
-            todoListView(todos)
-              .padding(20)
+    ZStack {
+      VStack(spacing: 0) {
+        navigationBar
+          .padding(.horizontal, 20)
+        
+        weekView
+        
+        Divider()
+          .padding(.top, 10)
+        
+        QueryView(isSameDayAs: store.focusDate) { todos in
+          if todos.isEmpty {
+            Spacer()
+            
+            EmptyView(subtitle: "There is nothing todo")
+            
+            Spacer()
+          } else {
+            ScrollView {
+              todoListView(todos)
+                .padding(20)
+            }
           }
         }
       }
+      .background(.background)
+      .frame(maxHeight: .infinity, alignment: .top)
+      
+      createView
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+        .safeAreaPadding(.bottom, 20)
+        .safeAreaPadding(.trailing, 20)
     }
-    .background(.background)
-    .frame(maxHeight: .infinity, alignment: .top)
     .onAppear {
       store.send(.onAppeared)
     }
     .fullScreenCover(item: $store.scope(state: \.todoDetail, action: \.todoDetail)) {
       TodoDetailView(store: $0)
+    }
+    .fullScreenCover(item: $store.scope(state: \.todoCreate, action: \.todoCreate)) {
+      TodoCreateView(store: $0)
     }
   }
 }
@@ -120,6 +130,19 @@ private extension CalendarHomeView {
         .frame(maxWidth: .infinity)
       }
     }
+  }
+  
+  var createView: some View {
+    Button {
+      store.send(.createTapped)
+    } label: {
+      Image(.plusCircleFill)
+        .resizable()
+        .renderingMode(.template)
+        .aspectRatio(contentMode: .fit)
+        .frame(width: 50, height: 50)
+    }
+    .foregroundStyle(.foreground)
   }
   
 }

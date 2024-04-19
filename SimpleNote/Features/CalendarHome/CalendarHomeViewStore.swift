@@ -19,6 +19,7 @@ struct CalendarHomeViewStore {
     var title: String
     var dayItems: [CalendarDayItem]
     @Presents var todoDetail: TodoDetailViewStore.State?
+    @Presents var todoCreate: TodoCreateViewStore.State?
     
     init(focusDate: Date = .now) {
       self.focusDate = focusDate
@@ -33,7 +34,9 @@ struct CalendarHomeViewStore {
     case dateTapped(Date)
     case checkTapped(Todo)
     case todoTapped(Todo)
+    case createTapped
     case todoDetail(PresentationAction<TodoDetailViewStore.Action>)
+    case todoCreate(PresentationAction<TodoCreateViewStore.Action>)
   }
   
   var body: some ReducerOf<Self> {
@@ -68,12 +71,26 @@ struct CalendarHomeViewStore {
         state.todoDetail = .init(todo: todo)
         return .none
         
+      case .createTapped:
+        state.todoCreate = .init(
+          todo: "",
+          targetDate: state.focusDate,
+          folder: nil
+        )
+        return .none
+        
       case .todoDetail:
+        return .none
+        
+      case .todoCreate:
         return .none
       }
     }
     .ifLet(\.$todoDetail, action: \.todoDetail) {
       TodoDetailViewStore()
+    }
+    .ifLet(\.$todoCreate, action: \.todoCreate) {
+      TodoCreateViewStore()
     }
   }
   
