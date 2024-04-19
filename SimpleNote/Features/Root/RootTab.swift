@@ -9,11 +9,13 @@ import SwiftUI
 
 enum RootTab {
   case home
+  case calendar
   case folder
   
   var title: String {
     switch self {
     case .home: return "Home"
+    case .calendar: return "Calendar"
     case .folder: return "Folder"
     }
   }
@@ -22,6 +24,10 @@ enum RootTab {
     switch self {
     case .home: 
       return Image(.house)
+        .renderingMode(.template)
+      
+    case .calendar:
+      return Image(.calendarDots)
         .renderingMode(.template)
       
     case .folder:
@@ -34,6 +40,10 @@ enum RootTab {
     switch self {
     case .home:
       return Image(.houseFill)
+        .renderingMode(.template)
+      
+    case .calendar:
+      return Image(.calendarDotsFill)
         .renderingMode(.template)
       
     case .folder:
