@@ -33,6 +33,10 @@ private extension RootView {
         .tabItem { RootTab.home.tabItem(isSelected: viewStore.selectedTab == .home) }
         .tag(RootTab.home)
       
+      CalendarHomeView(store: store.scope(state: \.calendar, action: \.calendar))
+        .tabItem { RootTab.calendar.tabItem(isSelected: viewStore.selectedTab == .calendar) }
+        .tag(RootTab.calendar)
+      
       FolderHomeView(store: store.scope(state: \.folder, action: \.folder))
         .tabItem { RootTab.folder.tabItem(isSelected: viewStore.selectedTab == .folder) }
         .tag(RootTab.folder)

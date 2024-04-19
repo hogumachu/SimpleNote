@@ -12,6 +12,7 @@ import SwiftUI
 @main
 struct SimpleNoteApp: App {
   
+  @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
   @Dependency(\.database) var database
   
   var body: some Scene {

@@ -17,6 +17,9 @@
         }
       }
     },
+    "%lld" : {
+
+    },
     "%lld todos" : {
       "localizations" : {
         "ko" : {
@@ -193,8 +196,8 @@
         }
       }
     },
-    "There is nothing to do" : {
-      "extractionState" : "stale",
+    "There is nothing todo" : {
+      "extractionState" : "manual",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
