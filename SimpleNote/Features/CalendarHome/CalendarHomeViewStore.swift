@@ -18,6 +18,7 @@ struct CalendarHomeViewStore {
     var focusDate: Date
     var title: String
     var dayItems: [CalendarDayItem]
+    var isToday: Bool
     @Presents var todoDetail: TodoDetailViewStore.State?
     @Presents var todoCreate: TodoCreateViewStore.State?
     
@@ -25,6 +26,7 @@ struct CalendarHomeViewStore {
       self.focusDate = focusDate
       self.title = ""
       self.dayItems = []
+      self.isToday = focusDate.compare(.isSameDay(Date.now))
     }
   }
   
@@ -35,6 +37,7 @@ struct CalendarHomeViewStore {
     case checkTapped(Todo)
     case todoTapped(Todo)
     case createTapped
+    case todayTapped
     case todoDetail(PresentationAction<TodoDetailViewStore.Action>)
     case todoCreate(PresentationAction<TodoCreateViewStore.Action>)
   }
@@ -47,6 +50,7 @@ struct CalendarHomeViewStore {
       case .binding(\.focusDate):
         state.dayItems = makeDayItems(selectedDate: state.focusDate)
         state.title = makeTitle(selectedDate: state.focusDate)
+        state.isToday = state.focusDate.compare(.isSameDay(Date.now))
         return .none
         
       case .binding:
@@ -61,6 +65,7 @@ struct CalendarHomeViewStore {
         state.focusDate = selectedDate
         state.dayItems = makeDayItems(selectedDate: selectedDate)
         state.title = makeTitle(selectedDate: selectedDate)
+        state.isToday = selectedDate.compare(.isSameDay(Date.now))
         return .none
         
       case let .checkTapped(todo):
@@ -77,6 +82,14 @@ struct CalendarHomeViewStore {
           targetDate: state.focusDate,
           folder: nil
         )
+        return .none
+        
+      case .todayTapped:
+        let selectedDate = Date.now
+        state.focusDate = selectedDate
+        state.dayItems = makeDayItems(selectedDate: selectedDate)
+        state.title = makeTitle(selectedDate: selectedDate)
+        state.isToday = selectedDate.compare(.isSameDay(Date.now))
         return .none
         
       case .todoDetail:

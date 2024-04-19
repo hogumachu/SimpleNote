@@ -260,6 +260,16 @@
         }
       }
     },
+    "Today" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "오늘"
+          }
+        }
+      }
+    },
     "Today's todos" : {
       "localizations" : {
         "ko" : {

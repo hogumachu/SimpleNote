@@ -47,10 +47,18 @@ struct CalendarHomeView: View {
       .background(.background)
       .frame(maxHeight: .infinity, alignment: .top)
       
-      createView
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
-        .safeAreaPadding(.bottom, 20)
-        .safeAreaPadding(.trailing, 20)
+      HStack {
+        if !store.isToday {
+          todayView
+        }
+        
+        Spacer()
+        
+        createView
+      }
+      .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+      .safeAreaPadding(.bottom, 20)
+      .safeAreaPadding(.horizontal, 20)
     }
     .onAppear {
       store.send(.onAppeared)
@@ -134,6 +142,28 @@ private extension CalendarHomeView {
         .frame(maxWidth: .infinity)
       }
     }
+  }
+  
+  var todayView: some View {
+    Button {
+      store.send(.todayTapped)
+    } label: {
+      Text("Today")
+        .font(.headline)
+        .foregroundStyle(.foreground)
+      
+      Image(.caretRight)
+        .resizable()
+        .renderingMode(.template)
+        .aspectRatio(contentMode: .fit)
+        .frame(width: 20, height: 20)
+        .foregroundStyle(.foreground)
+    }
+    .padding(10)
+    .background(
+      RoundedRectangle(cornerRadius: 16)
+        .foregroundStyle(.background.opacity(0.7))
+    )
   }
   
   var createView: some View {
