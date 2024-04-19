@@ -38,6 +38,22 @@ public extension Color {
     self.init(red: r, green: g, blue: b, opacity: a)
   }
   
+  init(hexOrPrimary hex: String?) {
+    if let hex {
+      self.init(hex: hex)
+    } else {
+      self = .primary
+    }
+  }
+  
+  init(hexOrGray hex: String?) {
+    if let hex {
+      self.init(hex: hex)
+    } else {
+      self = .gray
+    }
+  }
+  
   func hex() -> String {
     let components = UIColor(self).cgColor.components
     let r: CGFloat = components?[0] ?? 0.0

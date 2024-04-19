@@ -53,7 +53,11 @@ struct FolderDetailViewStore {
         return .none
         
       case .createTapped:
-        state.todoCreate = .init(todo: "", targetDate: .now)
+        state.todoCreate = .init(
+          todo: "",
+          targetDate: .now,
+          folder: state.folder
+        )
         return .none
         
       case let .checkTapped(todo):
@@ -72,13 +76,6 @@ struct FolderDetailViewStore {
           
         }
         return .none
-        
-      case let .todoCreate(.presented(.delegate(.create(todo)))):
-        todo.folder = state.folder
-        state.folder.todos?.append(todo)
-        return .run { send in
-          try todoDatabase.add(todo)
-        }
         
       case .todoCreate:
         return .none

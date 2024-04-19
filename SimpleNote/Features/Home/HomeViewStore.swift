@@ -14,6 +14,7 @@ struct HomeViewStore: Reducer {
   @ObservableState
   struct State: Equatable {
     @Presents var todoDetail: TodoDetailViewStore.State?
+    @Presents var todoCreate: TodoCreateViewStore.State?
     var path = StackState<SearchViewStore.State>()
   }
   
@@ -21,8 +22,10 @@ struct HomeViewStore: Reducer {
     case searchTapped
     case todoTapped(Todo)
     case checkTapped(Todo)
+    case createTapped
     case settingTapped
     case todoDetail(PresentationAction<TodoDetailViewStore.Action>)
+    case todoCreate(PresentationAction<TodoCreateViewStore.Action>)
     case path(StackAction<SearchViewStore.State, SearchViewStore.Action>)
   }
   
@@ -40,10 +43,21 @@ struct HomeViewStore: Reducer {
         todo.isComplete?.toggle()
         return .none
         
+      case .createTapped:
+        state.todoCreate = .init(
+          todo: "",
+          targetDate: .now,
+          folder: nil
+        )
+        return .none
+        
       case .settingTapped:
         return .none
         
       case .todoDetail:
+        return .none
+        
+      case .todoCreate:
         return .none
         
       case .path:
@@ -52,6 +66,9 @@ struct HomeViewStore: Reducer {
     }
     .ifLet(\.$todoDetail, action: \.todoDetail) {
       TodoDetailViewStore()
+    }
+    .ifLet(\.$todoCreate, action: \.todoCreate) {
+      TodoCreateViewStore()
     }
     .forEach(\.path, action: \.path) {
       SearchViewStore()
