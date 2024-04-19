@@ -18,30 +18,42 @@ struct TodoCreateView: View {
   }
   
   var body: some View {
-    VStack {
-      navigationBar
-        .padding(.horizontal, 10)
-      
-      todoTextField
-        .focused($isFocused)
-        .padding(.horizontal, 20)
-      
-      datePicker
-        .padding(.top, 10)
-        .padding(.horizontal, 20)
-        .frame(maxWidth: .infinity)
-      
-      Spacer()
-      
-      createButton
-        .padding(.horizontal, 10)
-        .safeAreaPadding(.bottom, 20)
+    NavigationStack {
+      VStack {
+        navigationBar
+          .padding(.horizontal, 10)
+        
+        todoTextField
+          .focused($isFocused)
+          .padding(.horizontal, 20)
+        
+        datePicker
+          .padding(.top, 10)
+          .padding(.horizontal, 20)
+          .frame(maxWidth: .infinity)
+        
+        folderPicker
+          .padding(.top, 10)
+          .padding(.horizontal, 20)
+          .frame(maxWidth: .infinity)
+        
+        Spacer()
+        
+        createButton
+          .padding(.horizontal, 10)
+          .safeAreaPadding(.bottom, 20)
+      }
+      .navigationDestination(item: $store.scope(state: \.folderPicker, action: \.folderPicker)) {
+        FolderPickerView(store: $0)
+          .toolbar(.hidden, for: .navigationBar)
+      }
     }
     .onAppear {
       isFocused = true
     }
     .frame(maxHeight: .infinity, alignment: .top)
     .background(.background)
+    
   }
   
 }
@@ -78,13 +90,53 @@ private extension TodoCreateView {
         displayedComponents: .date,
         label: {
           Text("Select Target Date")
+            .font(.body)
+            .foregroundStyle(.foreground)
         }
       )
     }
-    .padding(10)
+    .padding(.horizontal, 20)
+    .padding(.vertical, 10)
     .background(
-      RoundedRectangle(cornerRadius: 20, style: .circular)
-        .fill(Color.secondarySystemBackground)
+      RoundedRectangle(cornerRadius: 16)
+        .foregroundStyle(Color.secondarySystemBackground)
+    )
+  }
+  
+  var folderPicker: some View {
+    Button {
+      store.send(.folderTapped)
+    } label: {
+      HStack {
+        Text("Selected folder")
+          .font(.body)
+          .foregroundStyle(.foreground)
+        
+        Spacer()
+        
+        Image(.folderFill)
+          .resizable()
+          .renderingMode(.template)
+          .aspectRatio(contentMode: .fit)
+          .frame(width: 20, height: 20)
+          .foregroundStyle(Color(hexOrGray: store.folder?.hexColor))
+        
+        if let title = store.folder?.title {
+          Text(title)
+            .font(.body)
+            .foregroundStyle(.foreground)
+        } else {
+          Text("None")
+            .font(.body)
+            .foregroundStyle(.foreground)
+        }
+      }
+    }
+    .padding(.horizontal, 20)
+    .padding(.vertical, 15)
+    .background(
+      RoundedRectangle(cornerRadius: 16)
+        .foregroundStyle(Color.secondarySystemBackground)
     )
   }
   
@@ -108,7 +160,7 @@ private extension TodoCreateView {
 
 #Preview {
   TodoCreateView(store: Store(
-    initialState: TodoCreateViewStore.State(todo: "", targetDate: .now),
+    initialState: TodoCreateViewStore.State(todo: "", targetDate: .now, folder: nil),
     reducer: {
       TodoCreateViewStore()
     }

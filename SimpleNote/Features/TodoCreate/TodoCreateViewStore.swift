@@ -15,10 +15,13 @@ struct TodoCreateViewStore {
   struct State: Equatable {
     var todo: String
     var targetDate: Date
+    var folder: Folder?
+    @Presents var folderPicker: FolderPickerViewStore.State?
     
-    init(todo: String, targetDate: Date) {
+    init(todo: String, targetDate: Date, folder: Folder?) {
       self.todo = todo
       self.targetDate = targetDate
+      self.folder = folder
     }
   }
   
@@ -26,16 +29,14 @@ struct TodoCreateViewStore {
     case binding(BindingAction<State>)
     
     case createTapped
+    case folderTapped
     case closeTapped
     
-    case delegate(Delegate)
-    
-    enum Delegate {
-      case create(Todo)
-    }
+    case folderPicker(PresentationAction<FolderPickerViewStore.Action>)
   }
   
   @Dependency(\.dismiss) var dismiss
+  @Dependency(\.todoDatabase) var todoDatabase
   
   var body: some ReducerOf<Self> {
     BindingReducer()
@@ -46,23 +47,50 @@ struct TodoCreateViewStore {
         return .none
         
       case .createTapped:
-        return .run { [
-          todo = state.todo,
-          targetDate = state.targetDate
-        ] send in
-          let todo = Todo(id: .init(), todo: todo, targetDate: targetDate, isComplete: false)
-          await send(.delegate(.create(todo)))
-          await dismiss()
-        }
+        return createTapped(&state)
+        
+      case .folderTapped:
+        state.folderPicker = .init(selectedFolder: state.folder)
+        return .none
         
       case .closeTapped:
         return .run { _ in
           await dismiss()
         }
         
-      case .delegate:
+      case let .folderPicker(.presented(.delegate(.folderTapped(folder)))):
+        state.folder = folder
+        return .none
+        
+      case .folderPicker:
         return .none
       }
+    }
+    .ifLet(\.$folderPicker, action: \.folderPicker) {
+      FolderPickerViewStore()
+    }
+  }
+  
+}
+
+private extension TodoCreateViewStore {
+  
+  func createTapped(_ state: inout State) -> Effect<Action> {
+    let todo = Todo(
+      id: .init(),
+      todo: state.todo,
+      targetDate: state.targetDate,
+      isComplete: false
+    )
+    
+    if let folder = state.folder {
+      todo.folder = folder
+      folder.todos?.append(todo)
+    }
+    
+    return .run { send in
+      try todoDatabase.add(todo)
+      await dismiss()
     }
   }
   
