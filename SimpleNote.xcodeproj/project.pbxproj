@@ -50,6 +50,8 @@
 		F1FEE58D2BD265C50002CE89 /* TodoDetailViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEE58C2BD265C50002CE89 /* TodoDetailViewStore.swift */; };
 		F1FEE58F2BD266100002CE89 /* TodoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEE58E2BD266100002CE89 /* TodoDetailView.swift */; };
 		F1FEE5912BD27D5B0002CE89 /* Optional+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEE5902BD27D5B0002CE89 /* Optional+Default.swift */; };
+		F1FEE5952BD286770002CE89 /* QueryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEE5942BD286770002CE89 /* QueryView.swift */; };
+		F1FEE5972BD286E60002CE89 /* QueryView+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEE5962BD286E60002CE89 /* QueryView+Init.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +98,8 @@
 		F1FEE58C2BD265C50002CE89 /* TodoDetailViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailViewStore.swift; sourceTree = "<group>"; };
 		F1FEE58E2BD266100002CE89 /* TodoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailView.swift; sourceTree = "<group>"; };
 		F1FEE5902BD27D5B0002CE89 /* Optional+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Default.swift"; sourceTree = "<group>"; };
+		F1FEE5942BD286770002CE89 /* QueryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryView.swift; sourceTree = "<group>"; };
+		F1FEE5962BD286E60002CE89 /* QueryView+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QueryView+Init.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +210,7 @@
 				F1C842642BD0FB46006E3789 /* Localizable.xcstrings */,
 				F154032A2BD15AE400FAF7E3 /* EmptyView.swift */,
 				F1FEE5872BD21D880002CE89 /* TodoView.swift */,
+				F1FEE5942BD286770002CE89 /* QueryView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -291,6 +296,7 @@
 				F15403222BD135E900FAF7E3 /* Color+.swift */,
 				F1FEE5892BD226860002CE89 /* Formatter.swift */,
 				F1FEE5902BD27D5B0002CE89 /* Optional+Default.swift */,
+				F1FEE5962BD286E60002CE89 /* QueryView+Init.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -416,6 +422,8 @@
 				F15403332BD17B9F00FAF7E3 /* CalendarDayItem.swift in Sources */,
 				F1DBBD842BCE793100D1A58E /* FolderCreateView.swift in Sources */,
 				F1FEE58F2BD266100002CE89 /* TodoDetailView.swift in Sources */,
+				F1FEE5972BD286E60002CE89 /* QueryView+Init.swift in Sources */,
+				F1FEE5952BD286770002CE89 /* QueryView.swift in Sources */,
 				F1DBBD632BCD494F00D1A58E /* Todo.swift in Sources */,
 				F1023CE12BCFE5360050B0F2 /* TodoCreateView.swift in Sources */,
 				F1DBBD762BCD567B00D1A58E /* FolderHomeView.swift in Sources */,
