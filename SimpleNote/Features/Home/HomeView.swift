@@ -25,27 +25,34 @@ struct HomeView: View {
     NavigationStack(
       path: $store.scope(state: \.path, action: \.path)
     ) {
-      VStack(spacing: 0) {
-        navigationBar
-          .padding(.horizontal, 20)
-        
-        Divider()
-          .padding(.top, 10)
-        
-        ScrollView {
-          searchView
-            .padding(20)
-          
-          todayTodoListView
+      ZStack {
+        VStack(spacing: 0) {
+          navigationBar
             .padding(.horizontal, 20)
           
-          if !previousTodos.isEmpty {
-            previousTodoListView
+          Divider()
+            .padding(.top, 10)
+          
+          ScrollView {
+            searchView
+              .padding(20)
+            
+            todayTodoListView
               .padding(.horizontal, 20)
+            
+            if !previousTodos.isEmpty {
+              previousTodoListView
+                .padding(.horizontal, 20)
+            }
           }
         }
+        .background(.background)
+        
+        createView
+          .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+          .safeAreaPadding(.bottom, 20)
+          .safeAreaPadding(.trailing, 20)
       }
-      .background(.background)
     } destination: {
       SearchView(store: $0)
         .toolbar(.hidden, for: .tabBar)
@@ -53,6 +60,9 @@ struct HomeView: View {
     }
     .fullScreenCover(item: $store.scope(state: \.todoDetail, action: \.todoDetail)) {
       TodoDetailView(store: $0)
+    }
+    .fullScreenCover(item: $store.scope(state: \.todoCreate, action: \.todoCreate)) {
+      TodoCreateView(store: $0)
     }
   }
 }
@@ -141,6 +151,19 @@ private extension HomeView {
         .frame(maxWidth: .infinity)
       }
     }
+  }
+  
+  var createView: some View {
+    Button {
+      store.send(.createTapped)
+    } label: {
+      Image(.plusCircleFill)
+        .resizable()
+        .renderingMode(.template)
+        .aspectRatio(contentMode: .fit)
+        .frame(width: 50, height: 50)
+    }
+    .foregroundStyle(.foreground)
   }
   
 }

@@ -24,6 +24,7 @@ struct FolderDetailView: View {
     ZStack {
       VStack {
         navigationBar
+          .padding(.horizontal, 20)
         
         ScrollView {
           folderView
@@ -35,14 +36,14 @@ struct FolderDetailView: View {
       }
       .background(.background)
       .frame(maxHeight: .infinity, alignment: .top)
-      .sheet(item: $store.scope(state: \.todoCreate, action: \.todoCreate)) {
-        TodoCreateView(store: $0)
-      }
       
       createView
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
         .safeAreaPadding(.bottom, 20)
         .safeAreaPadding(.trailing, 20)
+    }
+    .fullScreenCover(item: $store.scope(state: \.todoCreate, action: \.todoCreate)) {
+      TodoCreateView(store: $0)
     }
     .fullScreenCover(item: $store.scope(state: \.folderEdit, action: \.folderEdit)) {
       FolderEditView(store: $0)
@@ -83,7 +84,6 @@ private extension FolderDetailView {
       }
     }
     .frame(height: 50)
-    .padding(.horizontal, 10)
   }
   
   var folderView: some View {
