@@ -196,6 +196,26 @@
         }
       }
     },
+    "There is no matching folder" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "일치하는 폴더가 없어요"
+          }
+        }
+      }
+    },
+    "There is no matching todos" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "일치하는 할 일이 없어요"
+          }
+        }
+      }
+    },
     "There is nothing todo" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -213,6 +233,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "오늘의 할 일"
+          }
+        }
+      }
+    },
+    "Todo" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "할 일"
           }
         }
       }

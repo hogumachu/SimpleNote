@@ -22,27 +22,35 @@ struct HomeView: View {
   }
   
   var body: some View {
-    VStack(spacing: 0) {
-      navigationBar
-        .padding(.horizontal, 20)
-      
-      Divider()
-        .padding(.top, 10)
-      
-      ScrollView {
-        searchView
-          .padding(20)
-        
-        todayTodoListView
+    NavigationStack(
+      path: $store.scope(state: \.path, action: \.path)
+    ) {
+      VStack(spacing: 0) {
+        navigationBar
           .padding(.horizontal, 20)
         
-        if !previousTodos.isEmpty {
-          previousTodoListView
+        Divider()
+          .padding(.top, 10)
+        
+        ScrollView {
+          searchView
+            .padding(20)
+          
+          todayTodoListView
             .padding(.horizontal, 20)
+          
+          if !previousTodos.isEmpty {
+            previousTodoListView
+              .padding(.horizontal, 20)
+          }
         }
       }
+      .background(.background)
+    } destination: {
+      SearchView(store: $0)
+        .toolbar(.hidden, for: .tabBar)
+        .toolbar(.hidden, for: .navigationBar)
     }
-    .background(.background)
     .fullScreenCover(item: $store.scope(state: \.todoDetail, action: \.todoDetail)) {
       TodoDetailView(store: $0)
     }
@@ -72,9 +80,7 @@ private extension HomeView {
   }
   
   var searchView: some View {
-    Button {
-      store.send(.searchTapped)
-    } label : {
+    NavigationLink(state: SearchViewStore.State()) {
       HStack {
         Image(.magnifyingGlass)
           .resizable()

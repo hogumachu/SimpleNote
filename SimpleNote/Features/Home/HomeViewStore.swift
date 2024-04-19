@@ -14,6 +14,7 @@ struct HomeViewStore: Reducer {
   @ObservableState
   struct State: Equatable {
     @Presents var todoDetail: TodoDetailViewStore.State?
+    var path = StackState<SearchViewStore.State>()
   }
   
   enum Action {
@@ -22,6 +23,7 @@ struct HomeViewStore: Reducer {
     case checkTapped(Todo)
     case settingTapped
     case todoDetail(PresentationAction<TodoDetailViewStore.Action>)
+    case path(StackAction<SearchViewStore.State, SearchViewStore.Action>)
   }
   
   var body: some ReducerOf<Self> {
@@ -43,10 +45,16 @@ struct HomeViewStore: Reducer {
         
       case .todoDetail:
         return .none
+        
+      case .path:
+        return .none
       }
     }
     .ifLet(\.$todoDetail, action: \.todoDetail) {
       TodoDetailViewStore()
+    }
+    .forEach(\.path, action: \.path) {
+      SearchViewStore()
     }
   }
   

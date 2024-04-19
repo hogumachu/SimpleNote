@@ -52,6 +52,9 @@
 		F1FEE5912BD27D5B0002CE89 /* Optional+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEE5902BD27D5B0002CE89 /* Optional+Default.swift */; };
 		F1FEE5952BD286770002CE89 /* QueryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEE5942BD286770002CE89 /* QueryView.swift */; };
 		F1FEE5972BD286E60002CE89 /* QueryView+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEE5962BD286E60002CE89 /* QueryView+Init.swift */; };
+		F1FEE59A2BD28D260002CE89 /* SearchViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEE5992BD28D260002CE89 /* SearchViewStore.swift */; };
+		F1FEE59C2BD28DD10002CE89 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEE59B2BD28DD10002CE89 /* SearchView.swift */; };
+		F1FEE59E2BD295F80002CE89 /* FolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEE59D2BD295F80002CE89 /* FolderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +103,9 @@
 		F1FEE5902BD27D5B0002CE89 /* Optional+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Default.swift"; sourceTree = "<group>"; };
 		F1FEE5942BD286770002CE89 /* QueryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryView.swift; sourceTree = "<group>"; };
 		F1FEE5962BD286E60002CE89 /* QueryView+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QueryView+Init.swift"; sourceTree = "<group>"; };
+		F1FEE5992BD28D260002CE89 /* SearchViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewStore.swift; sourceTree = "<group>"; };
+		F1FEE59B2BD28DD10002CE89 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		F1FEE59D2BD295F80002CE89 /* FolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +217,7 @@
 				F154032A2BD15AE400FAF7E3 /* EmptyView.swift */,
 				F1FEE5872BD21D880002CE89 /* TodoView.swift */,
 				F1FEE5942BD286770002CE89 /* QueryView.swift */,
+				F1FEE59D2BD295F80002CE89 /* FolderView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -247,6 +254,7 @@
 		F1DBBD6A2BCD4F3800D1A58E /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				F1FEE5982BD28D1B0002CE89 /* Search */,
 				F1FEE58B2BD265BD0002CE89 /* TodoDetail */,
 				F154032C2BD1696100FAF7E3 /* CalendarHome */,
 				F1C842582BD0E33C006E3789 /* FolderEdit */,
@@ -317,6 +325,15 @@
 				F1FEE58E2BD266100002CE89 /* TodoDetailView.swift */,
 			);
 			path = TodoDetail;
+			sourceTree = "<group>";
+		};
+		F1FEE5982BD28D1B0002CE89 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				F1FEE5992BD28D260002CE89 /* SearchViewStore.swift */,
+				F1FEE59B2BD28DD10002CE89 /* SearchView.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,12 +426,15 @@
 				F1FEE5912BD27D5B0002CE89 /* Optional+Default.swift in Sources */,
 				F1DBBD582BCD41F700D1A58E /* HomeView.swift in Sources */,
 				F1C8425C2BD0E8F8006E3789 /* FolderEditView.swift in Sources */,
+				F1FEE59E2BD295F80002CE89 /* FolderView.swift in Sources */,
 				F1DBBD712BCD500F00D1A58E /* RootTab.swift in Sources */,
 				F15403352BD17EDB00FAF7E3 /* AppDelegate.swift in Sources */,
+				F1FEE59C2BD28DD10002CE89 /* SearchView.swift in Sources */,
 				F1FEE5882BD21D880002CE89 /* TodoView.swift in Sources */,
 				F154273C2BCD0F310070D22C /* AppStore.swift in Sources */,
 				F1023CDF2BCFE4EB0050B0F2 /* TodoCreateViewStore.swift in Sources */,
 				F15403232BD135E900FAF7E3 /* Color+.swift in Sources */,
+				F1FEE59A2BD28D260002CE89 /* SearchViewStore.swift in Sources */,
 				F1FEE58D2BD265C50002CE89 /* TodoDetailViewStore.swift in Sources */,
 				F1DBBD5A2BCD42F900D1A58E /* App.swift in Sources */,
 				F154032B2BD15AE400FAF7E3 /* EmptyView.swift in Sources */,
