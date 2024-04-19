@@ -116,7 +116,7 @@ private extension FolderDetailView {
   var listView: some View {
     LazyVStack {
       if todos.isEmpty {
-        EmptyView(subtitle: "There is nothing to do")
+        EmptyView(subtitle: "There is nothing todo")
       } else {
         ForEach(todos) { todo in
           todoView(todo)
