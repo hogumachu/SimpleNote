@@ -19,37 +19,55 @@ struct CalendarHomeView: View {
   }
   
   var body: some View {
-    VStack(spacing: 0) {
-      navigationBar
-        .padding(.horizontal, 20)
-      
-      weekView
-      
-      Divider()
-        .padding(.top, 10)
-      
-      QueryView(isSameDayAs: store.focusDate) { todos in
-        if todos.isEmpty {
-          Spacer()
-          
-          EmptyView(subtitle: "There is nothing todo")
-          
-          Spacer()
-        } else {
-          ScrollView {
-            todoListView(todos)
-              .padding(20)
+    ZStack {
+      VStack(spacing: 0) {
+        navigationBar
+          .padding(.horizontal, 20)
+        
+        weekView
+        
+        Divider()
+          .padding(.top, 10)
+        
+        QueryView(isSameDayAs: store.focusDate) { todos in
+          if todos.isEmpty {
+            Spacer()
+            
+            EmptyView(subtitle: "There is nothing todo")
+            
+            Spacer()
+          } else {
+            ScrollView {
+              todoListView(todos)
+                .padding(20)
+            }
           }
         }
       }
+      .background(.background)
+      .frame(maxHeight: .infinity, alignment: .top)
+      
+      HStack {
+        if !store.isToday {
+          todayView
+        }
+        
+        Spacer()
+        
+        createView
+      }
+      .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+      .safeAreaPadding(.bottom, 20)
+      .safeAreaPadding(.horizontal, 20)
     }
-    .background(.background)
-    .frame(maxHeight: .infinity, alignment: .top)
     .onAppear {
       store.send(.onAppeared)
     }
     .fullScreenCover(item: $store.scope(state: \.todoDetail, action: \.todoDetail)) {
       TodoDetailView(store: $0)
+    }
+    .fullScreenCover(item: $store.scope(state: \.todoCreate, action: \.todoCreate)) {
+      TodoCreateView(store: $0)
     }
   }
 }
@@ -63,7 +81,11 @@ private extension CalendarHomeView {
       
       Spacer()
       
-      Image(systemName: "calendar")
+      Image(.calendarDots)
+        .resizable()
+        .renderingMode(.template)
+        .frame(width: 30, height: 30)
+        .foregroundStyle(.foreground)
         .overlay {
           DatePicker(
             selection: $store.focusDate,
@@ -120,6 +142,41 @@ private extension CalendarHomeView {
         .frame(maxWidth: .infinity)
       }
     }
+  }
+  
+  var todayView: some View {
+    Button {
+      store.send(.todayTapped)
+    } label: {
+      Text("Today")
+        .font(.headline)
+        .foregroundStyle(.foreground)
+      
+      Image(.caretRight)
+        .resizable()
+        .renderingMode(.template)
+        .aspectRatio(contentMode: .fit)
+        .frame(width: 20, height: 20)
+        .foregroundStyle(.foreground)
+    }
+    .padding(10)
+    .background(
+      RoundedRectangle(cornerRadius: 16)
+        .foregroundStyle(.background.opacity(0.7))
+    )
+  }
+  
+  var createView: some View {
+    Button {
+      store.send(.createTapped)
+    } label: {
+      Image(.plusCircleFill)
+        .resizable()
+        .renderingMode(.template)
+        .aspectRatio(contentMode: .fit)
+        .frame(width: 50, height: 50)
+    }
+    .foregroundStyle(.foreground)
   }
   
 }

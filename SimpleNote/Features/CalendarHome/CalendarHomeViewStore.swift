@@ -18,12 +18,15 @@ struct CalendarHomeViewStore {
     var focusDate: Date
     var title: String
     var dayItems: [CalendarDayItem]
+    var isToday: Bool
     @Presents var todoDetail: TodoDetailViewStore.State?
+    @Presents var todoCreate: TodoCreateViewStore.State?
     
     init(focusDate: Date = .now) {
       self.focusDate = focusDate
       self.title = ""
       self.dayItems = []
+      self.isToday = focusDate.compare(.isSameDay(Date.now))
     }
   }
   
@@ -33,7 +36,10 @@ struct CalendarHomeViewStore {
     case dateTapped(Date)
     case checkTapped(Todo)
     case todoTapped(Todo)
+    case createTapped
+    case todayTapped
     case todoDetail(PresentationAction<TodoDetailViewStore.Action>)
+    case todoCreate(PresentationAction<TodoCreateViewStore.Action>)
   }
   
   var body: some ReducerOf<Self> {
@@ -44,6 +50,7 @@ struct CalendarHomeViewStore {
       case .binding(\.focusDate):
         state.dayItems = makeDayItems(selectedDate: state.focusDate)
         state.title = makeTitle(selectedDate: state.focusDate)
+        state.isToday = state.focusDate.compare(.isSameDay(Date.now))
         return .none
         
       case .binding:
@@ -58,6 +65,7 @@ struct CalendarHomeViewStore {
         state.focusDate = selectedDate
         state.dayItems = makeDayItems(selectedDate: selectedDate)
         state.title = makeTitle(selectedDate: selectedDate)
+        state.isToday = selectedDate.compare(.isSameDay(Date.now))
         return .none
         
       case let .checkTapped(todo):
@@ -68,12 +76,34 @@ struct CalendarHomeViewStore {
         state.todoDetail = .init(todo: todo)
         return .none
         
+      case .createTapped:
+        state.todoCreate = .init(
+          todo: "",
+          targetDate: state.focusDate,
+          folder: nil
+        )
+        return .none
+        
+      case .todayTapped:
+        let selectedDate = Date.now
+        state.focusDate = selectedDate
+        state.dayItems = makeDayItems(selectedDate: selectedDate)
+        state.title = makeTitle(selectedDate: selectedDate)
+        state.isToday = selectedDate.compare(.isSameDay(Date.now))
+        return .none
+        
       case .todoDetail:
+        return .none
+        
+      case .todoCreate:
         return .none
       }
     }
     .ifLet(\.$todoDetail, action: \.todoDetail) {
       TodoDetailViewStore()
+    }
+    .ifLet(\.$todoCreate, action: \.todoCreate) {
+      TodoCreateViewStore()
     }
   }
   
