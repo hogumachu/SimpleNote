@@ -121,7 +121,7 @@ private extension HomeView {
         .padding(.top, 20)
       
       if todos.isEmpty {
-        EmptyView(subtitle: "There are no todos for today")
+        BoxEmptyView(state: .emptyTodoForToday)
       } else {
         ForEach(todos) { todo in
           TodoView(
