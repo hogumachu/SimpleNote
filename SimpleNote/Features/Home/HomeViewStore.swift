@@ -13,7 +13,7 @@ struct HomeViewStore: Reducer {
   
   @ObservableState
   struct State: Equatable {
-    
+    @Presents var todoDetail: TodoDetailViewStore.State?
   }
   
   enum Action {
@@ -21,6 +21,7 @@ struct HomeViewStore: Reducer {
     case todoTapped(Todo)
     case checkTapped(Todo)
     case settingTapped
+    case todoDetail(PresentationAction<TodoDetailViewStore.Action>)
   }
   
   var body: some ReducerOf<Self> {
@@ -30,6 +31,7 @@ struct HomeViewStore: Reducer {
         return .none
         
       case let .todoTapped(todo):
+        state.todoDetail = .init(todo: todo)
         return .none
         
       case let .checkTapped(todo):
@@ -38,7 +40,13 @@ struct HomeViewStore: Reducer {
         
       case .settingTapped:
         return .none
+        
+      case .todoDetail:
+        return .none
       }
+    }
+    .ifLet(\.$todoDetail, action: \.todoDetail) {
+      TodoDetailViewStore()
     }
   }
   

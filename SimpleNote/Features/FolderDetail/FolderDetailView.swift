@@ -47,6 +47,9 @@ struct FolderDetailView: View {
     .fullScreenCover(item: $store.scope(state: \.folderEdit, action: \.folderEdit)) {
       FolderEditView(store: $0)
     }
+    .fullScreenCover(item: $store.scope(state: \.todoDetail, action: \.todoDetail)) {
+      TodoDetailView(store: $0)
+    }
   }
   
 }
@@ -180,6 +183,9 @@ private extension FolderDetailView {
           .frame(width: 25, height: 25)
           .foregroundStyle(.red)
       }
+    }
+    .onTapGesture {
+      store.send(.todoTapped(todo))
     }
   }
   

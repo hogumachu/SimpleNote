@@ -18,11 +18,15 @@ struct FolderHomeView: View {
     NavigationStack(
       path: $store.scope(state: \.path, action: \.path)
     ) {
-      VStack(alignment: .leading) {
+      VStack(alignment: .leading, spacing: 0) {
         navigationBar
-          .padding(.horizontal, 10)
+          .padding(.horizontal, 20)
+        
+        Divider()
+          .padding(.top, 10)
         
         listView
+          .padding(.horizontal, 20)
       }
       .frame(maxHeight: .infinity, alignment: .top)
     } destination: {
@@ -110,7 +114,7 @@ private extension FolderHomeView {
           }
         }
       }
-      .padding(.horizontal, 10)
+      .padding(.vertical, 20)
     }
   }
   

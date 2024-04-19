@@ -11,7 +11,7 @@ import SwiftUI
 
 struct HomeView: View {
   
-  private let store: StoreOf<HomeViewStore>
+  @Bindable private var store: StoreOf<HomeViewStore>
   @Query private var todos: [Todo]
   @Query private var previousTodos: [Todo]
   
@@ -22,13 +22,16 @@ struct HomeView: View {
   }
   
   var body: some View {
-    VStack {
+    VStack(spacing: 0) {
       navigationBar
-        .padding(.horizontal, 10)
+        .padding(.horizontal, 20)
+      
+      Divider()
+        .padding(.top, 10)
       
       ScrollView {
         searchView
-          .padding(.horizontal, 20)
+          .padding(20)
         
         todayTodoListView
           .padding(.horizontal, 20)
@@ -40,6 +43,9 @@ struct HomeView: View {
       }
     }
     .background(.background)
+    .fullScreenCover(item: $store.scope(state: \.todoDetail, action: \.todoDetail)) {
+      TodoDetailView(store: $0)
+    }
   }
 }
 
@@ -47,6 +53,9 @@ private extension HomeView {
   
   var navigationBar: some View {
     HStack {
+      Text("Home")
+        .font(.headline)
+      
       Spacer()
       
       Button {
