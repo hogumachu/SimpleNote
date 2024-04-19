@@ -99,8 +99,12 @@ private extension HomeView {
         EmptyView(subtitle: "There are no todos for today")
       } else {
         ForEach(todos) { todo in
-          todoView(todo)
-            .frame(maxWidth: .infinity)
+          TodoView(
+            todo: todo,
+            checkTapped: { store.send(.checkTapped($0)) },
+            onTapped: { store.send(.todoTapped($0)) }
+          )
+          .frame(maxWidth: .infinity)
         }
       }
     }
@@ -114,58 +118,13 @@ private extension HomeView {
         .padding(.top, 20)
       
       ForEach(previousTodos) { todo in
-        todoView(todo)
-          .frame(maxWidth: .infinity)
+        TodoView(
+          todo: todo,
+          checkTapped: { store.send(.checkTapped($0)) },
+          onTapped: { store.send(.todoTapped($0)) }
+        )
+        .frame(maxWidth: .infinity)
       }
-    }
-  }
-  
-  func todoView(_ todo: Todo) -> some View {
-    HStack {
-      VStack(alignment: .leading) {
-        HStack(spacing: 3) {
-          Image(.folderFill)
-            .resizable()
-            .renderingMode(.template)
-            .aspectRatio(contentMode: .fit)
-            .frame(width: 20, height: 20)
-            .foregroundStyle(Color(hex: todo.folder?.hexColor ?? "#9f9f9f"))
-          
-          Text(todo.folder?.title ?? "Empty Folder")
-            .font(.callout)
-            .foregroundStyle(Color(hex: todo.folder?.hexColor ?? "#9f9f9f"))
-        }
-        
-        Text(todo.todo)
-          .font(.body)
-          .foregroundStyle(todo.isComplete ? .secondary : .primary)
-        
-        Text("\(todo.targetDate.formatted(date: .complete, time: .omitted))")
-          .font(.caption)
-          .foregroundStyle(.secondary)
-      }
-      
-      Spacer()
-      
-      Button {
-        _ = withAnimation {
-          store.send(.checkTapped(todo))
-        }
-      } label: {
-        Image(todo.isComplete ? .checkCircleFill : .circle)
-          .resizable()
-          .renderingMode(.template)
-          .frame(width: 30, height: 30)
-          .foregroundStyle(.foreground)
-      }
-    }
-    .padding()
-    .background(
-      RoundedRectangle(cornerRadius: 16)
-        .foregroundStyle(Color.secondarySystemBackground)
-    )
-    .onTapGesture {
-      store.send(.todoTapped(todo))
     }
   }
   
