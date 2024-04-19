@@ -49,6 +49,7 @@
 		F1FEE58A2BD226860002CE89 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEE5892BD226860002CE89 /* Formatter.swift */; };
 		F1FEE58D2BD265C50002CE89 /* TodoDetailViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEE58C2BD265C50002CE89 /* TodoDetailViewStore.swift */; };
 		F1FEE58F2BD266100002CE89 /* TodoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEE58E2BD266100002CE89 /* TodoDetailView.swift */; };
+		F1FEE5912BD27D5B0002CE89 /* Optional+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEE5902BD27D5B0002CE89 /* Optional+Default.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,7 @@
 		F1FEE5892BD226860002CE89 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		F1FEE58C2BD265C50002CE89 /* TodoDetailViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailViewStore.swift; sourceTree = "<group>"; };
 		F1FEE58E2BD266100002CE89 /* TodoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailView.swift; sourceTree = "<group>"; };
+		F1FEE5902BD27D5B0002CE89 /* Optional+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Default.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,6 +290,7 @@
 				F1DBBD852BCE87C300D1A58E /* UIDevice+.swift */,
 				F15403222BD135E900FAF7E3 /* Color+.swift */,
 				F1FEE5892BD226860002CE89 /* Formatter.swift */,
+				F1FEE5902BD27D5B0002CE89 /* Optional+Default.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				F1DBBD652BCD4A9A00D1A58E /* FolderDatabase.swift in Sources */,
 				F1023CD72BCF8A750050B0F2 /* SwiftData+Preview.swift in Sources */,
 				F1DBBD6D2BCD4F5600D1A58E /* RootViewStore.swift in Sources */,
+				F1FEE5912BD27D5B0002CE89 /* Optional+Default.swift in Sources */,
 				F1DBBD582BCD41F700D1A58E /* HomeView.swift in Sources */,
 				F1C8425C2BD0E8F8006E3789 /* FolderEditView.swift in Sources */,
 				F1DBBD712BCD500F00D1A58E /* RootTab.swift in Sources */,
