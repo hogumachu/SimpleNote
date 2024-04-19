@@ -21,7 +21,7 @@ struct TodoCreateView: View {
     NavigationStack {
       VStack {
         navigationBar
-          .padding(.horizontal, 10)
+          .padding(.horizontal, 20)
         
         todoTextField
           .focused($isFocused)

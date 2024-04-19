@@ -73,7 +73,11 @@ private extension CalendarHomeView {
       
       Spacer()
       
-      Image(systemName: "calendar")
+      Image(.calendarDots)
+        .resizable()
+        .renderingMode(.template)
+        .frame(width: 30, height: 30)
+        .foregroundStyle(.foreground)
         .overlay {
           DatePicker(
             selection: $store.focusDate,

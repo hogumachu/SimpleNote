@@ -20,7 +20,7 @@ struct FolderCreateView: View {
   var body: some View {
     VStack {
       navigationBar
-        .padding(.horizontal, 10)
+        .padding(.horizontal, 20)
       
       folderTextField
         .focused($isFocused)
