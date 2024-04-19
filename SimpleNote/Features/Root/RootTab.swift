@@ -12,11 +12,11 @@ enum RootTab {
   case calendar
   case folder
   
-  var title: String {
+  var title: LocalizedStringResource {
     switch self {
-    case .home: return "Home"
-    case .calendar: return "Calendar"
-    case .folder: return "Folder"
+    case .home: return LocalizedStringResource(stringLiteral: "Home")
+    case .calendar: return LocalizedStringResource(stringLiteral: "Calendar")
+    case .folder: return LocalizedStringResource(stringLiteral: "Folder")
     }
   }
   
