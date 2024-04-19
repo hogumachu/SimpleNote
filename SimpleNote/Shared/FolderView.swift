@@ -30,9 +30,15 @@ struct FolderView: View {
         .foregroundStyle(Color(hexOrGray: folder.hexColor))
       
       VStack(alignment: .leading) {
-        Text(folder.title ?? "Empty Folder")
-          .font(.body)
-          .foregroundStyle(.foreground)
+        if let title = folder.title {
+          Text(title)
+            .font(.body)
+            .foregroundStyle(.foreground)
+        } else {
+          Text("None")
+            .font(.body)
+            .foregroundStyle(.foreground)
+        }
         
         Text("\((folder.todos ?? []).count) todos")
           .font(.caption)

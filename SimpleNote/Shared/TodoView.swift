@@ -34,9 +34,15 @@ struct TodoView: View {
             .frame(width: 20, height: 20)
             .foregroundStyle(Color(hexOrGray: todo.folder?.hexColor))
           
-          Text(todo.folder?.title ?? "Empty Folder")
-            .font(.callout)
-            .foregroundStyle(Color(hexOrGray: todo.folder?.hexColor))
+          if let title = todo.folder?.title {
+            Text(title)
+              .font(.callout)
+              .foregroundStyle(Color(hexOrGray: todo.folder?.hexColor))
+          } else {
+            Text("None")
+              .font(.callout)
+              .foregroundStyle(Color(hexOrGray: todo.folder?.hexColor))
+          }
         }
         
         Text(todo.todo.orEmpty)
