@@ -62,7 +62,7 @@ struct FolderDetailViewStore {
         return .none
         
       case let .checkTapped(todo):
-        todo.isComplete.toggle()
+        todo.isComplete?.toggle()
         return .none
         
       case let .todoTapped(todo):
@@ -71,7 +71,7 @@ struct FolderDetailViewStore {
         
       case let .deleteTapped(todo):
         do {
-          state.folder.todos.removeAll(where: { $0 == todo })
+          state.folder.todos?.removeAll(where: { $0 == todo })
           try todoDatabase.delete(todo)
         } catch {
           
@@ -83,7 +83,7 @@ struct FolderDetailViewStore {
         
       case let .todoCreate(.presented(.delegate(.create(todo)))):
         todo.folder = state.folder
-        state.folder.todos.append(todo)
+        state.folder.todos?.append(todo)
         return .run { send in
           try todoDatabase.add(todo)
         }

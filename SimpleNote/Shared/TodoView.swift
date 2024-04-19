@@ -39,11 +39,11 @@ struct TodoView: View {
             .foregroundStyle(Color(hex: todo.folder?.hexColor ?? "#9f9f9f"))
         }
         
-        Text(todo.todo)
+        Text(todo.todo.orEmpty)
           .font(.body)
-          .foregroundStyle(todo.isComplete ? .secondary : .primary)
+          .foregroundStyle(todo.isComplete.orFalse ? .secondary : .primary)
         
-        Text("\(todo.targetDate.formatted(date: .complete, time: .omitted))")
+        Text("\(todo.targetDate.orNow.formatted(date: .complete, time: .omitted))")
           .font(.caption)
           .foregroundStyle(.secondary)
       }
@@ -55,7 +55,7 @@ struct TodoView: View {
           checkTapped(todo)
         }
       } label: {
-        Image(todo.isComplete ? .checkCircleFill : .circle)
+        Image(todo.isComplete.orFalse ? .checkCircleFill : .circle)
           .resizable()
           .renderingMode(.template)
           .frame(width: 30, height: 30)

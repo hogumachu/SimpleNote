@@ -35,7 +35,7 @@ struct HomeViewStore: Reducer {
         return .none
         
       case let .checkTapped(todo):
-        todo.isComplete.toggle()
+        todo.isComplete?.toggle()
         return .none
         
       case .settingTapped:

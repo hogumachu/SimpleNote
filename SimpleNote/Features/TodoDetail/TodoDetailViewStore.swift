@@ -19,8 +19,8 @@ struct TodoDetailViewStore {
     
     init(todo: Todo) {
       self.origin = todo
-      self.todo = todo.todo
-      self.targetDate = todo.targetDate
+      self.todo = todo.todo.orEmpty
+      self.targetDate = todo.targetDate.orNow
     }
   }
   
