@@ -18,14 +18,12 @@ struct CalendarHomeViewStore {
     var focusDate: Date
     var title: String
     var dayItems: [CalendarDayItem]
-    var todos: IdentifiedArrayOf<Todo>
     @Presents var todoDetail: TodoDetailViewStore.State?
     
     init(focusDate: Date = .now) {
       self.focusDate = focusDate
       self.title = ""
       self.dayItems = []
-      self.todos = []
     }
   }
   
@@ -38,16 +36,12 @@ struct CalendarHomeViewStore {
     case todoDetail(PresentationAction<TodoDetailViewStore.Action>)
   }
   
-  @Dependency(\.todoDatabase) private var todoDatabase
-  
   var body: some ReducerOf<Self> {
     BindingReducer()
     
     Reduce { state, action in
       switch action {
       case .binding(\.focusDate):
-        let todos = fetchTodos(selectedDate: state.focusDate)
-        state.todos = .init(uniqueElements: todos)
         state.dayItems = makeDayItems(selectedDate: state.focusDate)
         state.title = makeTitle(selectedDate: state.focusDate)
         return .none
@@ -56,16 +50,12 @@ struct CalendarHomeViewStore {
         return .none
         
       case .onAppeared:
-        let todos = fetchTodos(selectedDate: state.focusDate)
-        state.todos = .init(uniqueElements: todos)
         state.dayItems = makeDayItems(selectedDate: state.focusDate)
         state.title = makeTitle(selectedDate: state.focusDate)
         return .none
         
       case let .dateTapped(selectedDate):
         state.focusDate = selectedDate
-        let todos = fetchTodos(selectedDate: selectedDate)
-        state.todos = .init(uniqueElements: todos)
         state.dayItems = makeDayItems(selectedDate: selectedDate)
         state.title = makeTitle(selectedDate: selectedDate)
         return .none
@@ -99,16 +89,6 @@ private extension CalendarHomeViewStore {
         isSelected: date.compare(.isSameDay(selectedDate)),
         isLastItem: offset == 6
       )
-    }
-  }
-  
-  func fetchTodos(selectedDate: Date) -> [Todo] {
-    do {
-      let todos = try todoDatabase.fetch(FetchDescriptor(predicate: Todo.predicate(isSameDayAs: selectedDate)))
-      return todos
-    } catch {
-      print("TODO: - Handle Error: \(error.localizedDescription)")
-      return []
     }
   }
   

@@ -28,16 +28,18 @@ struct CalendarHomeView: View {
       Divider()
         .padding(.top, 10)
       
-      if store.todos.isEmpty {
-        Spacer()
-        
-        EmptyView(subtitle: "There is nothing todo")
-        
-        Spacer()
-      } else {
-        ScrollView {
-          todoListView
-            .padding(20)
+      QueryView(isSameDayAs: store.focusDate) { todos in
+        if todos.isEmpty {
+          Spacer()
+          
+          EmptyView(subtitle: "There is nothing todo")
+          
+          Spacer()
+        } else {
+          ScrollView {
+            todoListView(todos)
+              .padding(20)
+          }
         }
       }
     }
@@ -107,9 +109,9 @@ private extension CalendarHomeView {
     .frame(maxWidth: .infinity)
   }
   
-  var todoListView: some View {
+  func todoListView(_ todos: [Todo]) -> some View {
     LazyVStack {
-      ForEach(store.todos) { todo in
+      ForEach(todos) { todo in
         TodoView(
           todo: todo,
           checkTapped: { store.send(.checkTapped($0)) },
