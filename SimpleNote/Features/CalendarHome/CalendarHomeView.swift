@@ -46,6 +46,9 @@ struct CalendarHomeView: View {
     .onAppear {
       store.send(.onAppeared)
     }
+    .fullScreenCover(item: $store.scope(state: \.todoDetail, action: \.todoDetail)) {
+      TodoDetailView(store: $0)
+    }
   }
 }
 
@@ -110,7 +113,7 @@ private extension CalendarHomeView {
         TodoView(
           todo: todo,
           checkTapped: { store.send(.checkTapped($0)) },
-          onTapped: { _ in }
+          onTapped: { store.send(.todoTapped($0)) }
         )
         .frame(maxWidth: .infinity)
       }

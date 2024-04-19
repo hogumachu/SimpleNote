@@ -19,6 +19,7 @@ struct CalendarHomeViewStore {
     var title: String
     var dayItems: [CalendarDayItem]
     var todos: IdentifiedArrayOf<Todo>
+    @Presents var todoDetail: TodoDetailViewStore.State?
     
     init(focusDate: Date = .now) {
       self.focusDate = focusDate
@@ -33,6 +34,8 @@ struct CalendarHomeViewStore {
     case onAppeared
     case dateTapped(Date)
     case checkTapped(Todo)
+    case todoTapped(Todo)
+    case todoDetail(PresentationAction<TodoDetailViewStore.Action>)
   }
   
   @Dependency(\.todoDatabase) private var todoDatabase
@@ -70,7 +73,17 @@ struct CalendarHomeViewStore {
       case let .checkTapped(todo):
         todo.isComplete.toggle()
         return .none
+        
+      case let .todoTapped(todo):
+        state.todoDetail = .init(todo: todo)
+        return .none
+        
+      case .todoDetail:
+        return .none
       }
+    }
+    .ifLet(\.$todoDetail, action: \.todoDetail) {
+      TodoDetailViewStore()
     }
   }
   
