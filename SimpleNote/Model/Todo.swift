@@ -12,10 +12,10 @@ import SwiftDate
 @Model
 final class Todo {
   
-  @Attribute(.unique) var id: UUID
-  var todo: String
-  var targetDate: Date
-  var isComplete: Bool
+  var id: UUID?
+  var todo: String?
+  var targetDate: Date?
+  var isComplete: Bool?
   
   var folder: Folder?
   
@@ -32,7 +32,7 @@ extension Todo {
   
   static func predicate(searchText: String) -> Predicate<Todo> {
     return #Predicate {
-      !searchText.isEmpty && $0.todo.contains(searchText)
+      !searchText.isEmpty && ($0.todo ?? "").contains(searchText)
     }
   }
   
@@ -40,8 +40,9 @@ extension Todo {
     let calendar = Calendar.autoupdatingCurrent
     let start = calendar.startOfDay(for: date)
     let end = calendar.date(byAdding: .day, value: 1, to: start) ?? start
+    let now = Date.now
     return #Predicate {
-      $0.targetDate > start && $0.targetDate < end
+      $0.targetDate ?? now > start && $0.targetDate ?? now < end
     }
   }
   
@@ -54,8 +55,9 @@ extension Todo {
   static func predicate(lessThan date: Date, isComplete: Bool = false) -> Predicate<Todo> {
     let calendar = Calendar.autoupdatingCurrent
     let start = calendar.startOfDay(for: date)
+    let now = Date.now
     return #Predicate {
-      $0.targetDate < start && $0.isComplete == isComplete
+      $0.targetDate ?? now < start && $0.isComplete ?? false == isComplete
     }
   }
   

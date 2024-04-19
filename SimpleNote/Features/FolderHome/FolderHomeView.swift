@@ -91,14 +91,14 @@ private extension FolderHomeView {
                   .renderingMode(.template)
                   .aspectRatio(contentMode: .fit)
                   .frame(width: 45, height: 45)
-                  .foregroundStyle(Color(hex: folder.hexColor))
+                  .foregroundStyle(Color(hex: folder.hexColor.orEmpty))
                 
                 VStack(spacing: 3) {
-                  Text(folder.title)
+                  Text(folder.title.orEmpty)
                     .font(.headline)
                     .foregroundStyle(Color(uiColor: .label))
                   
-                  Text("\(folder.todos.count) todos")
+                  Text("\((folder.todos ?? []).count) todos")
                     .font(.caption)
                     .foregroundStyle(Color.gray)
                 }

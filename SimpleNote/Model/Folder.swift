@@ -11,12 +11,12 @@ import SwiftData
 @Model
 final class Folder {
   
-  @Attribute(.unique) var id: UUID
-  var title: String
-  var hexColor: String
+  var id: UUID?
+  var title: String?
+  var hexColor: String?
   
   @Relationship(deleteRule: .cascade, inverse: \Todo.folder)
-  var todos: [Todo] = []
+  var todos: [Todo]? = []
   
   init(id: UUID, title: String, hexColor: String) {
     self.id = id
@@ -30,7 +30,7 @@ extension Folder {
   
   static func predicate(searchText: String) -> Predicate<Folder> {
     return #Predicate {
-      searchText.isEmpty && $0.title.contains(searchText)
+      searchText.isEmpty && ($0.title ?? "").contains(searchText)
     }
   }
   

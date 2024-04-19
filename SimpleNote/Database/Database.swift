@@ -20,7 +20,8 @@ private let appContext: ModelContext = {
     ])
     let configuration = ModelConfiguration(
       schema: schema,
-      isStoredInMemoryOnly: false
+      isStoredInMemoryOnly: false,
+      cloudKitDatabase: .automatic
     )
     let container = try ModelContainer(
       for: schema,

@@ -71,7 +71,7 @@ struct CalendarHomeViewStore {
         return .none
         
       case let .checkTapped(todo):
-        todo.isComplete.toggle()
+        todo.isComplete?.toggle()
         return .none
         
       case let .todoTapped(todo):

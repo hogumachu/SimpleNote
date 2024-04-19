@@ -17,7 +17,7 @@ struct FolderDetailView: View {
   init(store: StoreOf<FolderDetailViewStore>) {
     self.store = store
     let folderID = store.folder.id
-    self._todos = Query(filter: Todo.predicate(folderID: folderID))
+    self._todos = Query(filter: Todo.predicate(folderID: folderID.orRandom))
   }
   
   var body: some View {
@@ -88,14 +88,14 @@ private extension FolderDetailView {
   
   var folderView: some View {
     VStack {
-      Text(store.folder.title)
+      Text(store.folder.title.orEmpty)
         .padding(.top, 20)
         .padding(.horizontal, 20)
         .frame(maxWidth: .infinity, alignment: .leading)
         .font(.headline)
         .foregroundStyle(.primary)
       
-      Text("\(todos.filter { $0.isComplete }.count)/\(todos.count) task done")
+      Text("\(todos.filter { $0.isComplete.orFalse }.count)/\(todos.count) task done")
         .padding(.horizontal, 20)
         .padding(.bottom, todos.isEmpty ? 20 : 10)
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -104,15 +104,15 @@ private extension FolderDetailView {
       
       if !todos.isEmpty {
         ProgressView(
-          value: Float(todos.filter { $0.isComplete }.count),
+          value: Float(todos.filter { $0.isComplete.orFalse }.count),
           total: Float(todos.count)
         )
-        .tint(Color(hex: store.folder.hexColor))
+        .tint(Color(hex: store.folder.hexColor.orEmpty))
         .padding(.horizontal, 20)
         .padding(.bottom, 20)
       }
     }
-    .background(Color(hex: store.folder.hexColor).opacity(0.1))
+    .background(Color(hex: store.folder.hexColor.orEmpty).opacity(0.1))
     .clipShape(RoundedRectangle(cornerRadius: 16))
   }
   
@@ -140,7 +140,7 @@ private extension FolderDetailView {
         .aspectRatio(contentMode: .fit)
         .frame(width: 50, height: 50)
     }
-    .foregroundStyle(Color(hex: store.folder.hexColor))
+    .foregroundStyle(Color(hex: store.folder.hexColor.orEmpty))
   }
   
   func todoView(_ todo: Todo) -> some View {
@@ -150,22 +150,22 @@ private extension FolderDetailView {
           store.send(.checkTapped(todo))
         }
       } label: {
-        Image(todo.isComplete ? .checkCircleFill : .circle)
+        Image(todo.isComplete.orFalse ? .checkCircleFill : .circle)
           .resizable()
           .renderingMode(.template)
           .frame(width: 30, height: 30)
-          .foregroundStyle(Color(hex: store.folder.hexColor))
+          .foregroundStyle(Color(hex: store.folder.hexColor.orEmpty))
       }
       
       Spacer()
         .frame(width: 20)
       
       VStack(alignment: .leading) {
-        Text(todo.todo)
+        Text(todo.todo.orEmpty)
           .font(.body)
-          .foregroundStyle(todo.isComplete ? .secondary : .primary)
+          .foregroundStyle(todo.isComplete.orFalse ? .secondary : .primary)
         
-        Text("\(todo.targetDate.formatted(date: .complete, time: .omitted))")
+        Text("\(todo.targetDate.orNow.formatted(date: .complete, time: .omitted))")
           .font(.caption)
           .foregroundStyle(.secondary)
       }
