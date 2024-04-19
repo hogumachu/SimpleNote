@@ -21,7 +21,7 @@ struct FolderEditViewStore {
     init(folder: Folder) {
       self.folder = folder
       self.title = folder.title.orEmpty
-      self.color = Color(hex: folder.hexColor.orEmpty)
+      self.color = Color(hexOrGray: folder.hexColor)
     }
   }
   

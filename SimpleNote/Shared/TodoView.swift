@@ -32,11 +32,11 @@ struct TodoView: View {
             .renderingMode(.template)
             .aspectRatio(contentMode: .fit)
             .frame(width: 20, height: 20)
-            .foregroundStyle(Color(hex: todo.folder?.hexColor ?? "#9f9f9f"))
+            .foregroundStyle(Color(hexOrGray: todo.folder?.hexColor))
           
           Text(todo.folder?.title ?? "Empty Folder")
             .font(.callout)
-            .foregroundStyle(Color(hex: todo.folder?.hexColor ?? "#9f9f9f"))
+            .foregroundStyle(Color(hexOrGray: todo.folder?.hexColor))
         }
         
         Text(todo.todo.orEmpty)

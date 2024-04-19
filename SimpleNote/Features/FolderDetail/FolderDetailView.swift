@@ -107,12 +107,12 @@ private extension FolderDetailView {
           value: Float(todos.filter { $0.isComplete.orFalse }.count),
           total: Float(todos.count)
         )
-        .tint(Color(hex: store.folder.hexColor.orEmpty))
+        .tint(Color(hexOrPrimary: store.folder.hexColor))
         .padding(.horizontal, 20)
         .padding(.bottom, 20)
       }
     }
-    .background(Color(hex: store.folder.hexColor.orEmpty).opacity(0.1))
+    .background(Color(hexOrGray: store.folder.hexColor).opacity(0.1))
     .clipShape(RoundedRectangle(cornerRadius: 16))
   }
   
@@ -140,7 +140,7 @@ private extension FolderDetailView {
         .aspectRatio(contentMode: .fit)
         .frame(width: 50, height: 50)
     }
-    .foregroundStyle(Color(hex: store.folder.hexColor.orEmpty))
+    .foregroundStyle(Color(hexOrPrimary: store.folder.hexColor))
   }
   
   func todoView(_ todo: Todo) -> some View {
@@ -154,7 +154,7 @@ private extension FolderDetailView {
           .resizable()
           .renderingMode(.template)
           .frame(width: 30, height: 30)
-          .foregroundStyle(Color(hex: store.folder.hexColor.orEmpty))
+          .foregroundStyle(Color(hexOrPrimary: store.folder.hexColor))
       }
       
       Spacer()

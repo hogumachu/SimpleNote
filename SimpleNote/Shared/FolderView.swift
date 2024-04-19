@@ -27,7 +27,7 @@ struct FolderView: View {
         .renderingMode(.template)
         .aspectRatio(contentMode: .fit)
         .frame(width: 30, height: 30)
-        .foregroundStyle(Color(hex: folder.hexColor ?? "#9f9f9f"))
+        .foregroundStyle(Color(hexOrGray: folder.hexColor))
       
       VStack(alignment: .leading) {
         Text(folder.title ?? "Empty Folder")

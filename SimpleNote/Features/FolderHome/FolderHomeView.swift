@@ -91,7 +91,7 @@ private extension FolderHomeView {
                   .renderingMode(.template)
                   .aspectRatio(contentMode: .fit)
                   .frame(width: 45, height: 45)
-                  .foregroundStyle(Color(hex: folder.hexColor.orEmpty))
+                  .foregroundStyle(Color(hexOrPrimary: folder.hexColor))
                 
                 VStack(spacing: 3) {
                   Text(folder.title.orEmpty)
