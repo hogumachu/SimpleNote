@@ -13,7 +13,7 @@
 		F15403212BD129EB00FAF7E3 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = F15403202BD129EB00FAF7E3 /* SwiftDate */; };
 		F15403232BD135E900FAF7E3 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15403222BD135E900FAF7E3 /* Color+.swift */; };
 		F15403292BD145AB00FAF7E3 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F15403282BD145AB00FAF7E3 /* Lottie */; };
-		F154032B2BD15AE400FAF7E3 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F154032A2BD15AE400FAF7E3 /* EmptyView.swift */; };
+		F154032B2BD15AE400FAF7E3 /* BoxEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F154032A2BD15AE400FAF7E3 /* BoxEmptyView.swift */; };
 		F154032E2BD1696C00FAF7E3 /* CalendarHomeViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F154032D2BD1696C00FAF7E3 /* CalendarHomeViewStore.swift */; };
 		F15403302BD16D7800FAF7E3 /* CalendarHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F154032F2BD16D7800FAF7E3 /* CalendarHomeView.swift */; };
 		F15403332BD17B9F00FAF7E3 /* CalendarDayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15403322BD17B9F00FAF7E3 /* CalendarDayItem.swift */; };
@@ -64,7 +64,7 @@
 		F1023CDE2BCFE4EB0050B0F2 /* TodoCreateViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCreateViewStore.swift; sourceTree = "<group>"; };
 		F1023CE02BCFE5360050B0F2 /* TodoCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCreateView.swift; sourceTree = "<group>"; };
 		F15403222BD135E900FAF7E3 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
-		F154032A2BD15AE400FAF7E3 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		F154032A2BD15AE400FAF7E3 /* BoxEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxEmptyView.swift; sourceTree = "<group>"; };
 		F154032D2BD1696C00FAF7E3 /* CalendarHomeViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHomeViewStore.swift; sourceTree = "<group>"; };
 		F154032F2BD16D7800FAF7E3 /* CalendarHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHomeView.swift; sourceTree = "<group>"; };
 		F15403322BD17B9F00FAF7E3 /* CalendarDayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayItem.swift; sourceTree = "<group>"; };
@@ -218,7 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				F1C842642BD0FB46006E3789 /* Localizable.xcstrings */,
-				F154032A2BD15AE400FAF7E3 /* EmptyView.swift */,
+				F154032A2BD15AE400FAF7E3 /* BoxEmptyView.swift */,
 				F1FEE5872BD21D880002CE89 /* TodoView.swift */,
 				F1FEE5942BD286770002CE89 /* QueryView.swift */,
 				F1FEE59D2BD295F80002CE89 /* FolderView.swift */,
@@ -452,7 +452,7 @@
 				F1FEE59A2BD28D260002CE89 /* SearchViewStore.swift in Sources */,
 				F1FEE58D2BD265C50002CE89 /* TodoDetailViewStore.swift in Sources */,
 				F1DBBD5A2BCD42F900D1A58E /* App.swift in Sources */,
-				F154032B2BD15AE400FAF7E3 /* EmptyView.swift in Sources */,
+				F154032B2BD15AE400FAF7E3 /* BoxEmptyView.swift in Sources */,
 				F1DBBD742BCD564800D1A58E /* FolderHomeViewStore.swift in Sources */,
 				F15403332BD17B9F00FAF7E3 /* CalendarDayItem.swift in Sources */,
 				F1DBBD842BCE793100D1A58E /* FolderCreateView.swift in Sources */,

@@ -27,7 +27,7 @@ struct FolderPickerView: View {
         if folders.isEmpty {
           Spacer()
           
-          EmptyView(subtitle: "There is no folder")
+          BoxEmptyView(state: .emptyFolderWithCreateDescription)
           
           Spacer()
         } else {

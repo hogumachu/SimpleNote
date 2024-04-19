@@ -33,7 +33,7 @@ struct CalendarHomeView: View {
           if todos.isEmpty {
             Spacer()
             
-            EmptyView(subtitle: "There is nothing todo")
+            BoxEmptyView(state: .emptyTodo)
             
             Spacer()
           } else {

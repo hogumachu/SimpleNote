@@ -46,6 +46,16 @@
         }
       }
     },
+    "Calendar" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "캘린더"
+          }
+        }
+      }
+    },
     "Cancel" : {
       "localizations" : {
         "ko" : {
@@ -97,7 +107,6 @@
       }
     },
     "Empty" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -208,7 +217,6 @@
       }
     },
     "There are no todos for today" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -316,6 +324,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "완료하지 않은 지난 할 일"
+          }
+        }
+      }
+    },
+    "You can create folders in the folder tab" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "폴더 탭에서 폴더를 생성할 수 있어요"
           }
         }
       }
