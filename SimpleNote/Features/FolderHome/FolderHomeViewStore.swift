@@ -28,16 +28,6 @@ struct FolderHomeViewStore: Reducer {
   var body: some ReducerOf<Self> {
     Reduce { state, action in
       switch action {
-      case let .path(.element(_, pathAction)):
-        switch pathAction {
-        case .delegate(.close):
-          _ = state.path.popLast()
-          return .none
-          
-        default:
-          return .none
-        }
-        
       case .path:
         return .none
         

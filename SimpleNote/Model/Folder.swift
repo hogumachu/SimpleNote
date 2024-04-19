@@ -30,7 +30,7 @@ extension Folder {
   
   static func predicate(searchText: String) -> Predicate<Folder> {
     return #Predicate {
-      searchText.isEmpty && ($0.title ?? "").contains(searchText)
+      !searchText.isEmpty && ($0.title?.contains(searchText) ?? false)
     }
   }
   

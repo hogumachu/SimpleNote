@@ -31,14 +31,9 @@ struct FolderDetailViewStore {
     case checkTapped(Todo)
     case todoTapped(Todo)
     case deleteTapped(Todo)
-    case delegate(Delegate)
     case todoCreate(PresentationAction<TodoCreateViewStore.Action>)
     case folderEdit(PresentationAction<FolderEditViewStore.Action>)
     case todoDetail(PresentationAction<TodoDetailViewStore.Action>)
-    
-    enum Delegate {
-      case close
-    }
   }
   
   @Dependency(\.dismiss) var dismiss
@@ -50,7 +45,7 @@ struct FolderDetailViewStore {
       switch action {
       case .closeTapped:
         return .run { send in
-          await send(.delegate(.close))
+          await dismiss()
         }
         
       case .editTapped:
@@ -76,9 +71,6 @@ struct FolderDetailViewStore {
         } catch {
           
         }
-        return .none
-        
-      case .delegate:
         return .none
         
       case let .todoCreate(.presented(.delegate(.create(todo)))):

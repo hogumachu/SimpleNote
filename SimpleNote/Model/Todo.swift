@@ -32,7 +32,7 @@ extension Todo {
   
   static func predicate(searchText: String) -> Predicate<Todo> {
     return #Predicate {
-      !searchText.isEmpty && ($0.todo ?? "").contains(searchText)
+      !searchText.isEmpty && ($0.todo?.contains(searchText) ?? false)
     }
   }
   

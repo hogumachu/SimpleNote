@@ -18,4 +18,24 @@ extension QueryView where T == Todo {
     self.init(descriptor: .init(predicate: predicate), content: content)
   }
   
+  init(
+    searchText: String,
+    @ViewBuilder content: @escaping ([T]) -> Content
+  ) {
+    let predicate: Predicate = Todo.predicate(searchText: searchText)
+    self.init(descriptor: .init(predicate: predicate), content: content)
+  }
+  
+}
+
+extension QueryView where T == Folder {
+  
+  init(
+    searchText: String,
+    @ViewBuilder content: @escaping ([T]) -> Content
+  ) {
+    let predicate: Predicate = Folder.predicate(searchText: searchText)
+    self.init(descriptor: .init(predicate: predicate), content: content)
+  }
+  
 }
