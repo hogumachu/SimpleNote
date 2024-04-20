@@ -16,11 +16,14 @@ struct TodoDetailViewStore {
     fileprivate var origin: Todo
     var todo: String
     var targetDate: Date
+    var folder: Folder?
+    @Presents var folderPicker: FolderPickerViewStore.State?
     
     init(todo: Todo) {
       self.origin = todo
       self.todo = todo.todo.orEmpty
       self.targetDate = todo.targetDate.orNow
+      self.folder = todo.folder
     }
   }
   
@@ -31,6 +34,9 @@ struct TodoDetailViewStore {
     case closeTapped
     case deleteTapped
     case editTapped
+    case folderTapped
+    
+    case folderPicker(PresentationAction<FolderPickerViewStore.Action>)
   }
   
   @Dependency(\.dismiss) private var dismiss
@@ -58,10 +64,30 @@ struct TodoDetailViewStore {
       case .editTapped:
         state.origin.todo = state.todo
         state.origin.targetDate = state.targetDate
+        if state.origin.folder != state.folder {
+          state.origin.folder?.todos?.removeAll(where: { $0 == state.origin })
+          state.origin.folder = state.folder
+          state.folder?.todos?.append(state.origin)
+        }
+        
         return .run { send in
           await dismiss()
         }
+        
+      case .folderTapped:
+        state.folderPicker = .init(selectedFolder: state.folder)
+        return .none
+        
+      case let .folderPicker(.presented(.delegate(.folderTapped(folder)))):
+        state.folder = folder
+        return .none
+        
+      case .folderPicker:
+        return .none
       }
+    }
+    .ifLet(\.$folderPicker, action: \.folderPicker) {
+      FolderPickerViewStore()
     }
   }
   
