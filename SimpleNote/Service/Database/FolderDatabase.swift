@@ -38,6 +38,12 @@ extension FolderDatabase: DependencyKey {
     delete: { folder in
       @Dependency(\.database.context) var context
       let folderContext = try context()
+      
+      /// CloudKit을 사용하면 cascade가 제대로 동작하지 않음
+      /// 따라서 폴더 제거할 때 내부에 있는 Todo를 모두 제거
+      folder.todos?.forEach {
+        folderContext.delete($0)
+      }
       folderContext.delete(folder)
     },
     deleteAll: {
