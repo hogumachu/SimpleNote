@@ -50,7 +50,7 @@ extension Todo {
     }
   }
   
-  static func predicate(folderID: UUID) -> Predicate<Todo> {
+  static func predicate(folderID: UUID?) -> Predicate<Todo> {
     return #Predicate {
       $0.folder?.id == folderID
     }

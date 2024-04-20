@@ -17,9 +17,9 @@ struct FolderDetailViewStore {
     @Presents var folderEdit: FolderEditViewStore.State?
     @Presents var todoDetail: TodoDetailViewStore.State?
     
-    var folder: Folder
+    var folder: Folder?
     
-    init(folder: Folder) {
+    init(folder: Folder?) {
       self.folder = folder
     }
   }
@@ -49,7 +49,9 @@ struct FolderDetailViewStore {
         }
         
       case .editTapped:
-        state.folderEdit = .init(folder: state.folder)
+        if let folder = state.folder {
+          state.folderEdit = .init(folder: folder)
+        }
         return .none
         
       case .createTapped:
@@ -70,7 +72,7 @@ struct FolderDetailViewStore {
         
       case let .deleteTapped(todo):
         do {
-          state.folder.todos?.removeAll(where: { $0 == todo })
+          state.folder?.todos?.removeAll(where: { $0 == todo })
           try todoDatabase.delete(todo)
         } catch {
           
@@ -81,8 +83,8 @@ struct FolderDetailViewStore {
         return .none
         
       case let .folderEdit(.presented(.delegate(.edit(title, hexColor)))):
-        state.folder.title = title
-        state.folder.hexColor = hexColor
+        state.folder?.title = title
+        state.folder?.hexColor = hexColor
         state.folderEdit = nil
         return .none
         

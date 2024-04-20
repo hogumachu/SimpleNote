@@ -60,6 +60,7 @@ private extension SettingView {
       switch item {
       case .hideCompleteTodo:
         Toggle(item.title, isOn: $hideCompleteTodo)
+          .tint(.blue)
         
       case .version:
         HStack {
