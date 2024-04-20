@@ -14,6 +14,7 @@ struct FolderDatabase {
   var fetch: @Sendable (FetchDescriptor<Folder>) throws -> [Folder]
   var add: @Sendable (Folder) throws -> Void
   var delete: @Sendable (Folder) throws -> Void
+  var deleteAll: @Sendable () throws -> Void
 }
 
 extension FolderDatabase: DependencyKey {
@@ -38,6 +39,11 @@ extension FolderDatabase: DependencyKey {
       @Dependency(\.database.context) var context
       let folderContext = try context()
       folderContext.delete(folder)
+    },
+    deleteAll: {
+      @Dependency(\.database.context) var context
+      let folderContext = try context()
+      try folderContext.delete(model: Folder.self)
     }
   )
 }
