@@ -10,6 +10,11 @@
 		F1023CD72BCF8A750050B0F2 /* SwiftData+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1023CD62BCF8A750050B0F2 /* SwiftData+Preview.swift */; };
 		F1023CDF2BCFE4EB0050B0F2 /* TodoCreateViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1023CDE2BCFE4EB0050B0F2 /* TodoCreateViewStore.swift */; };
 		F1023CE12BCFE5360050B0F2 /* TodoCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1023CE02BCFE5360050B0F2 /* TodoCreateView.swift */; };
+		F119A20C2BD3991900F2FFAF /* SettingViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F119A20B2BD3991900F2FFAF /* SettingViewStore.swift */; };
+		F119A20E2BD3997E00F2FFAF /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F119A20D2BD3997E00F2FFAF /* SettingView.swift */; };
+		F119A2212BD3AB8600F2FFAF /* SettingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F119A2202BD3AB8600F2FFAF /* SettingItem.swift */; };
+		F119A2252BD3BA4800F2FFAF /* AppBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F119A2242BD3BA4800F2FFAF /* AppBundle.swift */; };
+		F119A2272BD3BF7900F2FFAF /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F119A2262BD3BF7900F2FFAF /* UserDefaultsKey.swift */; };
 		F15403212BD129EB00FAF7E3 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = F15403202BD129EB00FAF7E3 /* SwiftDate */; };
 		F15403232BD135E900FAF7E3 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15403222BD135E900FAF7E3 /* Color+.swift */; };
 		F15403292BD145AB00FAF7E3 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F15403282BD145AB00FAF7E3 /* Lottie */; };
@@ -63,6 +68,11 @@
 		F1023CD62BCF8A750050B0F2 /* SwiftData+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftData+Preview.swift"; sourceTree = "<group>"; };
 		F1023CDE2BCFE4EB0050B0F2 /* TodoCreateViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCreateViewStore.swift; sourceTree = "<group>"; };
 		F1023CE02BCFE5360050B0F2 /* TodoCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCreateView.swift; sourceTree = "<group>"; };
+		F119A20B2BD3991900F2FFAF /* SettingViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewStore.swift; sourceTree = "<group>"; };
+		F119A20D2BD3997E00F2FFAF /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		F119A2202BD3AB8600F2FFAF /* SettingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItem.swift; sourceTree = "<group>"; };
+		F119A2242BD3BA4800F2FFAF /* AppBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBundle.swift; sourceTree = "<group>"; };
+		F119A2262BD3BF7900F2FFAF /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
 		F15403222BD135E900FAF7E3 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		F154032A2BD15AE400FAF7E3 /* BoxEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxEmptyView.swift; sourceTree = "<group>"; };
 		F154032D2BD1696C00FAF7E3 /* CalendarHomeViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHomeViewStore.swift; sourceTree = "<group>"; };
@@ -135,6 +145,34 @@
 			path = TodoCreate;
 			sourceTree = "<group>";
 		};
+		F119A20A2BD3991000F2FFAF /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				F119A20B2BD3991900F2FFAF /* SettingViewStore.swift */,
+				F119A20D2BD3997E00F2FFAF /* SettingView.swift */,
+				F119A2202BD3AB8600F2FFAF /* SettingItem.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		F119A20F2BD39BC300F2FFAF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F119A2102BD39C0000F2FFAF /* UserDefautls */,
+				F1DBBD5F2BCD479800D1A58E /* Model */,
+				F1DBBD5B2BCD435F00D1A58E /* Database */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F119A2102BD39C0000F2FFAF /* UserDefautls */ = {
+			isa = PBXGroup;
+			children = (
+				F119A2262BD3BF7900F2FFAF /* UserDefaultsKey.swift */,
+			);
+			path = UserDefautls;
+			sourceTree = "<group>";
+		};
 		F154032C2BD1696100FAF7E3 /* CalendarHome */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,11 +210,10 @@
 		F15427242BCD0C6C0070D22C /* SimpleNote */ = {
 			isa = PBXGroup;
 			children = (
+				F119A20F2BD39BC300F2FFAF /* Service */,
 				F1C842632BD0FB39006E3789 /* Shared */,
 				F1DBBD7D2BCD7DBD00D1A58E /* Extensions */,
 				F1DBBD6A2BCD4F3800D1A58E /* Features */,
-				F1DBBD5F2BCD479800D1A58E /* Model */,
-				F1DBBD5B2BCD435F00D1A58E /* Database */,
 				F154273A2BCD0F260070D22C /* App */,
 				F154272B2BCD0C6E0070D22C /* Assets.xcassets */,
 				F15427302BCD0C6E0070D22C /* SimpleNote.entitlements */,
@@ -222,6 +259,7 @@
 				F1FEE5872BD21D880002CE89 /* TodoView.swift */,
 				F1FEE5942BD286770002CE89 /* QueryView.swift */,
 				F1FEE59D2BD295F80002CE89 /* FolderView.swift */,
+				F119A2242BD3BA4800F2FFAF /* AppBundle.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -258,6 +296,7 @@
 		F1DBBD6A2BCD4F3800D1A58E /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				F119A20A2BD3991000F2FFAF /* Setting */,
 				F1FEE59F2BD2B7180002CE89 /* FolderPicker */,
 				F1FEE5982BD28D1B0002CE89 /* Search */,
 				F1FEE58B2BD265BD0002CE89 /* TodoDetail */,
@@ -433,6 +472,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1C8425A2BD0E348006E3789 /* FolderEditViewStore.swift in Sources */,
+				F119A20C2BD3991900F2FFAF /* SettingViewStore.swift in Sources */,
 				F1DBBD692BCD4BDF00D1A58E /* TodoDatabase.swift in Sources */,
 				F1DBBD652BCD4A9A00D1A58E /* FolderDatabase.swift in Sources */,
 				F1023CD72BCF8A750050B0F2 /* SwiftData+Preview.swift in Sources */,
@@ -448,12 +488,15 @@
 				F1FEE5A12BD2B72C0002CE89 /* FolderPickerViewStore.swift in Sources */,
 				F154273C2BCD0F310070D22C /* AppStore.swift in Sources */,
 				F1023CDF2BCFE4EB0050B0F2 /* TodoCreateViewStore.swift in Sources */,
+				F119A2272BD3BF7900F2FFAF /* UserDefaultsKey.swift in Sources */,
 				F15403232BD135E900FAF7E3 /* Color+.swift in Sources */,
+				F119A2252BD3BA4800F2FFAF /* AppBundle.swift in Sources */,
 				F1FEE59A2BD28D260002CE89 /* SearchViewStore.swift in Sources */,
 				F1FEE58D2BD265C50002CE89 /* TodoDetailViewStore.swift in Sources */,
 				F1DBBD5A2BCD42F900D1A58E /* App.swift in Sources */,
 				F154032B2BD15AE400FAF7E3 /* BoxEmptyView.swift in Sources */,
 				F1DBBD742BCD564800D1A58E /* FolderHomeViewStore.swift in Sources */,
+				F119A20E2BD3997E00F2FFAF /* SettingView.swift in Sources */,
 				F15403332BD17B9F00FAF7E3 /* CalendarDayItem.swift in Sources */,
 				F1DBBD842BCE793100D1A58E /* FolderCreateView.swift in Sources */,
 				F1FEE58F2BD266100002CE89 /* TodoDetailView.swift in Sources */,
@@ -470,6 +513,7 @@
 				F1DBBD822BCE791F00D1A58E /* FolderCreateViewStore.swift in Sources */,
 				F1DBBD5D2BCD436700D1A58E /* Database.swift in Sources */,
 				F1DBBD792BCD606700D1A58E /* FolderDetailViewStore.swift in Sources */,
+				F119A2212BD3AB8600F2FFAF /* SettingItem.swift in Sources */,
 				F1FEE58A2BD226860002CE89 /* Formatter.swift in Sources */,
 				F15403302BD16D7800FAF7E3 /* CalendarHomeView.swift in Sources */,
 				F154032E2BD1696C00FAF7E3 /* CalendarHomeViewStore.swift in Sources */,

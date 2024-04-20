@@ -12,13 +12,12 @@ import SwiftUI
 struct HomeView: View {
   
   @Bindable private var store: StoreOf<HomeViewStore>
-  @Query private var todos: [Todo]
-  @Query private var previousTodos: [Todo]
+  
+  @AppStorage(UserDefaultsKey.hideCompleteTodo.rawValue)
+  private var hideCompleteTodo = false
   
   init(store: StoreOf<HomeViewStore>) {
     self.store = store
-    self._todos = Query(filter: Todo.predicate(isSameDayAs: .now))
-    self._previousTodos = Query(filter: Todo.predicate(lessThan: .now))
   }
   
   var body: some View {
@@ -37,12 +36,16 @@ struct HomeView: View {
             searchView
               .padding(20)
             
-            todayTodoListView
-              .padding(.horizontal, 20)
-            
-            if !previousTodos.isEmpty {
-              previousTodoListView
+            QueryView(isSameDayAs: .now, hideCompleteTodo: hideCompleteTodo) { todos in
+              todayTodoListView(todos)
                 .padding(.horizontal, 20)
+            }
+            
+            QueryView(lessThan: .now) { todos in
+              if !todos.isEmpty {
+                previousTodoListView(todos)
+                  .padding(.horizontal, 20)
+              }
             }
           }
         }
@@ -53,10 +56,18 @@ struct HomeView: View {
           .safeAreaPadding(.bottom, 20)
           .safeAreaPadding(.trailing, 20)
       }
-    } destination: {
-      SearchView(store: $0)
-        .toolbar(.hidden, for: .tabBar)
-        .toolbar(.hidden, for: .navigationBar)
+    } destination: { store in
+      switch store.case {
+      case let .search(store):
+        SearchView(store: store)
+          .toolbar(.hidden, for: .tabBar)
+          .toolbar(.hidden, for: .navigationBar)
+        
+      case let .setting(store):
+        SettingView(store: store)
+          .toolbar(.hidden, for: .tabBar)
+          .toolbar(.hidden, for: .navigationBar)
+      }
     }
     .fullScreenCover(item: $store.scope(state: \.todoDetail, action: \.todoDetail)) {
       TodoDetailView(store: $0)
@@ -90,7 +101,9 @@ private extension HomeView {
   }
   
   var searchView: some View {
-    NavigationLink(state: SearchViewStore.State()) {
+    Button {
+      store.send(.searchTapped)
+    } label: {
       HStack {
         Image(.magnifyingGlass)
           .resizable()
@@ -113,7 +126,7 @@ private extension HomeView {
     }
   }
   
-  var todayTodoListView: some View {
+  func todayTodoListView(_ todos: [Todo]) -> some View {
     LazyVStack {
       Text("Today's todos")
         .font(.headline)
@@ -135,7 +148,7 @@ private extension HomeView {
     }
   }
   
-  var previousTodoListView: some View {
+  func previousTodoListView(_ previousTodos: [Todo]) -> some View {
     LazyVStack {
       Text("Uncompleted previous todos")
         .font(.headline)

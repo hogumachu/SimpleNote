@@ -11,11 +11,17 @@ import Foundation
 @Reducer
 struct HomeViewStore: Reducer {
   
+  @Reducer(state: .equatable)
+  enum Path {
+    case search(SearchViewStore)
+    case setting(SettingViewStore)
+  }
+  
   @ObservableState
   struct State: Equatable {
     @Presents var todoDetail: TodoDetailViewStore.State?
     @Presents var todoCreate: TodoCreateViewStore.State?
-    var path = StackState<SearchViewStore.State>()
+    var path = StackState<Path.State>()
   }
   
   enum Action {
@@ -26,13 +32,14 @@ struct HomeViewStore: Reducer {
     case settingTapped
     case todoDetail(PresentationAction<TodoDetailViewStore.Action>)
     case todoCreate(PresentationAction<TodoCreateViewStore.Action>)
-    case path(StackAction<SearchViewStore.State, SearchViewStore.Action>)
+    case path(StackAction<Path.State, Path.Action>)
   }
   
   var body: some ReducerOf<Self> {
     Reduce { state, action in
       switch action {
       case .searchTapped:
+        state.path.append(.search(SearchViewStore.State()))
         return .none
         
       case let .todoTapped(todo):
@@ -52,6 +59,7 @@ struct HomeViewStore: Reducer {
         return .none
         
       case .settingTapped:
+        state.path.append(.setting(SettingViewStore.State()))
         return .none
         
       case .todoDetail:
@@ -70,9 +78,7 @@ struct HomeViewStore: Reducer {
     .ifLet(\.$todoCreate, action: \.todoCreate) {
       TodoCreateViewStore()
     }
-    .forEach(\.path, action: \.path) {
-      SearchViewStore()
-    }
+    .forEach(\.path, action: \.path)
   }
   
 }

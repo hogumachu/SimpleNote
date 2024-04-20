@@ -46,6 +46,16 @@
         }
       }
     },
+    "App Version" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "앱 버전"
+          }
+        }
+      }
+    },
     "Calendar" : {
       "localizations" : {
         "ko" : {
@@ -76,12 +86,32 @@
         }
       }
     },
+    "Data once deleted cannot be recovered" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "데이터를 제거하면 다시 복구가 불가능합니다"
+          }
+        }
+      }
+    },
     "Delete" : {
       "localizations" : {
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "제거하기"
+          }
+        }
+      }
+    },
+    "Delete all data" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "모든 데이터 제거하기"
           }
         }
       }
@@ -129,6 +159,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "폴더"
+          }
+        }
+      }
+    },
+    "Hiding completed todos" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "완료된 할 일 숨기기"
           }
         }
       }
