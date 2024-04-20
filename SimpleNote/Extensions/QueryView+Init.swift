@@ -11,10 +11,19 @@ import SwiftUI
 extension QueryView where T == Todo {
   
   init(
-    isSameDayAs date: Date,
+    lessThan date: Date,
     @ViewBuilder content: @escaping ([T]) -> Content
   ) {
-    let predicate: Predicate = Todo.predicate(isSameDayAs: date)
+    let predicate: Predicate = Todo.predicate(lessThan: date)
+    self.init(descriptor: .init(predicate: predicate), content: content)
+  }
+  
+  init(
+    isSameDayAs date: Date,
+    hideCompleteTodo: Bool,
+    @ViewBuilder content: @escaping ([T]) -> Content
+  ) {
+    let predicate: Predicate = Todo.predicate(isSameDayAs: date, hideCompleteTodo: hideCompleteTodo)
     self.init(descriptor: .init(predicate: predicate), content: content)
   }
   

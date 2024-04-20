@@ -36,13 +36,17 @@ extension Todo {
     }
   }
   
-  static func predicate(isSameDayAs date: Date) -> Predicate<Todo> {
+  static func predicate(isSameDayAs date: Date, hideCompleteTodo: Bool) -> Predicate<Todo> {
     let calendar = Calendar.autoupdatingCurrent
     let start = calendar.startOfDay(for: date)
     let end = calendar.date(byAdding: .day, value: 1, to: start) ?? start
     let now = Date.now
     return #Predicate {
-      $0.targetDate ?? now > start && $0.targetDate ?? now < end
+      if hideCompleteTodo {
+        return !($0.isComplete ?? true) && $0.targetDate ?? now > start && $0.targetDate ?? now < end
+      } else {
+        return $0.targetDate ?? now > start && $0.targetDate ?? now < end
+      }
     }
   }
   

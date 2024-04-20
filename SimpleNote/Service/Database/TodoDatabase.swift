@@ -14,6 +14,7 @@ struct TodoDatabase {
   var fetch: @Sendable (FetchDescriptor<Todo>) throws -> [Todo]
   var add: @Sendable (Todo) throws -> Void
   var delete: @Sendable (Todo) throws -> Void
+  var deleteAll: @Sendable () throws -> Void
 }
 
 extension TodoDatabase: DependencyKey {
@@ -38,6 +39,11 @@ extension TodoDatabase: DependencyKey {
       @Dependency(\.database.context) var context
       let todoContext = try context()
       todoContext.delete(todo)
+    },
+    deleteAll: {
+      @Dependency(\.database.context) var context
+      let todoContext = try context()
+      try todoContext.delete(model: Todo.self)
     }
   )
 }

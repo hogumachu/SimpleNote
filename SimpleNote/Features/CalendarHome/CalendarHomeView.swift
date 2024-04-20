@@ -14,6 +14,9 @@ struct CalendarHomeView: View {
   
   @Bindable private var store: StoreOf<CalendarHomeViewStore>
   
+  @AppStorage(UserDefaultsKey.hideCompleteTodo.rawValue)
+  private var hideCompleteTodo = false
+  
   init(store: StoreOf<CalendarHomeViewStore>) {
     self.store = store
   }
@@ -29,7 +32,7 @@ struct CalendarHomeView: View {
         Divider()
           .padding(.top, 10)
         
-        QueryView(isSameDayAs: store.focusDate) { todos in
+        QueryView(isSameDayAs: store.focusDate, hideCompleteTodo: hideCompleteTodo) { todos in
           if todos.isEmpty {
             Spacer()
             
