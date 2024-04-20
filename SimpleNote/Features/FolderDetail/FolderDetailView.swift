@@ -16,8 +16,8 @@ struct FolderDetailView: View {
   
   init(store: StoreOf<FolderDetailViewStore>) {
     self.store = store
-    let folderID = store.folder.id
-    self._todos = Query(filter: Todo.predicate(folderID: folderID.orRandom))
+    let folderID = store.folder?.id
+    self._todos = Query(filter: Todo.predicate(folderID: folderID))
   }
   
   var body: some View {
@@ -72,15 +72,17 @@ private extension FolderDetailView {
       
       Spacer()
       
-      Button {
-        store.send(.editTapped)
-      } label: {
-        Image(.pencilSimple)
-          .resizable()
-          .renderingMode(.template)
-          .aspectRatio(contentMode: .fit)
-          .frame(width: 30, height: 30)
-          .foregroundStyle(.foreground)
+      if store.folder != nil {
+        Button {
+          store.send(.editTapped)
+        } label: {
+          Image(.pencilSimple)
+            .resizable()
+            .renderingMode(.template)
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 30, height: 30)
+            .foregroundStyle(.foreground)
+        }
       }
     }
     .frame(height: 50)
@@ -88,12 +90,21 @@ private extension FolderDetailView {
   
   var folderView: some View {
     VStack {
-      Text(store.folder.title.orEmpty)
-        .padding(.top, 20)
-        .padding(.horizontal, 20)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .font(.headline)
-        .foregroundStyle(.primary)
+      if let title = store.folder?.title {
+        Text(title)
+          .padding(.top, 20)
+          .padding(.horizontal, 20)
+          .frame(maxWidth: .infinity, alignment: .leading)
+          .font(.headline)
+          .foregroundStyle(.primary)
+      } else {
+        Text("None")
+          .padding(.top, 20)
+          .padding(.horizontal, 20)
+          .frame(maxWidth: .infinity, alignment: .leading)
+          .font(.headline)
+          .foregroundStyle(.primary)
+      }
       
       Text("\(todos.filter { $0.isComplete.orFalse }.count)/\(todos.count) task done")
         .padding(.horizontal, 20)
@@ -107,12 +118,12 @@ private extension FolderDetailView {
           value: Float(todos.filter { $0.isComplete.orFalse }.count),
           total: Float(todos.count)
         )
-        .tint(Color(hexOrPrimary: store.folder.hexColor))
+        .tint(Color(hexOrPrimary: store.folder?.hexColor))
         .padding(.horizontal, 20)
         .padding(.bottom, 20)
       }
     }
-    .background(Color(hexOrGray: store.folder.hexColor).opacity(0.1))
+    .background(Color(hexOrGray: store.folder?.hexColor).opacity(0.1))
     .clipShape(RoundedRectangle(cornerRadius: 16))
   }
   
@@ -140,7 +151,7 @@ private extension FolderDetailView {
         .aspectRatio(contentMode: .fit)
         .frame(width: 50, height: 50)
     }
-    .foregroundStyle(Color(hexOrPrimary: store.folder.hexColor))
+    .foregroundStyle(Color(hexOrPrimary: store.folder?.hexColor))
   }
   
   func todoView(_ todo: Todo) -> some View {
@@ -154,7 +165,7 @@ private extension FolderDetailView {
           .resizable()
           .renderingMode(.template)
           .frame(width: 30, height: 30)
-          .foregroundStyle(Color(hexOrPrimary: store.folder.hexColor))
+          .foregroundStyle(Color(hexOrPrimary: store.folder?.hexColor))
       }
       
       Spacer()

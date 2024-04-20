@@ -13,6 +13,13 @@ struct FolderHomeView: View {
   
   @Bindable var store: StoreOf<FolderHomeViewStore>
   @Query private var folders: [Folder]
+  @Query private var emptyFolderTodos: [Todo]
+  
+  init(store: StoreOf<FolderHomeViewStore>) {
+    self.store = store
+    self._folders = Query()
+    self._emptyFolderTodos = Query(filter: Todo.predicate(folderID: nil))
+  }
   
   var body: some View {
     NavigationStack(
@@ -112,6 +119,36 @@ private extension FolderHomeView {
                 .fill(Color.secondarySystemBackground)
             )
           }
+        }
+        
+        NavigationLink(state: FolderDetailViewStore.State(folder: nil)) {
+          HStack {
+            VStack(spacing: 12) {
+              Image(.folderFill)
+                .resizable()
+                .renderingMode(.template)
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 45, height: 45)
+                .foregroundStyle(.gray)
+              
+              VStack(spacing: 3) {
+                Text("None")
+                  .font(.headline)
+                  .foregroundStyle(Color(uiColor: .label))
+                
+                Text("\(emptyFolderTodos.count) todos")
+                  .font(.caption)
+                  .foregroundStyle(Color.gray)
+              }
+            }
+          }
+          .frame(maxWidth: .infinity, minHeight: 100)
+          .padding(.horizontal, 20)
+          .padding(.vertical, 20)
+          .background(
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+              .fill(Color.secondarySystemBackground)
+          )
         }
       }
       .padding(.vertical, 20)
