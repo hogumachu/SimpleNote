@@ -158,19 +158,19 @@
 		F119A20F2BD39BC300F2FFAF /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				F119A2102BD39C0000F2FFAF /* UserDefautls */,
+				F119A2102BD39C0000F2FFAF /* UserDefaults */,
 				F1DBBD5F2BCD479800D1A58E /* Model */,
 				F1DBBD5B2BCD435F00D1A58E /* Database */,
 			);
 			path = Service;
 			sourceTree = "<group>";
 		};
-		F119A2102BD39C0000F2FFAF /* UserDefautls */ = {
+		F119A2102BD39C0000F2FFAF /* UserDefaults */ = {
 			isa = PBXGroup;
 			children = (
 				F119A2262BD3BF7900F2FFAF /* UserDefaultsKey.swift */,
 			);
-			path = UserDefautls;
+			path = UserDefaults;
 			sourceTree = "<group>";
 		};
 		F154032C2BD1696100FAF7E3 /* CalendarHome */ = {
