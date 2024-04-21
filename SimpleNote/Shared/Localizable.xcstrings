@@ -368,6 +368,16 @@
         }
       }
     },
+    "Upcoming todos" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "다가오는 할 일"
+          }
+        }
+      }
+    },
     "You can create folders in the folder tab" : {
       "localizations" : {
         "ko" : {
