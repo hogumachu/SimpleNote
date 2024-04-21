@@ -7,7 +7,6 @@
 
 import SwiftData
 
-#if DEBUG
 extension ModelContainer {
   
   static func preview() -> ModelContainer {
@@ -31,4 +30,3 @@ extension ModelContainer {
   }
   
 }
-#endif
