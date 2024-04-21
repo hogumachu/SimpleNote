@@ -19,13 +19,13 @@ extension QueryView where T == Todo {
   }
   
   init(
-    greaterThan greaterDate: Date,
+    greaterThanEqaul greaterDate: Date,
     lessThan lessDate: Date,
     hideCompleteTodo: Bool,
     @ViewBuilder content: @escaping ([T]) -> Content
   ) {
     let predicate: Predicate = Todo.predicate(
-      greaterThan: greaterDate,
+      greaterThanEqaul: greaterDate,
       lessThan: lessDate,
       hideCompleteTodo: hideCompleteTodo
     )

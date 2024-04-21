@@ -43,9 +43,9 @@ extension Todo {
     let now = Date.now
     return #Predicate {
       if hideCompleteTodo {
-        return !($0.isComplete ?? true) && $0.targetDate ?? now > start && $0.targetDate ?? now < end
+        return !($0.isComplete ?? true) && $0.targetDate ?? now >= start && $0.targetDate ?? now < end
       } else {
-        return $0.targetDate ?? now > start && $0.targetDate ?? now < end
+        return $0.targetDate ?? now >= start && $0.targetDate ?? now < end
       }
     }
   }
@@ -66,7 +66,7 @@ extension Todo {
   }
   
   static func predicate(
-    greaterThan greaterDate: Date,
+    greaterThanEqaul greaterDate: Date,
     lessThan lessDate: Date,
     hideCompleteTodo: Bool
   ) -> Predicate<Todo> {
@@ -78,9 +78,9 @@ extension Todo {
     let now = Date.now
     return #Predicate {
       if hideCompleteTodo {
-        return !($0.isComplete ?? true) && $0.targetDate ?? now > start && $0.targetDate ?? now < end
+        return !($0.isComplete ?? true) && $0.targetDate ?? now >= start && $0.targetDate ?? now < end
       } else {
-        return $0.targetDate ?? now > start && $0.targetDate ?? now < end
+        return $0.targetDate ?? now >= start && $0.targetDate ?? now < end
       }
     }
   }
