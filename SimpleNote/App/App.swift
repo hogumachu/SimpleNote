@@ -17,9 +17,10 @@ struct SimpleNoteApp: App {
   
   var body: some Scene {
     WindowGroup {
-      AppView(store: Store(initialState: AppStore.State()) {
-        AppStore()
-      })
+      RootView(store: Store(
+        initialState: RootViewStore.State(),
+        reducer: { RootViewStore() }
+      ))
     }
     .modelContext(try! database.context())
   }
