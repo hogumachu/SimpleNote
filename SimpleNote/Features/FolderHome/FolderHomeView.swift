@@ -26,7 +26,7 @@ struct FolderHomeView: View {
       path: $store.scope(state: \.path, action: \.path)
     ) {
       VStack(alignment: .leading, spacing: 0) {
-        navigationBar
+        NavigationBar(style: .titleOnly("Folder"))
           .padding(.horizontal, 20)
         
         Divider()
@@ -38,8 +38,7 @@ struct FolderHomeView: View {
       .frame(maxHeight: .infinity, alignment: .top)
     } destination: {
       FolderDetailView(store: $0)
-        .toolbar(.hidden, for: .tabBar)
-        .toolbar(.hidden, for: .navigationBar)
+        .toolbar(.hidden, for: .tabBar, .navigationBar)
     }
     .fullScreenCover(item: $store.scope(state: \.folderCreate, action: \.folderCreate)) {
       FolderCreateView(store: $0)
@@ -49,16 +48,6 @@ struct FolderHomeView: View {
 }
 
 private extension FolderHomeView {
-  
-  var navigationBar: some View {
-    HStack {
-      Text("Folder")
-        .font(.headline)
-      
-      Spacer()
-    }
-    .frame(height: 50)
-  }
   
   var listView: some View {
     ScrollView {

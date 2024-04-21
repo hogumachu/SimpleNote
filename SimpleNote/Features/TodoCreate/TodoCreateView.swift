@@ -20,8 +20,10 @@ struct TodoCreateView: View {
   var body: some View {
     NavigationStack {
       VStack {
-        navigationBar
-          .padding(.horizontal, 20)
+        NavigationBar(style: .close) {
+          store.send(.closeTapped)
+        }
+        .padding(.horizontal, 20)
         
         ScrollView {
           todoTextField
@@ -62,24 +64,6 @@ struct TodoCreateView: View {
 }
 
 private extension TodoCreateView {
-  
-  var navigationBar: some View {
-    HStack {
-      Spacer()
-      
-      Button {
-        store.send(.closeTapped)
-      } label: {
-        Image(.X)
-          .resizable()
-          .renderingMode(.template)
-          .aspectRatio(contentMode: .fit)
-          .frame(width: 30, height: 30)
-          .foregroundStyle(.foreground)
-      }
-    }
-    .frame(height: 50)
-  }
   
   var todoTextField: some View {
     TextField("Type todo", text: $store.todo)

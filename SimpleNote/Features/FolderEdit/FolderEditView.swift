@@ -20,8 +20,10 @@ struct FolderEditView: View {
   
   var body: some View {
     VStack {
-      navigationBar
-        .padding(.horizontal, 10)
+      NavigationBar(style: .close) {
+        store.send(.closeTapped)
+      }
+      .padding(.horizontal, 20)
       
       ScrollView {
         folderTextField
@@ -52,23 +54,6 @@ struct FolderEditView: View {
 }
 
 private extension FolderEditView {
-  
-  var navigationBar: some View {
-    HStack {
-      Spacer()
-      
-      Button {
-        store.send(.closeTapped)
-      } label: {
-        Image(.X)
-          .resizable()
-          .renderingMode(.template)
-          .frame(width: 30, height: 30)
-          .foregroundStyle(.foreground)
-      }
-    }
-    .frame(height: 50)
-  }
   
   var folderTextField: some View {
     TextField("Type folder title", text: $store.title)
