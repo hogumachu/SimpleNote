@@ -21,8 +21,10 @@ struct SettingView: View {
   
   var body: some View {
     VStack {
-      navigationBar
-        .padding(.horizontal, 20)
+      NavigationBar(style: .back) {
+        store.send(.closeTapped)
+      }
+      .padding(.horizontal, 20)
       
       settingListView
     }
@@ -37,23 +39,6 @@ struct SettingView: View {
 }
 
 private extension SettingView {
-  
-  var navigationBar: some View {
-    HStack {
-      Button {
-        store.send(.closeTapped)
-      } label: {
-        Image(.arrowLeft)
-          .resizable()
-          .renderingMode(.template)
-          .frame(width: 30, height: 30)
-          .foregroundStyle(.foreground)
-      }
-      
-      Spacer()
-    }
-    .frame(height: 50)
-  }
   
   var settingListView: some View {
     List(store.settingItems) { item in

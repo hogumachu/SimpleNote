@@ -27,8 +27,10 @@ struct HomeView: View {
     ) {
       ZStack {
         VStack(spacing: 0) {
-          navigationBar
-            .padding(.horizontal, 20)
+          NavigationBar(style: .titleWithButton("Home", .gearFill)) {
+            store.send(.settingTapped)
+          }
+          .padding(.horizontal, 20)
           
           Divider()
             .padding(.top, 10)
@@ -50,7 +52,7 @@ struct HomeView: View {
             }
             
             QueryView(
-              greaterThan: .now + 1.days,
+              greaterThanEqaul: .now + 1.days,
               lessThan: .now + 7.days,
               hideCompleteTodo: hideCompleteTodo
             ) { todos in
@@ -66,22 +68,19 @@ struct HomeView: View {
         }
         .background(.background)
         
-        createView
+        PlusButton { store.send(.createTapped) }
           .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
-          .safeAreaPadding(.bottom, 20)
-          .safeAreaPadding(.trailing, 20)
+          .safeAreaPadding([.bottom, .trailing], 20)
       }
     } destination: { store in
       switch store.case {
       case let .search(store):
         SearchView(store: store)
-          .toolbar(.hidden, for: .tabBar)
-          .toolbar(.hidden, for: .navigationBar)
+          .toolbar(.hidden, for: .tabBar, .navigationBar)
         
       case let .setting(store):
         SettingView(store: store)
-          .toolbar(.hidden, for: .tabBar)
-          .toolbar(.hidden, for: .navigationBar)
+          .toolbar(.hidden, for: .tabBar, .navigationBar)
       }
     }
     .fullScreenCover(item: $store.scope(state: \.todoDetail, action: \.todoDetail)) {
@@ -94,26 +93,6 @@ struct HomeView: View {
 }
 
 private extension HomeView {
-  
-  var navigationBar: some View {
-    HStack {
-      Text("Home")
-        .font(.headline)
-      
-      Spacer()
-      
-      Button {
-        store.send(.settingTapped)
-      } label: {
-        Image(.gearFill)
-          .resizable()
-          .renderingMode(.template)
-          .frame(width: 30, height: 30)
-          .foregroundStyle(.foreground)
-      }
-    }
-    .frame(height: 50)
-  }
   
   var searchView: some View {
     Button {
@@ -197,19 +176,6 @@ private extension HomeView {
         .frame(maxWidth: .infinity)
       }
     }
-  }
-  
-  var createView: some View {
-    Button {
-      store.send(.createTapped)
-    } label: {
-      Image(.plusCircleFill)
-        .resizable()
-        .renderingMode(.template)
-        .aspectRatio(contentMode: .fit)
-        .frame(width: 50, height: 50)
-    }
-    .foregroundStyle(.foreground)
   }
   
 }

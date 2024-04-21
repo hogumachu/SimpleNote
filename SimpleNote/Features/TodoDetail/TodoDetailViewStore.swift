@@ -27,7 +27,6 @@ struct TodoDetailViewStore {
     }
   }
   
-  
   enum Action: BindableAction {
     case binding(BindingAction<State>)
     

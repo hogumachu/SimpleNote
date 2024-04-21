@@ -19,9 +19,10 @@ struct FolderPickerView: View {
   
   var body: some View {
     VStack {
-      navigationBar
-        .padding(.horizontal, 20)
-      
+      NavigationBar(style: .back) {
+        store.send(.closeTapped)
+      }
+      .padding(.horizontal, 20)
       
       QueryView(descriptor: FetchDescriptor<Folder>()) { folders in
         if folders.isEmpty {
@@ -45,24 +46,6 @@ struct FolderPickerView: View {
 }
 
 private extension FolderPickerView {
-  
-  var navigationBar: some View {
-    HStack {
-      Button {
-        store.send(.closeTapped)
-      } label: {
-        Image(.arrowLeft)
-          .resizable()
-          .renderingMode(.template)
-          .aspectRatio(contentMode: .fit)
-          .frame(width: 30, height: 30)
-          .foregroundStyle(.foreground)
-      }
-      
-      Spacer()
-    }
-    .frame(height: 50)
-  }
   
   func folderListView(_ folders: [Folder]) -> some View {
     LazyVStack {

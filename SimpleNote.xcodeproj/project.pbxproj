@@ -15,6 +15,8 @@
 		F119A2212BD3AB8600F2FFAF /* SettingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F119A2202BD3AB8600F2FFAF /* SettingItem.swift */; };
 		F119A2252BD3BA4800F2FFAF /* AppBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F119A2242BD3BA4800F2FFAF /* AppBundle.swift */; };
 		F119A2272BD3BF7900F2FFAF /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F119A2262BD3BF7900F2FFAF /* UserDefaultsKey.swift */; };
+		F119A22C2BD51E0300F2FFAF /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F119A22B2BD51E0300F2FFAF /* NavigationBar.swift */; };
+		F119A22E2BD5225900F2FFAF /* PlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F119A22D2BD5225900F2FFAF /* PlusButton.swift */; };
 		F15403212BD129EB00FAF7E3 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = F15403202BD129EB00FAF7E3 /* SwiftDate */; };
 		F15403232BD135E900FAF7E3 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15403222BD135E900FAF7E3 /* Color+.swift */; };
 		F15403292BD145AB00FAF7E3 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F15403282BD145AB00FAF7E3 /* Lottie */; };
@@ -26,8 +28,6 @@
 		F154272C2BCD0C6E0070D22C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F154272B2BCD0C6E0070D22C /* Assets.xcassets */; };
 		F154272F2BCD0C6E0070D22C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F154272E2BCD0C6E0070D22C /* Preview Assets.xcassets */; };
 		F15427392BCD0F060070D22C /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = F15427382BCD0F060070D22C /* ComposableArchitecture */; };
-		F154273C2BCD0F310070D22C /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F154273B2BCD0F310070D22C /* AppStore.swift */; };
-		F154273E2BCD200B0070D22C /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F154273D2BCD200B0070D22C /* AppView.swift */; };
 		F1C8425A2BD0E348006E3789 /* FolderEditViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C842592BD0E348006E3789 /* FolderEditViewStore.swift */; };
 		F1C8425C2BD0E8F8006E3789 /* FolderEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C8425B2BD0E8F8006E3789 /* FolderEditView.swift */; };
 		F1C842652BD0FB46006E3789 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F1C842642BD0FB46006E3789 /* Localizable.xcstrings */; };
@@ -73,6 +73,8 @@
 		F119A2202BD3AB8600F2FFAF /* SettingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItem.swift; sourceTree = "<group>"; };
 		F119A2242BD3BA4800F2FFAF /* AppBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBundle.swift; sourceTree = "<group>"; };
 		F119A2262BD3BF7900F2FFAF /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
+		F119A22B2BD51E0300F2FFAF /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		F119A22D2BD5225900F2FFAF /* PlusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButton.swift; sourceTree = "<group>"; };
 		F15403222BD135E900FAF7E3 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		F154032A2BD15AE400FAF7E3 /* BoxEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxEmptyView.swift; sourceTree = "<group>"; };
 		F154032D2BD1696C00FAF7E3 /* CalendarHomeViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHomeViewStore.swift; sourceTree = "<group>"; };
@@ -84,8 +86,6 @@
 		F154272E2BCD0C6E0070D22C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F15427302BCD0C6E0070D22C /* SimpleNote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SimpleNote.entitlements; sourceTree = "<group>"; };
 		F15427312BCD0C6E0070D22C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F154273B2BCD0F310070D22C /* AppStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStore.swift; sourceTree = "<group>"; };
-		F154273D2BCD200B0070D22C /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
 		F1C842592BD0E348006E3789 /* FolderEditViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderEditViewStore.swift; sourceTree = "<group>"; };
 		F1C8425B2BD0E8F8006E3789 /* FolderEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderEditView.swift; sourceTree = "<group>"; };
 		F1C842642BD0FB46006E3789 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -173,6 +173,19 @@
 			path = UserDefaults;
 			sourceTree = "<group>";
 		};
+		F119A22A2BD51DF800F2FFAF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F154032A2BD15AE400FAF7E3 /* BoxEmptyView.swift */,
+				F1FEE5872BD21D880002CE89 /* TodoView.swift */,
+				F1FEE5942BD286770002CE89 /* QueryView.swift */,
+				F1FEE59D2BD295F80002CE89 /* FolderView.swift */,
+				F119A22B2BD51E0300F2FFAF /* NavigationBar.swift */,
+				F119A22D2BD5225900F2FFAF /* PlusButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		F154032C2BD1696100FAF7E3 /* CalendarHome */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,8 +247,6 @@
 		F154273A2BCD0F260070D22C /* App */ = {
 			isa = PBXGroup;
 			children = (
-				F154273D2BCD200B0070D22C /* AppView.swift */,
-				F154273B2BCD0F310070D22C /* AppStore.swift */,
 				F1DBBD592BCD42F900D1A58E /* App.swift */,
 				F15403342BD17EDB00FAF7E3 /* AppDelegate.swift */,
 			);
@@ -254,11 +265,8 @@
 		F1C842632BD0FB39006E3789 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				F119A22A2BD51DF800F2FFAF /* Views */,
 				F1C842642BD0FB46006E3789 /* Localizable.xcstrings */,
-				F154032A2BD15AE400FAF7E3 /* BoxEmptyView.swift */,
-				F1FEE5872BD21D880002CE89 /* TodoView.swift */,
-				F1FEE5942BD286770002CE89 /* QueryView.swift */,
-				F1FEE59D2BD295F80002CE89 /* FolderView.swift */,
 				F119A2242BD3BA4800F2FFAF /* AppBundle.swift */,
 			);
 			path = Shared;
@@ -486,7 +494,6 @@
 				F1FEE59C2BD28DD10002CE89 /* SearchView.swift in Sources */,
 				F1FEE5882BD21D880002CE89 /* TodoView.swift in Sources */,
 				F1FEE5A12BD2B72C0002CE89 /* FolderPickerViewStore.swift in Sources */,
-				F154273C2BCD0F310070D22C /* AppStore.swift in Sources */,
 				F1023CDF2BCFE4EB0050B0F2 /* TodoCreateViewStore.swift in Sources */,
 				F119A2272BD3BF7900F2FFAF /* UserDefaultsKey.swift in Sources */,
 				F15403232BD135E900FAF7E3 /* Color+.swift in Sources */,
@@ -504,9 +511,11 @@
 				F1FEE5A32BD2B7690002CE89 /* FolderPickerView.swift in Sources */,
 				F1FEE5952BD286770002CE89 /* QueryView.swift in Sources */,
 				F1DBBD632BCD494F00D1A58E /* Todo.swift in Sources */,
+				F119A22E2BD5225900F2FFAF /* PlusButton.swift in Sources */,
 				F1023CE12BCFE5360050B0F2 /* TodoCreateView.swift in Sources */,
 				F1DBBD762BCD567B00D1A58E /* FolderHomeView.swift in Sources */,
 				F1DBBD562BCD3F0700D1A58E /* HomeViewStore.swift in Sources */,
+				F119A22C2BD51E0300F2FFAF /* NavigationBar.swift in Sources */,
 				F1DBBD7F2BCD7DCA00D1A58E /* Color+Init.swift in Sources */,
 				F1DBBD6F2BCD4F6F00D1A58E /* RootView.swift in Sources */,
 				F1DBBD7B2BCD607B00D1A58E /* FolderDetailView.swift in Sources */,
@@ -519,7 +528,6 @@
 				F154032E2BD1696C00FAF7E3 /* CalendarHomeViewStore.swift in Sources */,
 				F1DBBD612BCD47A400D1A58E /* Folder.swift in Sources */,
 				F1DBBD862BCE87C300D1A58E /* UIDevice+.swift in Sources */,
-				F154273E2BCD200B0070D22C /* AppView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -78,20 +78,28 @@ struct SettingViewStore {
         }
         
       case .deleteAllTapped:
-        state.alert = AlertState {
-          TextState("Delete all data")
-        } actions: {
-          ButtonState(role: .cancel) {
-            TextState("Cancel")
-          }
-          ButtonState(role: .destructive, action: .confirmDeletion) {
-            TextState("Delete")
-          }
-        } message: {
-          TextState("Data once deleted cannot be recovered")
-        }
+        state.alert = makeDeleteAlert()
         return .none
       }
+    }
+  }
+  
+}
+
+private extension SettingViewStore {
+  
+  func makeDeleteAlert() -> AlertState<Alert> {
+    return AlertState {
+      TextState("Delete all data")
+    } actions: {
+      ButtonState(role: .cancel) {
+        TextState("Cancel")
+      }
+      ButtonState(role: .destructive, action: .confirmDeletion) {
+        TextState("Delete")
+      }
+    } message: {
+      TextState("Data once deleted cannot be recovered")
     }
   }
   
