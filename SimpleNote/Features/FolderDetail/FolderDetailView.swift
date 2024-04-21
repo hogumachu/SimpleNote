@@ -40,10 +40,13 @@ struct FolderDetailView: View {
       .background(.background)
       .frame(maxHeight: .infinity, alignment: .top)
       
-      createView
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
-        .safeAreaPadding(.bottom, 20)
-        .safeAreaPadding(.trailing, 20)
+      PlusButton(hexColor: store.folder?.hexColor) {
+        store.send(.createTapped)
+      }
+      .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomTrailing)
+      .safeAreaPadding(.bottom, 20)
+      .safeAreaPadding(.trailing, 20)
+      
     }
     .fullScreenCover(item: $store.scope(state: \.todoCreate, action: \.todoCreate)) {
       TodoCreateView(store: $0)
@@ -144,25 +147,10 @@ private extension FolderDetailView {
     }
   }
   
-  var createView: some View {
-    Button {
-      store.send(.createTapped)
-    } label: {
-      Image(.plusCircleFill)
-        .resizable()
-        .renderingMode(.template)
-        .aspectRatio(contentMode: .fit)
-        .frame(width: 50, height: 50)
-    }
-    .foregroundStyle(Color(hexOrPrimary: store.folder?.hexColor))
-  }
-  
   func todoView(_ todo: Todo) -> some View {
     HStack {
       Button {
-        _ = withAnimation {
-          store.send(.checkTapped(todo))
-        }
+        store.send(.checkTapped(todo), animation: .default)
       } label: {
         Image(todo.isComplete.orFalse ? .checkCircleFill : .circle)
           .resizable()
@@ -187,9 +175,7 @@ private extension FolderDetailView {
       Spacer()
       
       Button {
-        _ = withAnimation(.easeInOut) {
-          store.send(.deleteTapped(todo))
-        }
+        store.send(.deleteTapped(todo), animation: .easeInOut)
       } label: {
         Image(.trash)
           .resizable()

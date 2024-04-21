@@ -60,7 +60,7 @@ struct CalendarHomeView: View {
         
         Spacer()
         
-        createView
+        PlusButton { store.send(.createTapped) }
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
       .safeAreaPadding(.bottom, 20)
@@ -170,19 +170,6 @@ private extension CalendarHomeView {
       RoundedRectangle(cornerRadius: 16)
         .foregroundStyle(.background.opacity(0.7))
     )
-  }
-  
-  var createView: some View {
-    Button {
-      store.send(.createTapped)
-    } label: {
-      Image(.plusCircleFill)
-        .resizable()
-        .renderingMode(.template)
-        .aspectRatio(contentMode: .fit)
-        .frame(width: 50, height: 50)
-    }
-    .foregroundStyle(.foreground)
   }
   
 }

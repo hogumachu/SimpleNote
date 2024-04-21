@@ -15,6 +15,8 @@
 		F119A2212BD3AB8600F2FFAF /* SettingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F119A2202BD3AB8600F2FFAF /* SettingItem.swift */; };
 		F119A2252BD3BA4800F2FFAF /* AppBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F119A2242BD3BA4800F2FFAF /* AppBundle.swift */; };
 		F119A2272BD3BF7900F2FFAF /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F119A2262BD3BF7900F2FFAF /* UserDefaultsKey.swift */; };
+		F119A22C2BD51E0300F2FFAF /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F119A22B2BD51E0300F2FFAF /* NavigationBar.swift */; };
+		F119A22E2BD5225900F2FFAF /* PlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F119A22D2BD5225900F2FFAF /* PlusButton.swift */; };
 		F15403212BD129EB00FAF7E3 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = F15403202BD129EB00FAF7E3 /* SwiftDate */; };
 		F15403232BD135E900FAF7E3 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15403222BD135E900FAF7E3 /* Color+.swift */; };
 		F15403292BD145AB00FAF7E3 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F15403282BD145AB00FAF7E3 /* Lottie */; };
@@ -71,6 +73,8 @@
 		F119A2202BD3AB8600F2FFAF /* SettingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItem.swift; sourceTree = "<group>"; };
 		F119A2242BD3BA4800F2FFAF /* AppBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBundle.swift; sourceTree = "<group>"; };
 		F119A2262BD3BF7900F2FFAF /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
+		F119A22B2BD51E0300F2FFAF /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		F119A22D2BD5225900F2FFAF /* PlusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButton.swift; sourceTree = "<group>"; };
 		F15403222BD135E900FAF7E3 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		F154032A2BD15AE400FAF7E3 /* BoxEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxEmptyView.swift; sourceTree = "<group>"; };
 		F154032D2BD1696C00FAF7E3 /* CalendarHomeViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHomeViewStore.swift; sourceTree = "<group>"; };
@@ -169,6 +173,19 @@
 			path = UserDefaults;
 			sourceTree = "<group>";
 		};
+		F119A22A2BD51DF800F2FFAF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F154032A2BD15AE400FAF7E3 /* BoxEmptyView.swift */,
+				F1FEE5872BD21D880002CE89 /* TodoView.swift */,
+				F1FEE5942BD286770002CE89 /* QueryView.swift */,
+				F1FEE59D2BD295F80002CE89 /* FolderView.swift */,
+				F119A22B2BD51E0300F2FFAF /* NavigationBar.swift */,
+				F119A22D2BD5225900F2FFAF /* PlusButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		F154032C2BD1696100FAF7E3 /* CalendarHome */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,11 +265,8 @@
 		F1C842632BD0FB39006E3789 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				F119A22A2BD51DF800F2FFAF /* Views */,
 				F1C842642BD0FB46006E3789 /* Localizable.xcstrings */,
-				F154032A2BD15AE400FAF7E3 /* BoxEmptyView.swift */,
-				F1FEE5872BD21D880002CE89 /* TodoView.swift */,
-				F1FEE5942BD286770002CE89 /* QueryView.swift */,
-				F1FEE59D2BD295F80002CE89 /* FolderView.swift */,
 				F119A2242BD3BA4800F2FFAF /* AppBundle.swift */,
 			);
 			path = Shared;
@@ -497,9 +511,11 @@
 				F1FEE5A32BD2B7690002CE89 /* FolderPickerView.swift in Sources */,
 				F1FEE5952BD286770002CE89 /* QueryView.swift in Sources */,
 				F1DBBD632BCD494F00D1A58E /* Todo.swift in Sources */,
+				F119A22E2BD5225900F2FFAF /* PlusButton.swift in Sources */,
 				F1023CE12BCFE5360050B0F2 /* TodoCreateView.swift in Sources */,
 				F1DBBD762BCD567B00D1A58E /* FolderHomeView.swift in Sources */,
 				F1DBBD562BCD3F0700D1A58E /* HomeViewStore.swift in Sources */,
+				F119A22C2BD51E0300F2FFAF /* NavigationBar.swift in Sources */,
 				F1DBBD7F2BCD7DCA00D1A58E /* Color+Init.swift in Sources */,
 				F1DBBD6F2BCD4F6F00D1A58E /* RootView.swift in Sources */,
 				F1DBBD7B2BCD607B00D1A58E /* FolderDetailView.swift in Sources */,
