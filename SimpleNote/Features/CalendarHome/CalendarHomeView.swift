@@ -43,6 +43,9 @@ struct CalendarHomeView: View {
             ScrollView {
               todoListView(todos)
                 .padding(20)
+              
+              Spacer()
+                .padding(40)
             }
           }
         }
