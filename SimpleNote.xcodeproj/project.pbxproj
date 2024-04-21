@@ -7,22 +7,119 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F15427262BCD0C6C0070D22C /* SimpleNoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15427252BCD0C6C0070D22C /* SimpleNoteApp.swift */; };
-		F15427282BCD0C6C0070D22C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15427272BCD0C6C0070D22C /* ContentView.swift */; };
-		F154272A2BCD0C6C0070D22C /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15427292BCD0C6C0070D22C /* Item.swift */; };
+		F1023CD72BCF8A750050B0F2 /* SwiftData+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1023CD62BCF8A750050B0F2 /* SwiftData+Preview.swift */; };
+		F1023CDF2BCFE4EB0050B0F2 /* TodoCreateViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1023CDE2BCFE4EB0050B0F2 /* TodoCreateViewStore.swift */; };
+		F1023CE12BCFE5360050B0F2 /* TodoCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1023CE02BCFE5360050B0F2 /* TodoCreateView.swift */; };
+		F119A20C2BD3991900F2FFAF /* SettingViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F119A20B2BD3991900F2FFAF /* SettingViewStore.swift */; };
+		F119A20E2BD3997E00F2FFAF /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F119A20D2BD3997E00F2FFAF /* SettingView.swift */; };
+		F119A2212BD3AB8600F2FFAF /* SettingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F119A2202BD3AB8600F2FFAF /* SettingItem.swift */; };
+		F119A2252BD3BA4800F2FFAF /* AppBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F119A2242BD3BA4800F2FFAF /* AppBundle.swift */; };
+		F119A2272BD3BF7900F2FFAF /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F119A2262BD3BF7900F2FFAF /* UserDefaultsKey.swift */; };
+		F119A22C2BD51E0300F2FFAF /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F119A22B2BD51E0300F2FFAF /* NavigationBar.swift */; };
+		F119A22E2BD5225900F2FFAF /* PlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F119A22D2BD5225900F2FFAF /* PlusButton.swift */; };
+		F15403212BD129EB00FAF7E3 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = F15403202BD129EB00FAF7E3 /* SwiftDate */; };
+		F15403232BD135E900FAF7E3 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15403222BD135E900FAF7E3 /* Color+.swift */; };
+		F15403292BD145AB00FAF7E3 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F15403282BD145AB00FAF7E3 /* Lottie */; };
+		F154032B2BD15AE400FAF7E3 /* BoxEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F154032A2BD15AE400FAF7E3 /* BoxEmptyView.swift */; };
+		F154032E2BD1696C00FAF7E3 /* CalendarHomeViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F154032D2BD1696C00FAF7E3 /* CalendarHomeViewStore.swift */; };
+		F15403302BD16D7800FAF7E3 /* CalendarHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F154032F2BD16D7800FAF7E3 /* CalendarHomeView.swift */; };
+		F15403332BD17B9F00FAF7E3 /* CalendarDayItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15403322BD17B9F00FAF7E3 /* CalendarDayItem.swift */; };
+		F15403352BD17EDB00FAF7E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15403342BD17EDB00FAF7E3 /* AppDelegate.swift */; };
 		F154272C2BCD0C6E0070D22C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F154272B2BCD0C6E0070D22C /* Assets.xcassets */; };
 		F154272F2BCD0C6E0070D22C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F154272E2BCD0C6E0070D22C /* Preview Assets.xcassets */; };
+		F15427392BCD0F060070D22C /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = F15427382BCD0F060070D22C /* ComposableArchitecture */; };
+		F1C8425A2BD0E348006E3789 /* FolderEditViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C842592BD0E348006E3789 /* FolderEditViewStore.swift */; };
+		F1C8425C2BD0E8F8006E3789 /* FolderEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C8425B2BD0E8F8006E3789 /* FolderEditView.swift */; };
+		F1C842652BD0FB46006E3789 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F1C842642BD0FB46006E3789 /* Localizable.xcstrings */; };
+		F1DBBD562BCD3F0700D1A58E /* HomeViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD552BCD3F0700D1A58E /* HomeViewStore.swift */; };
+		F1DBBD582BCD41F700D1A58E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD572BCD41F600D1A58E /* HomeView.swift */; };
+		F1DBBD5A2BCD42F900D1A58E /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD592BCD42F900D1A58E /* App.swift */; };
+		F1DBBD5D2BCD436700D1A58E /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD5C2BCD436700D1A58E /* Database.swift */; };
+		F1DBBD612BCD47A400D1A58E /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD602BCD47A400D1A58E /* Folder.swift */; };
+		F1DBBD632BCD494F00D1A58E /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD622BCD494F00D1A58E /* Todo.swift */; };
+		F1DBBD652BCD4A9A00D1A58E /* FolderDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD642BCD4A9A00D1A58E /* FolderDatabase.swift */; };
+		F1DBBD692BCD4BDF00D1A58E /* TodoDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD682BCD4BDF00D1A58E /* TodoDatabase.swift */; };
+		F1DBBD6D2BCD4F5600D1A58E /* RootViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD6C2BCD4F5600D1A58E /* RootViewStore.swift */; };
+		F1DBBD6F2BCD4F6F00D1A58E /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD6E2BCD4F6F00D1A58E /* RootView.swift */; };
+		F1DBBD712BCD500F00D1A58E /* RootTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD702BCD500F00D1A58E /* RootTab.swift */; };
+		F1DBBD742BCD564800D1A58E /* FolderHomeViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD732BCD564800D1A58E /* FolderHomeViewStore.swift */; };
+		F1DBBD762BCD567B00D1A58E /* FolderHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD752BCD567B00D1A58E /* FolderHomeView.swift */; };
+		F1DBBD792BCD606700D1A58E /* FolderDetailViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD782BCD606700D1A58E /* FolderDetailViewStore.swift */; };
+		F1DBBD7B2BCD607B00D1A58E /* FolderDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD7A2BCD607B00D1A58E /* FolderDetailView.swift */; };
+		F1DBBD7F2BCD7DCA00D1A58E /* Color+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD7E2BCD7DC900D1A58E /* Color+Init.swift */; };
+		F1DBBD822BCE791F00D1A58E /* FolderCreateViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD812BCE791F00D1A58E /* FolderCreateViewStore.swift */; };
+		F1DBBD842BCE793100D1A58E /* FolderCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD832BCE793100D1A58E /* FolderCreateView.swift */; };
+		F1DBBD862BCE87C300D1A58E /* UIDevice+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD852BCE87C300D1A58E /* UIDevice+.swift */; };
+		F1FEE5882BD21D880002CE89 /* TodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEE5872BD21D880002CE89 /* TodoView.swift */; };
+		F1FEE58A2BD226860002CE89 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEE5892BD226860002CE89 /* Formatter.swift */; };
+		F1FEE58D2BD265C50002CE89 /* TodoDetailViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEE58C2BD265C50002CE89 /* TodoDetailViewStore.swift */; };
+		F1FEE58F2BD266100002CE89 /* TodoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEE58E2BD266100002CE89 /* TodoDetailView.swift */; };
+		F1FEE5912BD27D5B0002CE89 /* Optional+Default.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEE5902BD27D5B0002CE89 /* Optional+Default.swift */; };
+		F1FEE5952BD286770002CE89 /* QueryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEE5942BD286770002CE89 /* QueryView.swift */; };
+		F1FEE5972BD286E60002CE89 /* QueryView+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEE5962BD286E60002CE89 /* QueryView+Init.swift */; };
+		F1FEE59A2BD28D260002CE89 /* SearchViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEE5992BD28D260002CE89 /* SearchViewStore.swift */; };
+		F1FEE59C2BD28DD10002CE89 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEE59B2BD28DD10002CE89 /* SearchView.swift */; };
+		F1FEE59E2BD295F80002CE89 /* FolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEE59D2BD295F80002CE89 /* FolderView.swift */; };
+		F1FEE5A12BD2B72C0002CE89 /* FolderPickerViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEE5A02BD2B72C0002CE89 /* FolderPickerViewStore.swift */; };
+		F1FEE5A32BD2B7690002CE89 /* FolderPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1FEE5A22BD2B7690002CE89 /* FolderPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F1023CD62BCF8A750050B0F2 /* SwiftData+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SwiftData+Preview.swift"; sourceTree = "<group>"; };
+		F1023CDE2BCFE4EB0050B0F2 /* TodoCreateViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCreateViewStore.swift; sourceTree = "<group>"; };
+		F1023CE02BCFE5360050B0F2 /* TodoCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCreateView.swift; sourceTree = "<group>"; };
+		F119A20B2BD3991900F2FFAF /* SettingViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewStore.swift; sourceTree = "<group>"; };
+		F119A20D2BD3997E00F2FFAF /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		F119A2202BD3AB8600F2FFAF /* SettingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItem.swift; sourceTree = "<group>"; };
+		F119A2242BD3BA4800F2FFAF /* AppBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBundle.swift; sourceTree = "<group>"; };
+		F119A2262BD3BF7900F2FFAF /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
+		F119A22B2BD51E0300F2FFAF /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		F119A22D2BD5225900F2FFAF /* PlusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButton.swift; sourceTree = "<group>"; };
+		F15403222BD135E900FAF7E3 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
+		F154032A2BD15AE400FAF7E3 /* BoxEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxEmptyView.swift; sourceTree = "<group>"; };
+		F154032D2BD1696C00FAF7E3 /* CalendarHomeViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHomeViewStore.swift; sourceTree = "<group>"; };
+		F154032F2BD16D7800FAF7E3 /* CalendarHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHomeView.swift; sourceTree = "<group>"; };
+		F15403322BD17B9F00FAF7E3 /* CalendarDayItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDayItem.swift; sourceTree = "<group>"; };
+		F15403342BD17EDB00FAF7E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F15427222BCD0C6C0070D22C /* SimpleNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F15427252BCD0C6C0070D22C /* SimpleNoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleNoteApp.swift; sourceTree = "<group>"; };
-		F15427272BCD0C6C0070D22C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		F15427292BCD0C6C0070D22C /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		F154272B2BCD0C6E0070D22C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F154272E2BCD0C6E0070D22C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F15427302BCD0C6E0070D22C /* SimpleNote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SimpleNote.entitlements; sourceTree = "<group>"; };
 		F15427312BCD0C6E0070D22C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1C842592BD0E348006E3789 /* FolderEditViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderEditViewStore.swift; sourceTree = "<group>"; };
+		F1C8425B2BD0E8F8006E3789 /* FolderEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderEditView.swift; sourceTree = "<group>"; };
+		F1C842642BD0FB46006E3789 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		F1DBBD552BCD3F0700D1A58E /* HomeViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewStore.swift; sourceTree = "<group>"; };
+		F1DBBD572BCD41F600D1A58E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F1DBBD592BCD42F900D1A58E /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		F1DBBD5C2BCD436700D1A58E /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		F1DBBD602BCD47A400D1A58E /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
+		F1DBBD622BCD494F00D1A58E /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		F1DBBD642BCD4A9A00D1A58E /* FolderDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderDatabase.swift; sourceTree = "<group>"; };
+		F1DBBD682BCD4BDF00D1A58E /* TodoDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDatabase.swift; sourceTree = "<group>"; };
+		F1DBBD6C2BCD4F5600D1A58E /* RootViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewStore.swift; sourceTree = "<group>"; };
+		F1DBBD6E2BCD4F6F00D1A58E /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		F1DBBD702BCD500F00D1A58E /* RootTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTab.swift; sourceTree = "<group>"; };
+		F1DBBD732BCD564800D1A58E /* FolderHomeViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderHomeViewStore.swift; sourceTree = "<group>"; };
+		F1DBBD752BCD567B00D1A58E /* FolderHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderHomeView.swift; sourceTree = "<group>"; };
+		F1DBBD782BCD606700D1A58E /* FolderDetailViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderDetailViewStore.swift; sourceTree = "<group>"; };
+		F1DBBD7A2BCD607B00D1A58E /* FolderDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderDetailView.swift; sourceTree = "<group>"; };
+		F1DBBD7E2BCD7DC900D1A58E /* Color+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Init.swift"; sourceTree = "<group>"; };
+		F1DBBD812BCE791F00D1A58E /* FolderCreateViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCreateViewStore.swift; sourceTree = "<group>"; };
+		F1DBBD832BCE793100D1A58E /* FolderCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCreateView.swift; sourceTree = "<group>"; };
+		F1DBBD852BCE87C300D1A58E /* UIDevice+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+.swift"; sourceTree = "<group>"; };
+		F1FEE5872BD21D880002CE89 /* TodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
+		F1FEE5892BD226860002CE89 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
+		F1FEE58C2BD265C50002CE89 /* TodoDetailViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailViewStore.swift; sourceTree = "<group>"; };
+		F1FEE58E2BD266100002CE89 /* TodoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailView.swift; sourceTree = "<group>"; };
+		F1FEE5902BD27D5B0002CE89 /* Optional+Default.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Default.swift"; sourceTree = "<group>"; };
+		F1FEE5942BD286770002CE89 /* QueryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryView.swift; sourceTree = "<group>"; };
+		F1FEE5962BD286E60002CE89 /* QueryView+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "QueryView+Init.swift"; sourceTree = "<group>"; };
+		F1FEE5992BD28D260002CE89 /* SearchViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewStore.swift; sourceTree = "<group>"; };
+		F1FEE59B2BD28DD10002CE89 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		F1FEE59D2BD295F80002CE89 /* FolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderView.swift; sourceTree = "<group>"; };
+		F1FEE5A02BD2B72C0002CE89 /* FolderPickerViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderPickerViewStore.swift; sourceTree = "<group>"; };
+		F1FEE5A22BD2B7690002CE89 /* FolderPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,12 +127,83 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F15403212BD129EB00FAF7E3 /* SwiftDate in Frameworks */,
+				F15427392BCD0F060070D22C /* ComposableArchitecture in Frameworks */,
+				F15403292BD145AB00FAF7E3 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F1023CDD2BCFE4DB0050B0F2 /* TodoCreate */ = {
+			isa = PBXGroup;
+			children = (
+				F1023CDE2BCFE4EB0050B0F2 /* TodoCreateViewStore.swift */,
+				F1023CE02BCFE5360050B0F2 /* TodoCreateView.swift */,
+			);
+			path = TodoCreate;
+			sourceTree = "<group>";
+		};
+		F119A20A2BD3991000F2FFAF /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				F119A20B2BD3991900F2FFAF /* SettingViewStore.swift */,
+				F119A20D2BD3997E00F2FFAF /* SettingView.swift */,
+				F119A2202BD3AB8600F2FFAF /* SettingItem.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		F119A20F2BD39BC300F2FFAF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F119A2102BD39C0000F2FFAF /* UserDefaults */,
+				F1DBBD5F2BCD479800D1A58E /* Model */,
+				F1DBBD5B2BCD435F00D1A58E /* Database */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F119A2102BD39C0000F2FFAF /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				F119A2262BD3BF7900F2FFAF /* UserDefaultsKey.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		F119A22A2BD51DF800F2FFAF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F154032A2BD15AE400FAF7E3 /* BoxEmptyView.swift */,
+				F1FEE5872BD21D880002CE89 /* TodoView.swift */,
+				F1FEE5942BD286770002CE89 /* QueryView.swift */,
+				F1FEE59D2BD295F80002CE89 /* FolderView.swift */,
+				F119A22B2BD51E0300F2FFAF /* NavigationBar.swift */,
+				F119A22D2BD5225900F2FFAF /* PlusButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F154032C2BD1696100FAF7E3 /* CalendarHome */ = {
+			isa = PBXGroup;
+			children = (
+				F15403312BD17B9600FAF7E3 /* Components */,
+				F154032D2BD1696C00FAF7E3 /* CalendarHomeViewStore.swift */,
+				F154032F2BD16D7800FAF7E3 /* CalendarHomeView.swift */,
+			);
+			path = CalendarHome;
+			sourceTree = "<group>";
+		};
+		F15403312BD17B9600FAF7E3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F15403322BD17B9F00FAF7E3 /* CalendarDayItem.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		F15427192BCD0C6C0070D22C = {
 			isa = PBXGroup;
 			children = (
@@ -55,9 +223,11 @@
 		F15427242BCD0C6C0070D22C /* SimpleNote */ = {
 			isa = PBXGroup;
 			children = (
-				F15427252BCD0C6C0070D22C /* SimpleNoteApp.swift */,
-				F15427272BCD0C6C0070D22C /* ContentView.swift */,
-				F15427292BCD0C6C0070D22C /* Item.swift */,
+				F119A20F2BD39BC300F2FFAF /* Service */,
+				F1C842632BD0FB39006E3789 /* Shared */,
+				F1DBBD7D2BCD7DBD00D1A58E /* Extensions */,
+				F1DBBD6A2BCD4F3800D1A58E /* Features */,
+				F154273A2BCD0F260070D22C /* App */,
 				F154272B2BCD0C6E0070D22C /* Assets.xcassets */,
 				F15427302BCD0C6E0070D22C /* SimpleNote.entitlements */,
 				F15427312BCD0C6E0070D22C /* Info.plist */,
@@ -72,6 +242,159 @@
 				F154272E2BCD0C6E0070D22C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F154273A2BCD0F260070D22C /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F1DBBD592BCD42F900D1A58E /* App.swift */,
+				F15403342BD17EDB00FAF7E3 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F1C842582BD0E33C006E3789 /* FolderEdit */ = {
+			isa = PBXGroup;
+			children = (
+				F1C842592BD0E348006E3789 /* FolderEditViewStore.swift */,
+				F1C8425B2BD0E8F8006E3789 /* FolderEditView.swift */,
+			);
+			path = FolderEdit;
+			sourceTree = "<group>";
+		};
+		F1C842632BD0FB39006E3789 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				F119A22A2BD51DF800F2FFAF /* Views */,
+				F1C842642BD0FB46006E3789 /* Localizable.xcstrings */,
+				F119A2242BD3BA4800F2FFAF /* AppBundle.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		F1DBBD542BCD3EFB00D1A58E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F1DBBD552BCD3F0700D1A58E /* HomeViewStore.swift */,
+				F1DBBD572BCD41F600D1A58E /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F1DBBD5B2BCD435F00D1A58E /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				F1DBBD5C2BCD436700D1A58E /* Database.swift */,
+				F1DBBD642BCD4A9A00D1A58E /* FolderDatabase.swift */,
+				F1DBBD682BCD4BDF00D1A58E /* TodoDatabase.swift */,
+				F1023CD62BCF8A750050B0F2 /* SwiftData+Preview.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		F1DBBD5F2BCD479800D1A58E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F1DBBD602BCD47A400D1A58E /* Folder.swift */,
+				F1DBBD622BCD494F00D1A58E /* Todo.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F1DBBD6A2BCD4F3800D1A58E /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				F119A20A2BD3991000F2FFAF /* Setting */,
+				F1FEE59F2BD2B7180002CE89 /* FolderPicker */,
+				F1FEE5982BD28D1B0002CE89 /* Search */,
+				F1FEE58B2BD265BD0002CE89 /* TodoDetail */,
+				F154032C2BD1696100FAF7E3 /* CalendarHome */,
+				F1C842582BD0E33C006E3789 /* FolderEdit */,
+				F1023CDD2BCFE4DB0050B0F2 /* TodoCreate */,
+				F1DBBD802BCE791500D1A58E /* FolderCreate */,
+				F1DBBD772BCD605900D1A58E /* FolderDetail */,
+				F1DBBD722BCD563500D1A58E /* FolderHome */,
+				F1DBBD6B2BCD4F4800D1A58E /* Root */,
+				F1DBBD542BCD3EFB00D1A58E /* Home */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		F1DBBD6B2BCD4F4800D1A58E /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				F1DBBD6C2BCD4F5600D1A58E /* RootViewStore.swift */,
+				F1DBBD6E2BCD4F6F00D1A58E /* RootView.swift */,
+				F1DBBD702BCD500F00D1A58E /* RootTab.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		F1DBBD722BCD563500D1A58E /* FolderHome */ = {
+			isa = PBXGroup;
+			children = (
+				F1DBBD732BCD564800D1A58E /* FolderHomeViewStore.swift */,
+				F1DBBD752BCD567B00D1A58E /* FolderHomeView.swift */,
+			);
+			path = FolderHome;
+			sourceTree = "<group>";
+		};
+		F1DBBD772BCD605900D1A58E /* FolderDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F1DBBD782BCD606700D1A58E /* FolderDetailViewStore.swift */,
+				F1DBBD7A2BCD607B00D1A58E /* FolderDetailView.swift */,
+			);
+			path = FolderDetail;
+			sourceTree = "<group>";
+		};
+		F1DBBD7D2BCD7DBD00D1A58E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F1DBBD7E2BCD7DC900D1A58E /* Color+Init.swift */,
+				F1DBBD852BCE87C300D1A58E /* UIDevice+.swift */,
+				F15403222BD135E900FAF7E3 /* Color+.swift */,
+				F1FEE5892BD226860002CE89 /* Formatter.swift */,
+				F1FEE5902BD27D5B0002CE89 /* Optional+Default.swift */,
+				F1FEE5962BD286E60002CE89 /* QueryView+Init.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F1DBBD802BCE791500D1A58E /* FolderCreate */ = {
+			isa = PBXGroup;
+			children = (
+				F1DBBD812BCE791F00D1A58E /* FolderCreateViewStore.swift */,
+				F1DBBD832BCE793100D1A58E /* FolderCreateView.swift */,
+			);
+			path = FolderCreate;
+			sourceTree = "<group>";
+		};
+		F1FEE58B2BD265BD0002CE89 /* TodoDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F1FEE58C2BD265C50002CE89 /* TodoDetailViewStore.swift */,
+				F1FEE58E2BD266100002CE89 /* TodoDetailView.swift */,
+			);
+			path = TodoDetail;
+			sourceTree = "<group>";
+		};
+		F1FEE5982BD28D1B0002CE89 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				F1FEE5992BD28D260002CE89 /* SearchViewStore.swift */,
+				F1FEE59B2BD28DD10002CE89 /* SearchView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		F1FEE59F2BD2B7180002CE89 /* FolderPicker */ = {
+			isa = PBXGroup;
+			children = (
+				F1FEE5A02BD2B72C0002CE89 /* FolderPickerViewStore.swift */,
+				F1FEE5A22BD2B7690002CE89 /* FolderPickerView.swift */,
+			);
+			path = FolderPicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -90,6 +413,11 @@
 			dependencies = (
 			);
 			name = SimpleNote;
+			packageProductDependencies = (
+				F15427382BCD0F060070D22C /* ComposableArchitecture */,
+				F15403202BD129EB00FAF7E3 /* SwiftDate */,
+				F15403282BD145AB00FAF7E3 /* Lottie */,
+			);
 			productName = SimpleNote;
 			productReference = F15427222BCD0C6C0070D22C /* SimpleNote.app */;
 			productType = "com.apple.product-type.application";
@@ -116,8 +444,14 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = F15427192BCD0C6C0070D22C;
+			packageReferences = (
+				F15427372BCD0F060070D22C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				F154031F2BD129EB00FAF7E3 /* XCRemoteSwiftPackageReference "SwiftDate" */,
+				F15403272BD145AB00FAF7E3 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = F15427232BCD0C6C0070D22C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -134,6 +468,7 @@
 			files = (
 				F154272F2BCD0C6E0070D22C /* Preview Assets.xcassets in Resources */,
 				F154272C2BCD0C6E0070D22C /* Assets.xcassets in Resources */,
+				F1C842652BD0FB46006E3789 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,9 +479,55 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F15427282BCD0C6C0070D22C /* ContentView.swift in Sources */,
-				F154272A2BCD0C6C0070D22C /* Item.swift in Sources */,
-				F15427262BCD0C6C0070D22C /* SimpleNoteApp.swift in Sources */,
+				F1C8425A2BD0E348006E3789 /* FolderEditViewStore.swift in Sources */,
+				F119A20C2BD3991900F2FFAF /* SettingViewStore.swift in Sources */,
+				F1DBBD692BCD4BDF00D1A58E /* TodoDatabase.swift in Sources */,
+				F1DBBD652BCD4A9A00D1A58E /* FolderDatabase.swift in Sources */,
+				F1023CD72BCF8A750050B0F2 /* SwiftData+Preview.swift in Sources */,
+				F1DBBD6D2BCD4F5600D1A58E /* RootViewStore.swift in Sources */,
+				F1FEE5912BD27D5B0002CE89 /* Optional+Default.swift in Sources */,
+				F1DBBD582BCD41F700D1A58E /* HomeView.swift in Sources */,
+				F1C8425C2BD0E8F8006E3789 /* FolderEditView.swift in Sources */,
+				F1FEE59E2BD295F80002CE89 /* FolderView.swift in Sources */,
+				F1DBBD712BCD500F00D1A58E /* RootTab.swift in Sources */,
+				F15403352BD17EDB00FAF7E3 /* AppDelegate.swift in Sources */,
+				F1FEE59C2BD28DD10002CE89 /* SearchView.swift in Sources */,
+				F1FEE5882BD21D880002CE89 /* TodoView.swift in Sources */,
+				F1FEE5A12BD2B72C0002CE89 /* FolderPickerViewStore.swift in Sources */,
+				F1023CDF2BCFE4EB0050B0F2 /* TodoCreateViewStore.swift in Sources */,
+				F119A2272BD3BF7900F2FFAF /* UserDefaultsKey.swift in Sources */,
+				F15403232BD135E900FAF7E3 /* Color+.swift in Sources */,
+				F119A2252BD3BA4800F2FFAF /* AppBundle.swift in Sources */,
+				F1FEE59A2BD28D260002CE89 /* SearchViewStore.swift in Sources */,
+				F1FEE58D2BD265C50002CE89 /* TodoDetailViewStore.swift in Sources */,
+				F1DBBD5A2BCD42F900D1A58E /* App.swift in Sources */,
+				F154032B2BD15AE400FAF7E3 /* BoxEmptyView.swift in Sources */,
+				F1DBBD742BCD564800D1A58E /* FolderHomeViewStore.swift in Sources */,
+				F119A20E2BD3997E00F2FFAF /* SettingView.swift in Sources */,
+				F15403332BD17B9F00FAF7E3 /* CalendarDayItem.swift in Sources */,
+				F1DBBD842BCE793100D1A58E /* FolderCreateView.swift in Sources */,
+				F1FEE58F2BD266100002CE89 /* TodoDetailView.swift in Sources */,
+				F1FEE5972BD286E60002CE89 /* QueryView+Init.swift in Sources */,
+				F1FEE5A32BD2B7690002CE89 /* FolderPickerView.swift in Sources */,
+				F1FEE5952BD286770002CE89 /* QueryView.swift in Sources */,
+				F1DBBD632BCD494F00D1A58E /* Todo.swift in Sources */,
+				F119A22E2BD5225900F2FFAF /* PlusButton.swift in Sources */,
+				F1023CE12BCFE5360050B0F2 /* TodoCreateView.swift in Sources */,
+				F1DBBD762BCD567B00D1A58E /* FolderHomeView.swift in Sources */,
+				F1DBBD562BCD3F0700D1A58E /* HomeViewStore.swift in Sources */,
+				F119A22C2BD51E0300F2FFAF /* NavigationBar.swift in Sources */,
+				F1DBBD7F2BCD7DCA00D1A58E /* Color+Init.swift in Sources */,
+				F1DBBD6F2BCD4F6F00D1A58E /* RootView.swift in Sources */,
+				F1DBBD7B2BCD607B00D1A58E /* FolderDetailView.swift in Sources */,
+				F1DBBD822BCE791F00D1A58E /* FolderCreateViewStore.swift in Sources */,
+				F1DBBD5D2BCD436700D1A58E /* Database.swift in Sources */,
+				F1DBBD792BCD606700D1A58E /* FolderDetailViewStore.swift in Sources */,
+				F119A2212BD3AB8600F2FFAF /* SettingItem.swift in Sources */,
+				F1FEE58A2BD226860002CE89 /* Formatter.swift in Sources */,
+				F15403302BD16D7800FAF7E3 /* CalendarHomeView.swift in Sources */,
+				F154032E2BD1696C00FAF7E3 /* CalendarHomeViewStore.swift in Sources */,
+				F1DBBD612BCD47A400D1A58E /* Folder.swift in Sources */,
+				F1DBBD862BCE87C300D1A58E /* UIDevice+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +666,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SimpleNote/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SimpleNote;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -294,7 +677,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = hogumachu.SimpleNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -316,6 +699,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SimpleNote/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SimpleNote;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -325,7 +710,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = hogumachu.SimpleNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -356,6 +741,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F154031F2BD129EB00FAF7E3 /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/SwiftDate";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		F15403272BD145AB00FAF7E3 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.3;
+			};
+		};
+		F15427372BCD0F060070D22C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F15403202BD129EB00FAF7E3 /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F154031F2BD129EB00FAF7E3 /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
+		};
+		F15403282BD145AB00FAF7E3 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F15403272BD145AB00FAF7E3 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		F15427382BCD0F060070D22C /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F15427372BCD0F060070D22C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F154271A2BCD0C6C0070D22C /* Project object */;
 }
