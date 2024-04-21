@@ -23,25 +23,28 @@ struct TodoCreateView: View {
         navigationBar
           .padding(.horizontal, 20)
         
-        todoTextField
-          .focused($isFocused)
-          .padding(.horizontal, 20)
-        
-        datePicker
-          .padding(.top, 10)
-          .padding(.horizontal, 20)
-          .frame(maxWidth: .infinity)
-        
-        folderPicker
-          .padding(.top, 10)
-          .padding(.horizontal, 20)
-          .frame(maxWidth: .infinity)
-        
-        Spacer()
-        
-        createButton
-          .padding(.horizontal, 10)
-          .safeAreaPadding(.bottom, 20)
+        ScrollView {
+          todoTextField
+            .focused($isFocused)
+            .padding(.horizontal, 20)
+          
+          datePicker
+            .padding(.top, 10)
+            .padding(.horizontal, 20)
+            .frame(maxWidth: .infinity)
+          
+          folderPicker
+            .padding(.top, 10)
+            .padding(.horizontal, 20)
+            .frame(maxWidth: .infinity)
+          
+          Spacer()
+        }
+        .safeAreaInset(edge: .bottom) {
+          createButton
+            .padding(.horizontal, 10)
+            .padding(.bottom, 20)
+        }
       }
       .navigationDestination(item: $store.scope(state: \.folderPicker, action: \.folderPicker)) {
         FolderPickerView(store: $0)

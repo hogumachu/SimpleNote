@@ -19,6 +19,26 @@ extension QueryView where T == Todo {
   }
   
   init(
+    greaterThan greaterDate: Date,
+    lessThan lessDate: Date,
+    hideCompleteTodo: Bool,
+    @ViewBuilder content: @escaping ([T]) -> Content
+  ) {
+    let predicate: Predicate = Todo.predicate(
+      greaterThan: greaterDate,
+      lessThan: lessDate,
+      hideCompleteTodo: hideCompleteTodo
+    )
+    self.init(
+      descriptor: .init(
+        predicate: predicate,
+        sortBy: [.init(\.targetDate)]
+      ),
+      content: content
+    )
+  }
+  
+  init(
     isSameDayAs date: Date,
     hideCompleteTodo: Bool,
     @ViewBuilder content: @escaping ([T]) -> Content

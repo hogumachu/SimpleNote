@@ -22,27 +22,29 @@ struct TodoDetailView: View {
         navigationBar
           .padding(.horizontal, 10)
         
-        todoTextField
-          .padding(.horizontal, 20)
-        
-        datePicker
-          .padding(.top, 10)
-          .padding(.horizontal, 20)
-          .frame(maxWidth: .infinity)
-        
-        folderPicker
-          .padding(.top, 10)
-          .padding(.horizontal, 20)
-          .frame(maxWidth: .infinity)
-        
-        Spacer()
-        
-        HStack {
-          deleteButton
-          editButton
+        ScrollView {
+          todoTextField
+            .padding(.horizontal, 20)
+          
+          datePicker
+            .padding(.top, 10)
+            .padding(.horizontal, 20)
+            .frame(maxWidth: .infinity)
+          
+          folderPicker
+            .padding(.top, 10)
+            .padding(.horizontal, 20)
+            .frame(maxWidth: .infinity)
+          
+          Spacer()
+        }.safeAreaInset(edge: .bottom) {
+          HStack {
+            deleteButton
+            editButton
+          }
+          .padding(.horizontal, 10)
+          .padding(.bottom, 20)
         }
-        .padding(.horizontal, 10)
-        .safeAreaPadding(.bottom, 20)
       }
       .navigationDestination(item: $store.scope(state: \.folderPicker, action: \.folderPicker)) {
         FolderPickerView(store: $0)

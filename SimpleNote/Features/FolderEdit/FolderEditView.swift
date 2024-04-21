@@ -23,23 +23,25 @@ struct FolderEditView: View {
       navigationBar
         .padding(.horizontal, 10)
       
-      folderTextField
-        .focused($isFocused)
+      ScrollView {
+        folderTextField
+          .focused($isFocused)
+          .padding(.horizontal, 20)
+        
+        ColorView(color: $store.color)
+        .padding(.top, 10)
         .padding(.horizontal, 20)
-      
-      ColorView(color: $store.color)
-      .padding(.top, 10)
-      .padding(.horizontal, 20)
-      .frame(maxWidth: .infinity, alignment: .leading)
-      
-      Spacer()
-      
-      HStack {
-        deleteButton
-        editButton
+        .frame(maxWidth: .infinity, alignment: .leading)
+        
+        Spacer()
+      }.safeAreaInset(edge: .bottom) {
+        HStack {
+          deleteButton
+          editButton
+        }
+        .padding(.horizontal, 10)
+        .padding(.bottom, 20)
       }
-      .padding(.horizontal, 10)
-      .safeAreaPadding(.bottom, 20)
     }
     .onAppear {
       isFocused = true

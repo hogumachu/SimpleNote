@@ -32,6 +32,9 @@ struct FolderDetailView: View {
           
           listView
             .padding(.horizontal, 20)
+          
+          Spacer()
+            .padding(40)
         }
       }
       .background(.background)
