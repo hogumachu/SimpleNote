@@ -5,6 +5,7 @@
 //  Created by 홍성준 on 4/15/24.
 //
 
+import Entity
 import Foundation
 import ThirdPartyKit
 
