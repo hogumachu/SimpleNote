@@ -5,7 +5,7 @@
 //  Created by 홍성준 on 4/15/24.
 //
 
-import BaseFeature
+import FeatureKit
 import SwiftData
 import SwiftUI
 
@@ -26,7 +26,7 @@ struct FolderHomeView: View {
       path: $store.scope(state: \.path, action: \.path)
     ) {
       VStack(alignment: .leading, spacing: 0) {
-        NavigationBar(style: .titleOnly("Folder"))
+        NavigationBar(style: .titleOnly(LocalString("Folder", bundle: .module)))
           .padding(.horizontal, 20)
         
         Divider()
@@ -59,13 +59,13 @@ private extension FolderHomeView {
           store.send(.addButtonTapped)
         } label: {
           VStack(spacing: 10) {
-            Image(.plus)
+            Image(.Plus)
               .resizable()
               .renderingMode(.template)
               .frame(width: 30, height: 30)
               .foregroundStyle(.blue)
             
-            Text("New folder")
+            Text("New folder", bundle: .module)
               .font(.body)
               .foregroundStyle(.blue)
           }
@@ -82,7 +82,7 @@ private extension FolderHomeView {
           NavigationLink(state: FolderDetailViewStore.State(folder: folder)) {
             HStack {
               VStack(spacing: 12) {
-                Image(.folderFill)
+                Image(.FolderFill)
                   .resizable()
                   .renderingMode(.template)
                   .aspectRatio(contentMode: .fit)
@@ -94,7 +94,7 @@ private extension FolderHomeView {
                     .font(.headline)
                     .foregroundStyle(Color(uiColor: .label))
                   
-                  Text("\((folder.todos ?? []).count) todos")
+                  Text("\((folder.todos ?? []).count) todos", bundle: .module)
                     .font(.caption)
                     .foregroundStyle(Color.gray)
                 }
@@ -113,7 +113,7 @@ private extension FolderHomeView {
         NavigationLink(state: FolderDetailViewStore.State(folder: nil)) {
           HStack {
             VStack(spacing: 12) {
-              Image(.folderFill)
+              Image(.FolderFill)
                 .resizable()
                 .renderingMode(.template)
                 .aspectRatio(contentMode: .fit)
@@ -121,11 +121,11 @@ private extension FolderHomeView {
                 .foregroundStyle(.gray)
               
               VStack(spacing: 3) {
-                Text("None")
+                Text("None", bundle: .module)
                   .font(.headline)
                   .foregroundStyle(Color(uiColor: .label))
                 
-                Text("\(emptyFolderTodos.count) todos")
+                Text("\(emptyFolderTodos.count) todos", bundle: .module)
                   .font(.caption)
                   .foregroundStyle(Color.gray)
               }

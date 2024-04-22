@@ -5,6 +5,7 @@
 //  Created by 홍성준 on 4/18/24.
 //
 
+import BaseFeature
 import Lottie
 import SwiftUI
 
@@ -14,35 +15,35 @@ enum EmptyViewState {
   case emptyTodo
   case emptyTodoForToday
   
-  var title: LocalizedStringResource {
+  var title: String {
     switch self {
     case .emptyFolder:
-      return .init(stringLiteral: "Empty")
+      return LocalString("Empty", bundle: .module)
       
     case .emptyFolderWithCreateDescription:
-      return .init(stringLiteral: "There is no folder")
+      return LocalString("There is no folder", bundle: .module)
       
     case .emptyTodo:
-      return .init(stringLiteral: "Empty")
+      return LocalString("Empty", bundle: .module)
       
     case .emptyTodoForToday:
-      return .init(stringLiteral: "Empty")
+      return LocalString("Empty", bundle: .module)
     }
   }
   
-  var subtitle: LocalizedStringResource {
+  var subtitle: String {
     switch self {
     case .emptyFolder:
-      return .init(stringLiteral: "There is no folder")
+      return LocalString("There is no folder", bundle: .module)
       
     case .emptyFolderWithCreateDescription:
-      return .init(stringLiteral: "You can create folders in the folder tab")
+      return LocalString("You can create folders in the folder tab", bundle: .module)
       
     case .emptyTodo:
-      return .init(stringLiteral: "There is nothing todo")
+      return LocalString("There is nothing todo", bundle: .module)
       
     case .emptyTodoForToday:
-      return .init(stringLiteral: "There are no todos for today")
+      return LocalString("There are no todos for today", bundle: .module)
     }
   }
 }
@@ -57,7 +58,7 @@ struct BoxEmptyView: View {
   
   var body: some View {
     VStack {
-      LottieView(animation: .named("empty-box"))
+      LottieView(animation: .named("empty-box", bundle: .base))
         .playing(loopMode: .playOnce)
         .frame(maxHeight: 250)
       

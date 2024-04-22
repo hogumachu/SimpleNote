@@ -5,7 +5,7 @@
 //  Created by 홍성준 on 4/15/24.
 //
 
-import BaseFeature
+import FeatureKit
 import SwiftData
 import SwiftUI
 
@@ -68,7 +68,7 @@ private extension FolderDetailView {
       Button {
         store.send(.closeTapped)
       } label: {
-        Image(.arrowLeft)
+        Image(.ArrowLeft)
           .resizable()
           .renderingMode(.template)
           .aspectRatio(contentMode: .fit)
@@ -82,7 +82,7 @@ private extension FolderDetailView {
         Button {
           store.send(.editTapped)
         } label: {
-          Image(.pencilSimple)
+          Image(.PencilSimple)
             .resizable()
             .renderingMode(.template)
             .aspectRatio(contentMode: .fit)
@@ -104,7 +104,7 @@ private extension FolderDetailView {
           .font(.headline)
           .foregroundStyle(.primary)
       } else {
-        Text("None")
+        Text("None", bundle: .module)
           .padding(.top, 20)
           .padding(.horizontal, 20)
           .frame(maxWidth: .infinity, alignment: .leading)
@@ -112,7 +112,7 @@ private extension FolderDetailView {
           .foregroundStyle(.primary)
       }
       
-      Text("\(todos.filter { $0.isComplete.orFalse }.count)/\(todos.count) task done")
+      Text("\(todos.filter { $0.isComplete.orFalse }.count)/\(todos.count) task done", bundle: .module)
         .padding(.horizontal, 20)
         .padding(.bottom, todos.isEmpty ? 20 : 10)
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -152,7 +152,7 @@ private extension FolderDetailView {
       Button {
         store.send(.checkTapped(todo), animation: .default)
       } label: {
-        Image(todo.isComplete.orFalse ? .checkCircleFill : .circle)
+        Image(todo.isComplete.orFalse ? .CheckCircleFill : .Circle)
           .resizable()
           .renderingMode(.template)
           .frame(width: 30, height: 30)
@@ -177,7 +177,7 @@ private extension FolderDetailView {
       Button {
         store.send(.deleteTapped(todo), animation: .easeInOut)
       } label: {
-        Image(.trash)
+        Image(.Trash)
           .resizable()
           .renderingMode(.template)
           .frame(width: 25, height: 25)

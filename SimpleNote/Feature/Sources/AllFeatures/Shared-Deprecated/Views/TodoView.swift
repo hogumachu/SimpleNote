@@ -28,7 +28,7 @@ struct TodoView: View {
     HStack {
       VStack(alignment: .leading) {
         HStack(spacing: 3) {
-          Image(.folderFill)
+          Image(.FolderFill)
             .resizable()
             .renderingMode(.template)
             .aspectRatio(contentMode: .fit)
@@ -40,7 +40,7 @@ struct TodoView: View {
               .font(.callout)
               .foregroundStyle(Color(hexOrGray: todo.folder?.hexColor))
           } else {
-            Text("None")
+            Text("None", bundle: .module)
               .font(.callout)
               .foregroundStyle(Color(hexOrGray: todo.folder?.hexColor))
           }
@@ -62,7 +62,7 @@ struct TodoView: View {
           checkTapped(todo)
         }
       } label: {
-        Image(todo.isComplete.orFalse ? .checkCircleFill : .circle)
+        Image(todo.isComplete.orFalse ? .CheckCircleFill : .Circle)
           .resizable()
           .renderingMode(.template)
           .frame(width: 30, height: 30)

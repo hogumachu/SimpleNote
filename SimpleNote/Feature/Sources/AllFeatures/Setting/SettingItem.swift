@@ -5,7 +5,7 @@
 //  Created by 홍성준 on 4/20/24.
 //
 
-import Foundation
+import FeatureKit
 import SwiftUI
 
 enum SettingItem: Equatable, Identifiable {
@@ -16,16 +16,16 @@ enum SettingItem: Equatable, Identifiable {
   case version
   case deleteAll
   
-  var title: LocalizedStringKey {
+  var title: String {
     switch self {
     case .hideCompleteTodo:
-      return .init(stringLiteral: "Hiding completed todos")
+      return LocalString("Hiding completed todos", bundle: .module)
       
     case .version:
-      return .init(stringLiteral: "App Version")
+      return LocalString("App Version", bundle: .module)
       
     case .deleteAll:
-      return .init(stringLiteral: "Delete all data")
+      return LocalString("Delete all data", bundle: .module)
     }
   }
   

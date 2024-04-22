@@ -5,7 +5,7 @@
 //  Created by 홍성준 on 4/19/24.
 //
 
-import BaseFeature
+import FeatureKit
 import SwiftUI
 
 struct TodoDetailView: View {
@@ -63,7 +63,7 @@ struct TodoDetailView: View {
 private extension TodoDetailView {
   
   var todoTextField: some View {
-    TextField("Type todo", text: $store.todo)
+    TextField(LocalString("Type todo", bundle: .module), text: $store.todo)
       .font(.largeTitle)
   }
   
@@ -73,7 +73,7 @@ private extension TodoDetailView {
         selection: $store.targetDate,
         displayedComponents: .date,
         label: {
-          Text("Select Target Date")
+          Text("Select Target Date", bundle: .module)
         }
       )
     }
@@ -88,7 +88,7 @@ private extension TodoDetailView {
     Button {
       store.send(.deleteTapped)
     } label: {
-      Text("Delete")
+      Text("Delete", bundle: .module)
         .frame(maxWidth: .infinity)
         .foregroundStyle(.background)
         .font(.headline)
@@ -105,13 +105,13 @@ private extension TodoDetailView {
       store.send(.folderTapped)
     } label: {
       HStack {
-        Text("Selected folder")
+        Text("Selected folder", bundle: .module)
           .font(.body)
           .foregroundStyle(.foreground)
         
         Spacer()
         
-        Image(.folderFill)
+        Image(.FolderFill)
           .resizable()
           .renderingMode(.template)
           .aspectRatio(contentMode: .fit)
@@ -123,7 +123,7 @@ private extension TodoDetailView {
             .font(.body)
             .foregroundStyle(.foreground)
         } else {
-          Text("None")
+          Text("None", bundle: .module)
             .font(.body)
             .foregroundStyle(.foreground)
         }
@@ -141,7 +141,7 @@ private extension TodoDetailView {
     Button {
       store.send(.editTapped)
     } label: {
-      Text("Edit")
+      Text("Edit", bundle: .module)
         .frame(maxWidth: .infinity)
         .foregroundStyle(.background)
         .font(.headline)

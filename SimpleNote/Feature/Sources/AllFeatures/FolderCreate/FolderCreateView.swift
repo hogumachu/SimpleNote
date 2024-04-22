@@ -5,7 +5,8 @@
 //  Created by 홍성준 on 4/16/24.
 //
 
-import BaseFeature
+import FeatureKit
+import Foundation
 import SwiftUI
 
 struct FolderCreateView: View {
@@ -54,7 +55,7 @@ struct FolderCreateView: View {
 private extension FolderCreateView {
   
   var folderTextField: some View {
-    TextField("Type folder title", text: $store.title)
+    TextField(LocalString("Type folder title", bundle: .module), text: $store.title)
       .font(.largeTitle)
   }
   
@@ -62,7 +63,7 @@ private extension FolderCreateView {
     Button {
       store.send(.createTapped)
     } label: {
-      Text("Create")
+      Text("Create", bundle: .module)
         .frame(maxWidth: .infinity)
         .foregroundStyle(.background)
         .font(.headline)
@@ -85,7 +86,7 @@ private extension FolderCreateView {
         ColorPicker(
           selection: $color,
           label: {
-            Text("Select Color")
+            Text("Select Color", bundle: .module)
               .foregroundStyle(.foreground)
           }
         )

@@ -2,7 +2,6 @@
   "sourceLanguage" : "en",
   "strings" : {
     "%@" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -18,8 +17,10 @@
         }
       }
     },
+    "%lld" : {
+
+    },
     "%lld todos" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -30,7 +31,6 @@
       }
     },
     "%lld/%lld task done" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -41,7 +41,6 @@
       }
     },
     "App Version" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -52,7 +51,6 @@
       }
     },
     "Calendar" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -63,7 +61,6 @@
       }
     },
     "Cancel" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -74,7 +71,6 @@
       }
     },
     "Create" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -85,7 +81,6 @@
       }
     },
     "Data once deleted cannot be recovered" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -96,7 +91,6 @@
       }
     },
     "Delete" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -107,7 +101,6 @@
       }
     },
     "Delete all data" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -118,7 +111,6 @@
       }
     },
     "Delete folder" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -129,7 +121,6 @@
       }
     },
     "Edit" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -140,7 +131,6 @@
       }
     },
     "Empty" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -168,7 +158,6 @@
       }
     },
     "Hiding completed todos" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -190,7 +179,6 @@
       }
     },
     "If you delete the folder, the data inside will be erased together." : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -201,7 +189,6 @@
       }
     },
     "New folder" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -223,7 +210,6 @@
       }
     },
     "Please enter a search term" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -234,7 +220,6 @@
       }
     },
     "Select Color" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -245,7 +230,6 @@
       }
     },
     "Select Target Date" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -267,7 +251,6 @@
       }
     },
     "There are no todos for today" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -289,7 +272,6 @@
       }
     },
     "There is no matching folder" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -300,7 +282,6 @@
       }
     },
     "There is no matching todos" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -322,7 +303,6 @@
       }
     },
     "Today" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -333,7 +313,6 @@
       }
     },
     "Today's todos" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -344,7 +323,6 @@
       }
     },
     "Todo" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -355,7 +333,6 @@
       }
     },
     "Type folder title" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -366,7 +343,6 @@
       }
     },
     "Type todo" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -377,7 +353,6 @@
       }
     },
     "Uncompleted previous todos" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -388,7 +363,6 @@
       }
     },
     "Upcoming todos" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {
@@ -399,7 +373,6 @@
       }
     },
     "You can create folders in the folder tab" : {
-      "extractionState" : "stale",
       "localizations" : {
         "ko" : {
           "stringUnit" : {

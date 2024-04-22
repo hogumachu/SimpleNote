@@ -5,7 +5,7 @@
 //  Created by 홍성준 on 4/18/24.
 //
 
-import BaseFeature
+import FeatureKit
 import SwiftData
 import SwiftUI
 
@@ -56,7 +56,7 @@ struct FolderEditView: View {
 private extension FolderEditView {
   
   var folderTextField: some View {
-    TextField("Type folder title", text: $store.title)
+    TextField(LocalString("Type folder title", bundle: .module), text: $store.title)
       .font(.largeTitle)
   }
   
@@ -64,7 +64,7 @@ private extension FolderEditView {
     Button {
       store.send(.deleteTapped)
     } label: {
-      Text("Delete")
+      Text("Delete", bundle: .module)
         .frame(maxWidth: .infinity)
         .foregroundStyle(.background)
         .font(.headline)
@@ -80,7 +80,7 @@ private extension FolderEditView {
     Button {
       store.send(.editTapped)
     } label: {
-      Text("Edit")
+      Text("Edit", bundle: .module)
         .frame(maxWidth: .infinity)
         .foregroundStyle(.background)
         .font(.headline)
@@ -101,7 +101,7 @@ private extension FolderEditView {
         ColorPicker(
           selection: $color,
           label: {
-            Text("Select Color")
+            Text("Select Color", bundle: .module)
               .foregroundStyle(.foreground)
           }
         )

@@ -5,11 +5,16 @@ import PackageDescription
 
 let package = Package(
   name: "Feature",
+  defaultLocalization: "en",
   platforms: [.iOS(.v17)],
   products: [
     .library(
       name: "BaseFeature",
       targets: ["BaseFeature"]
+    ),
+    .library(
+      name: "FeatureKit",
+      targets: ["FeatureKit"]
     ),
     .library(
       name: "AllFeatures",
@@ -26,12 +31,21 @@ let package = Package(
       dependencies: [
         .product(name: "Storage", package: "Service"),
         .product(name: "ThirdPartyKit", package: "Shared"),
+      ],
+      resources: [
+        .process("Resources")
+      ]
+    ),
+    .target(
+      name: "FeatureKit",
+      dependencies: [
+        "BaseFeature"
       ]
     ),
     .target(
       name: "AllFeatures",
       dependencies: [
-        "BaseFeature"
+        "FeatureKit"
       ],
       resources: [
         .process("Resources")

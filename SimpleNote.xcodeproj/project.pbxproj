@@ -10,7 +10,6 @@
 		F10065E62BD695CF00D8A620 /* Entity in Frameworks */ = {isa = PBXBuildFile; productRef = F10065E52BD695CF00D8A620 /* Entity */; };
 		F10065E82BD6986800D8A620 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = F10065E72BD6986800D8A620 /* Storage */; };
 		F10065EB2BD69C1400D8A620 /* AllFeatures in Frameworks */ = {isa = PBXBuildFile; productRef = F10065EA2BD69C1400D8A620 /* AllFeatures */; };
-		F10065ED2BD69F2000D8A620 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F10065EC2BD69EB300D8A620 /* Localizable.xcstrings */; };
 		F15403352BD17EDB00FAF7E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15403342BD17EDB00FAF7E3 /* AppDelegate.swift */; };
 		F154272C2BCD0C6E0070D22C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F154272B2BCD0C6E0070D22C /* Assets.xcassets */; };
 		F154272F2BCD0C6E0070D22C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F154272E2BCD0C6E0070D22C /* Preview Assets.xcassets */; };
@@ -20,7 +19,6 @@
 
 /* Begin PBXFileReference section */
 		F10065E92BD69B4500D8A620 /* Feature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Feature; path = SimpleNote/Feature; sourceTree = "<group>"; };
-		F10065EC2BD69EB300D8A620 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F15403342BD17EDB00FAF7E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F15427222BCD0C6C0070D22C /* SimpleNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F154272B2BCD0C6E0070D22C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,7 +68,6 @@
 		F15427242BCD0C6C0070D22C /* SimpleNote */ = {
 			isa = PBXGroup;
 			children = (
-				F10065EC2BD69EB300D8A620 /* Localizable.xcstrings */,
 				F154273A2BCD0F260070D22C /* App */,
 				F154272B2BCD0C6E0070D22C /* Assets.xcassets */,
 				F15427302BCD0C6E0070D22C /* SimpleNote.entitlements */,
@@ -173,7 +170,6 @@
 			files = (
 				F154272F2BCD0C6E0070D22C /* Preview Assets.xcassets in Resources */,
 				F154272C2BCD0C6E0070D22C /* Assets.xcassets in Resources */,
-				F10065ED2BD69F2000D8A620 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
