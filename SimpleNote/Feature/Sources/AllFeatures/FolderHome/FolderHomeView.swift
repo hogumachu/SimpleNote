@@ -5,7 +5,7 @@
 //  Created by 홍성준 on 4/15/24.
 //
 
-import BaseFeature
+import FeatureKit
 import SwiftData
 import SwiftUI
 
@@ -59,7 +59,7 @@ private extension FolderHomeView {
           store.send(.addButtonTapped)
         } label: {
           VStack(spacing: 10) {
-            Image(.plus)
+            Image(.Plus)
               .resizable()
               .renderingMode(.template)
               .frame(width: 30, height: 30)
@@ -82,7 +82,7 @@ private extension FolderHomeView {
           NavigationLink(state: FolderDetailViewStore.State(folder: folder)) {
             HStack {
               VStack(spacing: 12) {
-                Image(.folderFill)
+                Image(.FolderFill)
                   .resizable()
                   .renderingMode(.template)
                   .aspectRatio(contentMode: .fit)
@@ -113,7 +113,7 @@ private extension FolderHomeView {
         NavigationLink(state: FolderDetailViewStore.State(folder: nil)) {
           HStack {
             VStack(spacing: 12) {
-              Image(.folderFill)
+              Image(.FolderFill)
                 .resizable()
                 .renderingMode(.template)
                 .aspectRatio(contentMode: .fit)

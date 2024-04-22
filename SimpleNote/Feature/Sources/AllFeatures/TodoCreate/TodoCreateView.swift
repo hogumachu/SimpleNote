@@ -5,7 +5,7 @@
 //  Created by 홍성준 on 4/17/24.
 //
 
-import BaseFeature
+import FeatureKit
 import SwiftUI
 
 struct TodoCreateView: View {
@@ -101,7 +101,7 @@ private extension TodoCreateView {
         
         Spacer()
         
-        Image(.folderFill)
+        Image(.FolderFill)
           .resizable()
           .renderingMode(.template)
           .aspectRatio(contentMode: .fit)

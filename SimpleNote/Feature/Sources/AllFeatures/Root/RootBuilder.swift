@@ -5,7 +5,7 @@
 //  Created by 홍성준 on 4/22/24.
 //
 
-import BaseFeature
+import FeatureKit
 import SwiftUI
 
 /// 현재 Feature에 모듈화 진행이 미흡한 상황이라 생성한 빌더

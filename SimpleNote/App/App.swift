@@ -6,7 +6,7 @@
 //
 
 import AllFeatures
-import BaseFeature
+import FeatureKit
 import SwiftData
 import SwiftUI
 

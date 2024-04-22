@@ -5,6 +5,7 @@
 //  Created by 홍성준 on 4/15/24.
 //
 
+import FeatureKit
 import SwiftUI
 
 enum RootTab {
@@ -23,15 +24,15 @@ enum RootTab {
   var image: Image {
     switch self {
     case .home: 
-      return Image(.house)
+      return Image(.House)
         .renderingMode(.template)
       
     case .calendar:
-      return Image(.calendarDots)
+      return Image(.CalendarDots)
         .renderingMode(.template)
       
     case .folder:
-      return Image(.folders)
+      return Image(.Folders)
         .renderingMode(.template)
     }
   }
@@ -39,15 +40,15 @@ enum RootTab {
   var selectedImage: Image {
     switch self {
     case .home:
-      return Image(.houseFill)
+      return Image(.HouseFill)
         .renderingMode(.template)
       
     case .calendar:
-      return Image(.calendarDotsFill)
+      return Image(.CalendarDotsFill)
         .renderingMode(.template)
       
     case .folder:
-      return Image(.foldersFill)
+      return Image(.FoldersFill)
         .renderingMode(.template)
     }
   }

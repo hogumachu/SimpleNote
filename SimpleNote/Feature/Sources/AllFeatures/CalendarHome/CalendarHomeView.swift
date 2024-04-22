@@ -5,7 +5,7 @@
 //  Created by 홍성준 on 4/19/24.
 //
 
-import BaseFeature
+import FeatureKit
 import SwiftData
 import SwiftUI
 
@@ -86,7 +86,7 @@ private extension CalendarHomeView {
       
       Spacer()
       
-      Image(.calendarDots)
+      Image(.CalendarDots)
         .resizable()
         .renderingMode(.template)
         .frame(width: 30, height: 30)
@@ -157,7 +157,7 @@ private extension CalendarHomeView {
         .font(.headline)
         .foregroundStyle(.foreground)
       
-      Image(.caretRight)
+      Image(.CaretRight)
         .resizable()
         .renderingMode(.template)
         .aspectRatio(contentMode: .fit)

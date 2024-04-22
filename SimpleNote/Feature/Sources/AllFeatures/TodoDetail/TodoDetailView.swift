@@ -5,7 +5,7 @@
 //  Created by 홍성준 on 4/19/24.
 //
 
-import BaseFeature
+import FeatureKit
 import SwiftUI
 
 struct TodoDetailView: View {
@@ -111,7 +111,7 @@ private extension TodoDetailView {
         
         Spacer()
         
-        Image(.folderFill)
+        Image(.FolderFill)
           .resizable()
           .renderingMode(.template)
           .aspectRatio(contentMode: .fit)

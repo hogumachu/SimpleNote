@@ -5,7 +5,7 @@
 //  Created by 홍성준 on 4/19/24.
 //
 
-import BaseFeature
+import FeatureKit
 import SwiftUI
 
 struct SearchView: View {
@@ -57,7 +57,7 @@ private extension SearchView {
       Button {
         store.send(.closeTapped)
       } label: {
-        Image(.arrowLeft)
+        Image(.ArrowLeft)
           .resizable()
           .renderingMode(.template)
           .frame(width: 30, height: 30)
@@ -67,7 +67,7 @@ private extension SearchView {
       Spacer()
       
       HStack(alignment: .top) {
-        Image(.magnifyingGlass)
+        Image(.MagnifyingGlass)
           .resizable()
           .renderingMode(.template)
           .foregroundStyle(.foreground)

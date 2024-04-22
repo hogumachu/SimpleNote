@@ -5,7 +5,7 @@
 //  Created by 홍성준 on 4/19/24.
 //
 
-import Entity
+import FeatureKit
 import SwiftUI
 
 struct FolderView: View {
@@ -23,7 +23,7 @@ struct FolderView: View {
   
   var body: some View {
     HStack {
-      Image(.folderFill)
+      Image(.FolderFill)
         .resizable()
         .renderingMode(.template)
         .aspectRatio(contentMode: .fit)

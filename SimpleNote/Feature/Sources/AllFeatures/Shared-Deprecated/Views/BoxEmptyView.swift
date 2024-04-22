@@ -5,6 +5,7 @@
 //  Created by 홍성준 on 4/18/24.
 //
 
+import BaseFeature
 import Lottie
 import SwiftUI
 
@@ -57,7 +58,7 @@ struct BoxEmptyView: View {
   
   var body: some View {
     VStack {
-      LottieView(animation: .named("empty-box"))
+      LottieView(animation: .named("empty-box", bundle: .base))
         .playing(loopMode: .playOnce)
         .frame(maxHeight: 250)
       

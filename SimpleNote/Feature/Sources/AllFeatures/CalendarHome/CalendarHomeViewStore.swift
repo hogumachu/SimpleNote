@@ -5,7 +5,7 @@
 //  Created by 홍성준 on 4/18/24.
 //
 
-import BaseFeature
+import FeatureKit
 import Foundation
 import SwiftData
 

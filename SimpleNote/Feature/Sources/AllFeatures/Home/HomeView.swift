@@ -5,7 +5,7 @@
 //  Created by 홍성준 on 4/15/24.
 //
 
-import BaseFeature
+import FeatureKit
 import SwiftData
 import SwiftUI
 
@@ -26,7 +26,7 @@ struct HomeView: View {
     ) {
       ZStack {
         VStack(spacing: 0) {
-          NavigationBar(style: .titleWithButton("Home", .gearFill)) {
+          NavigationBar(style: .titleWithButton("Home", .GearFill)) {
             store.send(.settingTapped)
           }
           .padding(.horizontal, 20)
@@ -98,7 +98,7 @@ private extension HomeView {
       store.send(.searchTapped)
     } label: {
       HStack {
-        Image(.magnifyingGlass)
+        Image(.MagnifyingGlass)
           .resizable()
           .renderingMode(.template)
           .foregroundStyle(.foreground)

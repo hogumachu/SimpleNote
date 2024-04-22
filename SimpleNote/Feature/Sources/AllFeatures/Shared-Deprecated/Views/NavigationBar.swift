@@ -31,7 +31,7 @@ struct NavigationBar: View {
         Button {
           onTapped?()
         } label: {
-          Image(.arrowLeft)
+          Image(.ArrowLeft)
             .resizable()
             .renderingMode(.template)
             .frame(width: 30, height: 30)
@@ -46,7 +46,7 @@ struct NavigationBar: View {
         Button {
           onTapped?()
         } label: {
-          Image(.X)
+          Image(.Xmark)
             .resizable()
             .renderingMode(.template)
             .aspectRatio(contentMode: .fit)

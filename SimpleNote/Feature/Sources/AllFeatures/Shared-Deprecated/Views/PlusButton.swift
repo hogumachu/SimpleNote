@@ -21,7 +21,7 @@ struct PlusButton: View {
     Button {
       onTapped()
     } label: {
-      Image(.plusCircleFill)
+      Image(.PlusCircleFill)
         .resizable()
         .renderingMode(.template)
         .aspectRatio(contentMode: .fit)
