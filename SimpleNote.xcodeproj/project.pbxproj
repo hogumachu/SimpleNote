@@ -17,9 +17,7 @@
 		F119A2272BD3BF7900F2FFAF /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F119A2262BD3BF7900F2FFAF /* UserDefaultsKey.swift */; };
 		F119A22C2BD51E0300F2FFAF /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F119A22B2BD51E0300F2FFAF /* NavigationBar.swift */; };
 		F119A22E2BD5225900F2FFAF /* PlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F119A22D2BD5225900F2FFAF /* PlusButton.swift */; };
-		F15403212BD129EB00FAF7E3 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = F15403202BD129EB00FAF7E3 /* SwiftDate */; };
 		F15403232BD135E900FAF7E3 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15403222BD135E900FAF7E3 /* Color+.swift */; };
-		F15403292BD145AB00FAF7E3 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = F15403282BD145AB00FAF7E3 /* Lottie */; };
 		F154032B2BD15AE400FAF7E3 /* BoxEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F154032A2BD15AE400FAF7E3 /* BoxEmptyView.swift */; };
 		F154032E2BD1696C00FAF7E3 /* CalendarHomeViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F154032D2BD1696C00FAF7E3 /* CalendarHomeViewStore.swift */; };
 		F15403302BD16D7800FAF7E3 /* CalendarHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F154032F2BD16D7800FAF7E3 /* CalendarHomeView.swift */; };
@@ -27,7 +25,7 @@
 		F15403352BD17EDB00FAF7E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15403342BD17EDB00FAF7E3 /* AppDelegate.swift */; };
 		F154272C2BCD0C6E0070D22C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F154272B2BCD0C6E0070D22C /* Assets.xcassets */; };
 		F154272F2BCD0C6E0070D22C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F154272E2BCD0C6E0070D22C /* Preview Assets.xcassets */; };
-		F15427392BCD0F060070D22C /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = F15427382BCD0F060070D22C /* ComposableArchitecture */; };
+		F16380EA2BD6924500BC655B /* ThirdPartyKit in Frameworks */ = {isa = PBXBuildFile; productRef = F16380E92BD6924500BC655B /* ThirdPartyKit */; };
 		F1C8425A2BD0E348006E3789 /* FolderEditViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C842592BD0E348006E3789 /* FolderEditViewStore.swift */; };
 		F1C8425C2BD0E8F8006E3789 /* FolderEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C8425B2BD0E8F8006E3789 /* FolderEditView.swift */; };
 		F1C842652BD0FB46006E3789 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F1C842642BD0FB46006E3789 /* Localizable.xcstrings */; };
@@ -86,6 +84,7 @@
 		F154272E2BCD0C6E0070D22C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F15427302BCD0C6E0070D22C /* SimpleNote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SimpleNote.entitlements; sourceTree = "<group>"; };
 		F15427312BCD0C6E0070D22C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F16380E52BD68E1800BC655B /* Shared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Shared; path = SimpleNote/Shared; sourceTree = "<group>"; };
 		F1C842592BD0E348006E3789 /* FolderEditViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderEditViewStore.swift; sourceTree = "<group>"; };
 		F1C8425B2BD0E8F8006E3789 /* FolderEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderEditView.swift; sourceTree = "<group>"; };
 		F1C842642BD0FB46006E3789 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
@@ -127,9 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F15403212BD129EB00FAF7E3 /* SwiftDate in Frameworks */,
-				F15427392BCD0F060070D22C /* ComposableArchitecture in Frameworks */,
-				F15403292BD145AB00FAF7E3 /* Lottie in Frameworks */,
+				F16380EA2BD6924500BC655B /* ThirdPartyKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,8 +204,10 @@
 		F15427192BCD0C6C0070D22C = {
 			isa = PBXGroup;
 			children = (
+				F16380E52BD68E1800BC655B /* Shared */,
 				F15427242BCD0C6C0070D22C /* SimpleNote */,
 				F15427232BCD0C6C0070D22C /* Products */,
+				F16380E62BD68E8400BC655B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -224,7 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				F119A20F2BD39BC300F2FFAF /* Service */,
-				F1C842632BD0FB39006E3789 /* Shared */,
+				F1C842632BD0FB39006E3789 /* Shared-Deprecated */,
 				F1DBBD7D2BCD7DBD00D1A58E /* Extensions */,
 				F1DBBD6A2BCD4F3800D1A58E /* Features */,
 				F154273A2BCD0F260070D22C /* App */,
@@ -253,6 +252,13 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		F16380E62BD68E8400BC655B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F1C842582BD0E33C006E3789 /* FolderEdit */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,14 +268,14 @@
 			path = FolderEdit;
 			sourceTree = "<group>";
 		};
-		F1C842632BD0FB39006E3789 /* Shared */ = {
+		F1C842632BD0FB39006E3789 /* Shared-Deprecated */ = {
 			isa = PBXGroup;
 			children = (
 				F119A22A2BD51DF800F2FFAF /* Views */,
 				F1C842642BD0FB46006E3789 /* Localizable.xcstrings */,
 				F119A2242BD3BA4800F2FFAF /* AppBundle.swift */,
 			);
-			path = Shared;
+			path = "Shared-Deprecated";
 			sourceTree = "<group>";
 		};
 		F1DBBD542BCD3EFB00D1A58E /* Home */ = {
@@ -414,9 +420,7 @@
 			);
 			name = SimpleNote;
 			packageProductDependencies = (
-				F15427382BCD0F060070D22C /* ComposableArchitecture */,
-				F15403202BD129EB00FAF7E3 /* SwiftDate */,
-				F15403282BD145AB00FAF7E3 /* Lottie */,
+				F16380E92BD6924500BC655B /* ThirdPartyKit */,
 			);
 			productName = SimpleNote;
 			productReference = F15427222BCD0C6C0070D22C /* SimpleNote.app */;
@@ -448,9 +452,6 @@
 			);
 			mainGroup = F15427192BCD0C6C0070D22C;
 			packageReferences = (
-				F15427372BCD0F060070D22C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
-				F154031F2BD129EB00FAF7E3 /* XCRemoteSwiftPackageReference "SwiftDate" */,
-				F15403272BD145AB00FAF7E3 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = F15427232BCD0C6C0070D22C /* Products */;
 			projectDirPath = "";
@@ -742,48 +743,10 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		F154031F2BD129EB00FAF7E3 /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/malcommac/SwiftDate";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
-			};
-		};
-		F15403272BD145AB00FAF7E3 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/airbnb/lottie-ios";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.4.3;
-			};
-		};
-		F15427372BCD0F060070D22C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.9.2;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		F15403202BD129EB00FAF7E3 /* SwiftDate */ = {
+		F16380E92BD6924500BC655B /* ThirdPartyKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F154031F2BD129EB00FAF7E3 /* XCRemoteSwiftPackageReference "SwiftDate" */;
-			productName = SwiftDate;
-		};
-		F15403282BD145AB00FAF7E3 /* Lottie */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F15403272BD145AB00FAF7E3 /* XCRemoteSwiftPackageReference "lottie-ios" */;
-			productName = Lottie;
-		};
-		F15427382BCD0F060070D22C /* ComposableArchitecture */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F15427372BCD0F060070D22C /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
-			productName = ComposableArchitecture;
+			productName = ThirdPartyKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
