@@ -11,10 +11,24 @@ let package = Package(
       name: "Entity",
       targets: ["Entity"]
     ),
+    .library(
+      name: "Storage",
+      targets: ["Storage"]
+    ),
+  ],
+  dependencies: [
+    .package(path: "../Shared")
   ],
   targets: [
     .target(
       name: "Entity"
+    ),
+    .target(
+      name: "Storage",
+      dependencies: [
+        "Entity",
+        .product(name: "ThirdPartyKit", package: "Shared")
+      ]
     ),
   ]
 )

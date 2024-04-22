@@ -10,16 +10,30 @@ import Dependencies
 import Foundation
 import SwiftData
 
-struct FolderDatabase {
-  var fetchAll: @Sendable () throws -> [Folder]
-  var fetch: @Sendable (FetchDescriptor<Folder>) throws -> [Folder]
-  var add: @Sendable (Folder) throws -> Void
-  var delete: @Sendable (Folder) throws -> Void
-  var deleteAll: @Sendable () throws -> Void
+public struct FolderDatabase {
+  public var fetchAll: @Sendable () throws -> [Folder]
+  public var fetch: @Sendable (FetchDescriptor<Folder>) throws -> [Folder]
+  public var add: @Sendable (Folder) throws -> Void
+  public var delete: @Sendable (Folder) throws -> Void
+  public var deleteAll: @Sendable () throws -> Void
+  
+  public init(
+    fetchAll: @Sendable @escaping () throws -> [Folder],
+    fetch: @Sendable @escaping (FetchDescriptor<Folder>) throws -> [Folder],
+    add: @Sendable @escaping (Folder) throws -> Void,
+    delete: @Sendable @escaping (Folder) throws -> Void,
+    deleteAll: @Sendable @escaping () throws -> Void
+  ) {
+    self.fetchAll = fetchAll
+    self.fetch = fetch
+    self.add = add
+    self.delete = delete
+    self.deleteAll = deleteAll
+  }
 }
 
 extension FolderDatabase: DependencyKey {
-  static let liveValue = FolderDatabase(
+  public static let liveValue = FolderDatabase(
     fetchAll: {
       @Dependency(\.database.context) var context
       let folderContext = try context()
@@ -55,7 +69,7 @@ extension FolderDatabase: DependencyKey {
   )
 }
 
-extension DependencyValues {
+public extension DependencyValues {
   var folderDatabase: FolderDatabase {
     get { self[FolderDatabase.self] }
     set { self[FolderDatabase.self] = newValue }

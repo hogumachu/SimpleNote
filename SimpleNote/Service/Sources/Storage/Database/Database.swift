@@ -9,8 +9,12 @@ import Entity
 import Dependencies
 import SwiftData
 
-struct Database {
-  var context: () throws -> ModelContext
+public struct Database {
+  public var context: () throws -> ModelContext
+  
+  public init(context: @escaping () -> ModelContext) {
+    self.context = context
+  }
 }
 
 private let appContext: ModelContext = {
@@ -35,12 +39,12 @@ private let appContext: ModelContext = {
 }()
 
 extension Database: DependencyKey {
-  static let liveValue = Database(
+  public static let liveValue = Database(
     context: { appContext }
   )
 }
 
-extension DependencyValues {
+public extension DependencyValues {
   var database: Database {
     get { self[Database.self] }
     set { self[Database.self] = newValue }
