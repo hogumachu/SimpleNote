@@ -5,6 +5,7 @@
 //  Created by 홍성준 on 4/18/24.
 //
 
+import Entity
 import SwiftUI
 import ThirdPartyKit
 

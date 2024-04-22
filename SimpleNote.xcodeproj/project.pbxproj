@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F10065E62BD695CF00D8A620 /* Entity in Frameworks */ = {isa = PBXBuildFile; productRef = F10065E52BD695CF00D8A620 /* Entity */; };
+		F10065E82BD6986800D8A620 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = F10065E72BD6986800D8A620 /* Storage */; };
 		F1023CD72BCF8A750050B0F2 /* SwiftData+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1023CD62BCF8A750050B0F2 /* SwiftData+Preview.swift */; };
 		F1023CDF2BCFE4EB0050B0F2 /* TodoCreateViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1023CDE2BCFE4EB0050B0F2 /* TodoCreateViewStore.swift */; };
 		F1023CE12BCFE5360050B0F2 /* TodoCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1023CE02BCFE5360050B0F2 /* TodoCreateView.swift */; };
@@ -32,11 +34,6 @@
 		F1DBBD562BCD3F0700D1A58E /* HomeViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD552BCD3F0700D1A58E /* HomeViewStore.swift */; };
 		F1DBBD582BCD41F700D1A58E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD572BCD41F600D1A58E /* HomeView.swift */; };
 		F1DBBD5A2BCD42F900D1A58E /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD592BCD42F900D1A58E /* App.swift */; };
-		F1DBBD5D2BCD436700D1A58E /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD5C2BCD436700D1A58E /* Database.swift */; };
-		F1DBBD612BCD47A400D1A58E /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD602BCD47A400D1A58E /* Folder.swift */; };
-		F1DBBD632BCD494F00D1A58E /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD622BCD494F00D1A58E /* Todo.swift */; };
-		F1DBBD652BCD4A9A00D1A58E /* FolderDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD642BCD4A9A00D1A58E /* FolderDatabase.swift */; };
-		F1DBBD692BCD4BDF00D1A58E /* TodoDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD682BCD4BDF00D1A58E /* TodoDatabase.swift */; };
 		F1DBBD6D2BCD4F5600D1A58E /* RootViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD6C2BCD4F5600D1A58E /* RootViewStore.swift */; };
 		F1DBBD6F2BCD4F6F00D1A58E /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD6E2BCD4F6F00D1A58E /* RootView.swift */; };
 		F1DBBD712BCD500F00D1A58E /* RootTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD702BCD500F00D1A58E /* RootTab.swift */; };
@@ -85,17 +82,13 @@
 		F15427302BCD0C6E0070D22C /* SimpleNote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SimpleNote.entitlements; sourceTree = "<group>"; };
 		F15427312BCD0C6E0070D22C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F16380E52BD68E1800BC655B /* Shared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Shared; path = SimpleNote/Shared; sourceTree = "<group>"; };
+		F16380EC2BD6956000BC655B /* Service */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Service; path = SimpleNote/Service; sourceTree = "<group>"; };
 		F1C842592BD0E348006E3789 /* FolderEditViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderEditViewStore.swift; sourceTree = "<group>"; };
 		F1C8425B2BD0E8F8006E3789 /* FolderEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderEditView.swift; sourceTree = "<group>"; };
 		F1C842642BD0FB46006E3789 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F1DBBD552BCD3F0700D1A58E /* HomeViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewStore.swift; sourceTree = "<group>"; };
 		F1DBBD572BCD41F600D1A58E /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F1DBBD592BCD42F900D1A58E /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
-		F1DBBD5C2BCD436700D1A58E /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
-		F1DBBD602BCD47A400D1A58E /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
-		F1DBBD622BCD494F00D1A58E /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
-		F1DBBD642BCD4A9A00D1A58E /* FolderDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderDatabase.swift; sourceTree = "<group>"; };
-		F1DBBD682BCD4BDF00D1A58E /* TodoDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDatabase.swift; sourceTree = "<group>"; };
 		F1DBBD6C2BCD4F5600D1A58E /* RootViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewStore.swift; sourceTree = "<group>"; };
 		F1DBBD6E2BCD4F6F00D1A58E /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		F1DBBD702BCD500F00D1A58E /* RootTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTab.swift; sourceTree = "<group>"; };
@@ -126,7 +119,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F10065E82BD6986800D8A620 /* Storage in Frameworks */,
 				F16380EA2BD6924500BC655B /* ThirdPartyKit in Frameworks */,
+				F10065E62BD695CF00D8A620 /* Entity in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,22 +147,11 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
-		F119A20F2BD39BC300F2FFAF /* Service */ = {
+		F119A20F2BD39BC300F2FFAF /* Service-Deprecated */ = {
 			isa = PBXGroup;
 			children = (
-				F119A2102BD39C0000F2FFAF /* UserDefaults */,
-				F1DBBD5F2BCD479800D1A58E /* Model */,
-				F1DBBD5B2BCD435F00D1A58E /* Database */,
 			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		F119A2102BD39C0000F2FFAF /* UserDefaults */ = {
-			isa = PBXGroup;
-			children = (
-				F119A2262BD3BF7900F2FFAF /* UserDefaultsKey.swift */,
-			);
-			path = UserDefaults;
+			path = "Service-Deprecated";
 			sourceTree = "<group>";
 		};
 		F119A22A2BD51DF800F2FFAF /* Views */ = {
@@ -204,6 +188,7 @@
 		F15427192BCD0C6C0070D22C = {
 			isa = PBXGroup;
 			children = (
+				F16380EC2BD6956000BC655B /* Service */,
 				F16380E52BD68E1800BC655B /* Shared */,
 				F15427242BCD0C6C0070D22C /* SimpleNote */,
 				F15427232BCD0C6C0070D22C /* Products */,
@@ -222,7 +207,7 @@
 		F15427242BCD0C6C0070D22C /* SimpleNote */ = {
 			isa = PBXGroup;
 			children = (
-				F119A20F2BD39BC300F2FFAF /* Service */,
+				F119A20F2BD39BC300F2FFAF /* Service-Deprecated */,
 				F1C842632BD0FB39006E3789 /* Shared-Deprecated */,
 				F1DBBD7D2BCD7DBD00D1A58E /* Extensions */,
 				F1DBBD6A2BCD4F3800D1A58E /* Features */,
@@ -287,26 +272,6 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
-		F1DBBD5B2BCD435F00D1A58E /* Database */ = {
-			isa = PBXGroup;
-			children = (
-				F1DBBD5C2BCD436700D1A58E /* Database.swift */,
-				F1DBBD642BCD4A9A00D1A58E /* FolderDatabase.swift */,
-				F1DBBD682BCD4BDF00D1A58E /* TodoDatabase.swift */,
-				F1023CD62BCF8A750050B0F2 /* SwiftData+Preview.swift */,
-			);
-			path = Database;
-			sourceTree = "<group>";
-		};
-		F1DBBD5F2BCD479800D1A58E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				F1DBBD602BCD47A400D1A58E /* Folder.swift */,
-				F1DBBD622BCD494F00D1A58E /* Todo.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		F1DBBD6A2BCD4F3800D1A58E /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,6 +322,8 @@
 		F1DBBD7D2BCD7DBD00D1A58E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F119A2262BD3BF7900F2FFAF /* UserDefaultsKey.swift */,
+				F1023CD62BCF8A750050B0F2 /* SwiftData+Preview.swift */,
 				F1DBBD7E2BCD7DC900D1A58E /* Color+Init.swift */,
 				F1DBBD852BCE87C300D1A58E /* UIDevice+.swift */,
 				F15403222BD135E900FAF7E3 /* Color+.swift */,
@@ -421,6 +388,8 @@
 			name = SimpleNote;
 			packageProductDependencies = (
 				F16380E92BD6924500BC655B /* ThirdPartyKit */,
+				F10065E52BD695CF00D8A620 /* Entity */,
+				F10065E72BD6986800D8A620 /* Storage */,
 			);
 			productName = SimpleNote;
 			productReference = F15427222BCD0C6C0070D22C /* SimpleNote.app */;
@@ -482,8 +451,6 @@
 			files = (
 				F1C8425A2BD0E348006E3789 /* FolderEditViewStore.swift in Sources */,
 				F119A20C2BD3991900F2FFAF /* SettingViewStore.swift in Sources */,
-				F1DBBD692BCD4BDF00D1A58E /* TodoDatabase.swift in Sources */,
-				F1DBBD652BCD4A9A00D1A58E /* FolderDatabase.swift in Sources */,
 				F1023CD72BCF8A750050B0F2 /* SwiftData+Preview.swift in Sources */,
 				F1DBBD6D2BCD4F5600D1A58E /* RootViewStore.swift in Sources */,
 				F1FEE5912BD27D5B0002CE89 /* Optional+Default.swift in Sources */,
@@ -511,7 +478,6 @@
 				F1FEE5972BD286E60002CE89 /* QueryView+Init.swift in Sources */,
 				F1FEE5A32BD2B7690002CE89 /* FolderPickerView.swift in Sources */,
 				F1FEE5952BD286770002CE89 /* QueryView.swift in Sources */,
-				F1DBBD632BCD494F00D1A58E /* Todo.swift in Sources */,
 				F119A22E2BD5225900F2FFAF /* PlusButton.swift in Sources */,
 				F1023CE12BCFE5360050B0F2 /* TodoCreateView.swift in Sources */,
 				F1DBBD762BCD567B00D1A58E /* FolderHomeView.swift in Sources */,
@@ -521,13 +487,11 @@
 				F1DBBD6F2BCD4F6F00D1A58E /* RootView.swift in Sources */,
 				F1DBBD7B2BCD607B00D1A58E /* FolderDetailView.swift in Sources */,
 				F1DBBD822BCE791F00D1A58E /* FolderCreateViewStore.swift in Sources */,
-				F1DBBD5D2BCD436700D1A58E /* Database.swift in Sources */,
 				F1DBBD792BCD606700D1A58E /* FolderDetailViewStore.swift in Sources */,
 				F119A2212BD3AB8600F2FFAF /* SettingItem.swift in Sources */,
 				F1FEE58A2BD226860002CE89 /* Formatter.swift in Sources */,
 				F15403302BD16D7800FAF7E3 /* CalendarHomeView.swift in Sources */,
 				F154032E2BD1696C00FAF7E3 /* CalendarHomeViewStore.swift in Sources */,
-				F1DBBD612BCD47A400D1A58E /* Folder.swift in Sources */,
 				F1DBBD862BCE87C300D1A58E /* UIDevice+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -744,6 +708,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F10065E52BD695CF00D8A620 /* Entity */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Entity;
+		};
+		F10065E72BD6986800D8A620 /* Storage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Storage;
+		};
 		F16380E92BD6924500BC655B /* ThirdPartyKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ThirdPartyKit;

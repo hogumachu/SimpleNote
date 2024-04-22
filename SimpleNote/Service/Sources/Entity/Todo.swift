@@ -7,19 +7,18 @@
 
 import Foundation
 import SwiftData
-import SwiftDate
 
 @Model
-final class Todo {
+public final class Todo {
   
-  var id: UUID?
-  var todo: String?
-  var targetDate: Date?
-  var isComplete: Bool?
+  public var id: UUID?
+  public var todo: String?
+  public var targetDate: Date?
+  public var isComplete: Bool?
   
-  var folder: Folder?
+  public var folder: Folder?
   
-  init(id: UUID, todo: String, targetDate: Date, isComplete: Bool) {
+  public init(id: UUID, todo: String, targetDate: Date, isComplete: Bool) {
     self.id = id
     self.todo = todo
     self.targetDate = targetDate
@@ -28,7 +27,7 @@ final class Todo {
   
 }
 
-extension Todo {
+public extension Todo {
   
   static func predicate(searchText: String) -> Predicate<Todo> {
     return #Predicate {

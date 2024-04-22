@@ -9,16 +9,16 @@ import Foundation
 import SwiftData
 
 @Model
-final class Folder {
+public final class Folder {
   
-  var id: UUID?
-  var title: String?
-  var hexColor: String?
+  public var id: UUID?
+  public var title: String?
+  public var hexColor: String?
   
   @Relationship(deleteRule: .cascade, inverse: \Todo.folder)
-  var todos: [Todo]? = []
+  public var todos: [Todo]? = []
   
-  init(id: UUID, title: String, hexColor: String) {
+  public init(id: UUID, title: String, hexColor: String) {
     self.id = id
     self.title = title
     self.hexColor = hexColor
@@ -26,7 +26,7 @@ final class Folder {
   
 }
 
-extension Folder {
+public extension Folder {
   
   static func predicate(searchText: String) -> Predicate<Folder> {
     return #Predicate {
