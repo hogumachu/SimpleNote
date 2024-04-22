@@ -66,7 +66,7 @@ struct TodoCreateView: View {
 private extension TodoCreateView {
   
   var todoTextField: some View {
-    TextField("Type todo", text: $store.todo)
+    TextField(LocalString("Type todo", bundle: .module), text: $store.todo)
       .font(.largeTitle)
   }
   
@@ -76,7 +76,7 @@ private extension TodoCreateView {
         selection: $store.targetDate,
         displayedComponents: .date,
         label: {
-          Text("Select Target Date")
+          Text("Select Target Date", bundle: .module)
             .font(.body)
             .foregroundStyle(.foreground)
         }
@@ -95,7 +95,7 @@ private extension TodoCreateView {
       store.send(.folderTapped)
     } label: {
       HStack {
-        Text("Selected folder")
+        Text("Selected folder", bundle: .module)
           .font(.body)
           .foregroundStyle(.foreground)
         
@@ -113,7 +113,7 @@ private extension TodoCreateView {
             .font(.body)
             .foregroundStyle(.foreground)
         } else {
-          Text("None")
+          Text("None", bundle: .module)
             .font(.body)
             .foregroundStyle(.foreground)
         }
@@ -131,7 +131,7 @@ private extension TodoCreateView {
     Button {
       store.send(.createTapped)
     } label: {
-      Text("Create")
+      Text("Create", bundle: .module)
         .frame(maxWidth: .infinity)
         .foregroundStyle(.background)
         .font(.headline)

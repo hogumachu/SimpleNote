@@ -104,7 +104,7 @@ private extension FolderDetailView {
           .font(.headline)
           .foregroundStyle(.primary)
       } else {
-        Text("None")
+        Text("None", bundle: .module)
           .padding(.top, 20)
           .padding(.horizontal, 20)
           .frame(maxWidth: .infinity, alignment: .leading)
@@ -112,7 +112,7 @@ private extension FolderDetailView {
           .foregroundStyle(.primary)
       }
       
-      Text("\(todos.filter { $0.isComplete.orFalse }.count)/\(todos.count) task done")
+      Text("\(todos.filter { $0.isComplete.orFalse }.count)/\(todos.count) task done", bundle: .module)
         .padding(.horizontal, 20)
         .padding(.bottom, todos.isEmpty ? 20 : 10)
         .frame(maxWidth: .infinity, alignment: .leading)

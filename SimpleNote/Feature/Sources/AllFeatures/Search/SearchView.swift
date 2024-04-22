@@ -74,7 +74,7 @@ private extension SearchView {
           .frame(width: 25, height: 25)
         
         TextField(
-          "Please enter a search term",
+          LocalString("Please enter a search term", bundle: .module),
           text: $store.searchText
         )
         .focused($isFocused)
@@ -91,13 +91,13 @@ private extension SearchView {
   
   func folderListView(_ folders: [Folder]) -> some View {
     LazyVStack {
-      Text("Folder")
+      Text("Folder", bundle: .module)
         .font(.headline)
         .foregroundStyle(.foreground)
         .frame(maxWidth: .infinity, alignment: .leading)
       
       if folders.isEmpty {
-        Text("There is no matching folder")
+        Text("There is no matching folder", bundle: .module)
           .font(.body)
           .foregroundStyle(.gray)
           .padding()
@@ -115,13 +115,13 @@ private extension SearchView {
   
   func todoListView(_ todos: [Todo]) -> some View {
     LazyVStack {
-      Text("Todo")
+      Text("Todo", bundle: .module)
         .font(.headline)
         .foregroundStyle(.foreground)
         .frame(maxWidth: .infinity, alignment: .leading)
       
       if todos.isEmpty {
-        Text("There is no matching todos")
+        Text("There is no matching todos", bundle: .module)
           .font(.body)
           .foregroundStyle(.gray)
           .padding()

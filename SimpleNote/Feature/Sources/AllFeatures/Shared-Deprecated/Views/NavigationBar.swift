@@ -10,8 +10,8 @@ import SwiftUI
 enum NavigationBarStyle {
   case back
   case close
-  case titleOnly(LocalizedStringKey)
-  case titleWithButton(LocalizedStringKey, ImageResource)
+  case titleOnly(String)
+  case titleWithButton(String, ImageResource)
 }
 
 struct NavigationBar: View {

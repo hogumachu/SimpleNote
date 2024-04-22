@@ -26,7 +26,7 @@ struct HomeView: View {
     ) {
       ZStack {
         VStack(spacing: 0) {
-          NavigationBar(style: .titleWithButton("Home", .GearFill)) {
+          NavigationBar(style: .titleWithButton(LocalString("Home", bundle: .module), .GearFill)) {
             store.send(.settingTapped)
           }
           .padding(.horizontal, 20)
@@ -104,7 +104,7 @@ private extension HomeView {
           .foregroundStyle(.foreground)
           .frame(width: 25, height: 25)
         
-        Text("Please enter a search term")
+        Text("Please enter a search term", bundle: .module)
           .font(.body)
           .foregroundStyle(.gray)
         
@@ -121,7 +121,7 @@ private extension HomeView {
   
   func todayTodoListView(_ todos: [Todo]) -> some View {
     LazyVStack {
-      Text("Today's todos")
+      Text("Today's todos", bundle: .module)
         .font(.headline)
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.top, 20)
@@ -143,7 +143,7 @@ private extension HomeView {
   
   func previousTodoListView(_ previousTodos: [Todo]) -> some View {
     LazyVStack {
-      Text("Uncompleted previous todos")
+      Text("Uncompleted previous todos", bundle: .module)
         .font(.headline)
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.top, 20)
@@ -161,7 +161,7 @@ private extension HomeView {
   
   func upcomingTodoListView(_ previousTodos: [Todo]) -> some View {
     LazyVStack {
-      Text("Upcoming todos")
+      Text("Upcoming todos", bundle: .module)
         .font(.headline)
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.top, 20)

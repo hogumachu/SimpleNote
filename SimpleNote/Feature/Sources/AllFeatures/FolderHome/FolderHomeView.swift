@@ -26,7 +26,7 @@ struct FolderHomeView: View {
       path: $store.scope(state: \.path, action: \.path)
     ) {
       VStack(alignment: .leading, spacing: 0) {
-        NavigationBar(style: .titleOnly("Folder"))
+        NavigationBar(style: .titleOnly(LocalString("Folder", bundle: .module)))
           .padding(.horizontal, 20)
         
         Divider()
@@ -65,7 +65,7 @@ private extension FolderHomeView {
               .frame(width: 30, height: 30)
               .foregroundStyle(.blue)
             
-            Text("New folder")
+            Text("New folder", bundle: .module)
               .font(.body)
               .foregroundStyle(.blue)
           }
@@ -94,7 +94,7 @@ private extension FolderHomeView {
                     .font(.headline)
                     .foregroundStyle(Color(uiColor: .label))
                   
-                  Text("\((folder.todos ?? []).count) todos")
+                  Text("\((folder.todos ?? []).count) todos", bundle: .module)
                     .font(.caption)
                     .foregroundStyle(Color.gray)
                 }
@@ -121,11 +121,11 @@ private extension FolderHomeView {
                 .foregroundStyle(.gray)
               
               VStack(spacing: 3) {
-                Text("None")
+                Text("None", bundle: .module)
                   .font(.headline)
                   .foregroundStyle(Color(uiColor: .label))
                 
-                Text("\(emptyFolderTodos.count) todos")
+                Text("\(emptyFolderTodos.count) todos", bundle: .module)
                   .font(.caption)
                   .foregroundStyle(Color.gray)
               }

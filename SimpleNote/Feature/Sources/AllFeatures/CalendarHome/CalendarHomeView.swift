@@ -153,7 +153,7 @@ private extension CalendarHomeView {
     Button {
       store.send(.todayTapped)
     } label: {
-      Text("Today")
+      Text("Today", bundle: .module)
         .font(.headline)
         .foregroundStyle(.foreground)
       

@@ -46,6 +46,9 @@ let package = Package(
       name: "AllFeatures",
       dependencies: [
         "FeatureKit"
+      ],
+      resources: [
+        .process("Resources")
       ]
     ),
   ]

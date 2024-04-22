@@ -40,7 +40,7 @@ struct TodoView: View {
               .font(.callout)
               .foregroundStyle(Color(hexOrGray: todo.folder?.hexColor))
           } else {
-            Text("None")
+            Text("None", bundle: .module)
               .font(.callout)
               .foregroundStyle(Color(hexOrGray: todo.folder?.hexColor))
           }

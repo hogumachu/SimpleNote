@@ -36,12 +36,12 @@ struct FolderView: View {
             .font(.body)
             .foregroundStyle(.foreground)
         } else {
-          Text("None")
+          Text("None", bundle: .module)
             .font(.body)
             .foregroundStyle(.foreground)
         }
         
-        Text("\((folder.todos ?? []).count) todos")
+        Text("\((folder.todos ?? []).count) todos", bundle: .module)
           .font(.caption)
           .foregroundStyle(Color.gray)
       }
