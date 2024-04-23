@@ -8,16 +8,16 @@
 import SwiftUI
 import UIFeatureKit
 
-struct TodoCreateView: View {
+public struct TodoCreateView: View {
   
   @Bindable private var store: StoreOf<TodoCreateViewStore>
   @FocusState private var isFocused: Bool
   
-  init(store: StoreOf<TodoCreateViewStore>) {
+  public init(store: StoreOf<TodoCreateViewStore>) {
     self.store = store
   }
   
-  var body: some View {
+  public var body: some View {
     NavigationStack {
       VStack {
         NavigationBar(style: .close) {

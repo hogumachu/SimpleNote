@@ -9,7 +9,7 @@ import Foundation
 
 extension DateFormatter {
   
-  static let yearMonthFormatter: DateFormatter = {
+  public static let yearMonthFormatter: DateFormatter = {
     let isKorean = Locale.current.language.languageCode == .korean
     let formatter = DateFormatter()
     formatter.dateFormat = isKorean ? "yyyy년 MMM" : "MMM, yyyy"

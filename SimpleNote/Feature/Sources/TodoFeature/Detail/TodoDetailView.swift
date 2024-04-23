@@ -8,15 +8,15 @@
 import SwiftUI
 import UIFeatureKit
 
-struct TodoDetailView: View {
+public struct TodoDetailView: View {
   
   @Bindable private var store: StoreOf<TodoDetailViewStore>
   
-  init(store: StoreOf<TodoDetailViewStore>) {
+  public init(store: StoreOf<TodoDetailViewStore>) {
     self.store = store
   }
   
-  var body: some View {
+  public var body: some View {
     NavigationStack {
       VStack {
         NavigationBar(style: .close) {

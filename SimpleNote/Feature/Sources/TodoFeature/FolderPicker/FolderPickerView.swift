@@ -9,15 +9,15 @@ import SwiftData
 import SwiftUI
 import UIFeatureKit
 
-struct FolderPickerView: View {
+public struct FolderPickerView: View {
   
   private let store: StoreOf<FolderPickerViewStore>
   
-  init(store: StoreOf<FolderPickerViewStore>) {
+  public init(store: StoreOf<FolderPickerViewStore>) {
     self.store = store
   }
   
-  var body: some View {
+  public var body: some View {
     VStack {
       NavigationBar(style: .back) {
         store.send(.closeTapped)

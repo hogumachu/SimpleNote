@@ -186,16 +186,6 @@
         }
       }
     },
-    "Select Target Date" : {
-      "localizations" : {
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "목표 날짜를 선택하세요"
-          }
-        }
-      }
-    },
     "Selected folder" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -249,16 +239,6 @@
         }
       }
     },
-    "Today" : {
-      "localizations" : {
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "오늘"
-          }
-        }
-      }
-    },
     "Today's todos" : {
       "localizations" : {
         "ko" : {
@@ -285,16 +265,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "제목을 입력해 주세요"
-          }
-        }
-      }
-    },
-    "Type todo" : {
-      "localizations" : {
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "할 일을 입력하세요"
           }
         }
       }

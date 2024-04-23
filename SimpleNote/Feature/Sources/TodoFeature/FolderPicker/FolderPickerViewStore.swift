@@ -9,26 +9,32 @@ import Foundation
 import UIFeatureKit
 
 @Reducer
-struct FolderPickerViewStore {
+public struct FolderPickerViewStore {
   
   @ObservableState
-  struct State: Equatable {
-    var selectedFolder: Folder?
+  public struct State: Equatable {
+    public var selectedFolder: Folder?
+    
+    public init(selectedFolder: Folder? = nil) {
+      self.selectedFolder = selectedFolder
+    }
   }
   
-  enum Action {
+  public enum Action {
     case closeTapped
     case folderTapped(Folder)
     case delegate(Delegate)
     
-    enum Delegate {
+    public enum Delegate {
       case folderTapped(Folder)
     }
   }
   
   @Dependency(\.dismiss) private var dismiss
   
-  var body: some ReducerOf<Self> {
+  public init() {}
+  
+  public var body: some ReducerOf<Self> {
     Reduce { state, action in
       switch action {
       case .closeTapped:

@@ -9,23 +9,23 @@ import SwiftUI
 import UIFeatureKit
 
 @Reducer
-struct TodoCreateViewStore {
+public struct TodoCreateViewStore {
   
   @ObservableState
-  struct State: Equatable {
-    var todo: String
-    var targetDate: Date
-    var folder: Folder?
-    @Presents var folderPicker: FolderPickerViewStore.State?
+  public struct State: Equatable {
+    public var todo: String
+    public var targetDate: Date
+    public var folder: Folder?
+    @Presents public var folderPicker: FolderPickerViewStore.State?
     
-    init(todo: String, targetDate: Date, folder: Folder?) {
+    public init(todo: String, targetDate: Date, folder: Folder?) {
       self.todo = todo
       self.targetDate = targetDate
       self.folder = folder
     }
   }
   
-  enum Action: BindableAction {
+  public enum Action: BindableAction {
     case binding(BindingAction<State>)
     
     case createTapped
@@ -35,10 +35,12 @@ struct TodoCreateViewStore {
     case folderPicker(PresentationAction<FolderPickerViewStore.Action>)
   }
   
-  @Dependency(\.dismiss) var dismiss
-  @Dependency(\.todoDatabase) var todoDatabase
+  @Dependency(\.dismiss) private var dismiss
+  @Dependency(\.todoDatabase) private var todoDatabase
   
-  var body: some ReducerOf<Self> {
+  public init() {}
+  
+  public var body: some ReducerOf<Self> {
     BindingReducer()
     
     Reduce { state, action in

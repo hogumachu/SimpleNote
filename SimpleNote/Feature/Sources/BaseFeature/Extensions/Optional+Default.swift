@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Optional where Wrapped == String {
+public extension Optional where Wrapped == String {
   
   var orEmpty: String {
     switch self {
@@ -20,7 +20,7 @@ extension Optional where Wrapped == String {
   
 }
 
-extension Optional where Wrapped == Date {
+public extension Optional where Wrapped == Date {
   
   var orNow: Date {
     switch self {
@@ -33,7 +33,7 @@ extension Optional where Wrapped == Date {
   
 }
 
-extension Optional where Wrapped == Bool {
+public extension Optional where Wrapped == Bool {
   
   var orTrue: Bool {
     switch self {
@@ -55,7 +55,7 @@ extension Optional where Wrapped == Bool {
   
 }
 
-extension Optional where Wrapped == UUID {
+public extension Optional where Wrapped == UUID {
   
   var orRandom: UUID {
     switch self {

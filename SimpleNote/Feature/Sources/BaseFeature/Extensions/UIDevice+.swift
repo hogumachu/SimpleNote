@@ -7,7 +7,7 @@
 
 import UIKit
 
-extension UIDevice {
+public extension UIDevice {
   
   var isPhone: Bool {
     return UIDevice.current.userInterfaceIdiom == .phone

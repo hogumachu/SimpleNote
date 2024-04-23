@@ -9,25 +9,25 @@ import Foundation
 import UIFeatureKit
 
 @Reducer
-struct TodoDetailViewStore {
+public struct TodoDetailViewStore {
   
   @ObservableState
-  struct State: Equatable {
+  public struct State: Equatable {
     fileprivate var origin: Todo
-    var todo: String
-    var targetDate: Date
-    var folder: Folder?
-    @Presents var folderPicker: FolderPickerViewStore.State?
+    public var todo: String
+    public var targetDate: Date
+    public var folder: Folder?
+    @Presents public var folderPicker: FolderPickerViewStore.State?
     
-    init(todo: Todo) {
+    public init(todo: Todo) {
       self.origin = todo
-      self.todo = todo.todo.orEmpty
-      self.targetDate = todo.targetDate.orNow
+      self.todo = todo.todo ?? ""
+      self.targetDate = todo.targetDate ?? .now
       self.folder = todo.folder
     }
   }
   
-  enum Action: BindableAction {
+  public enum Action: BindableAction {
     case binding(BindingAction<State>)
     
     case closeTapped
@@ -41,7 +41,9 @@ struct TodoDetailViewStore {
   @Dependency(\.dismiss) private var dismiss
   @Dependency(\.todoDatabase) private var todoDatebase
   
-  var body: some ReducerOf<Self> {
+  public init() {}
+  
+  public var body: some ReducerOf<Self> {
     BindingReducer()
     
     Reduce { state, action in

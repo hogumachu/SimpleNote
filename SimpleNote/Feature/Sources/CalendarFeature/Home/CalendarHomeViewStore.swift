@@ -7,21 +7,22 @@
 
 import Foundation
 import SwiftData
+import TodoFeature
 import UIFeatureKit
 
 @Reducer
-struct CalendarHomeViewStore {
+public struct CalendarHomeViewStore {
   
   @ObservableState
-  struct State: Equatable {
-    var focusDate: Date
-    var title: String
-    var dayItems: [CalendarDayItem]
-    var isToday: Bool
-    @Presents var todoDetail: TodoDetailViewStore.State?
-    @Presents var todoCreate: TodoCreateViewStore.State?
+  public struct State: Equatable {
+    public var focusDate: Date
+    public var title: String
+    public var dayItems: [CalendarDayItem]
+    public var isToday: Bool
+    @Presents public var todoDetail: TodoDetailViewStore.State?
+    @Presents public var todoCreate: TodoCreateViewStore.State?
     
-    init(focusDate: Date = .now) {
+    public init(focusDate: Date = .now) {
       self.focusDate = focusDate
       self.title = ""
       self.dayItems = []
@@ -29,7 +30,7 @@ struct CalendarHomeViewStore {
     }
   }
   
-  enum Action: BindableAction {
+  public enum Action: BindableAction {
     case binding(BindingAction<State>)
     case onAppeared
     case dateTapped(Date)
@@ -41,7 +42,9 @@ struct CalendarHomeViewStore {
     case todoCreate(PresentationAction<TodoCreateViewStore.Action>)
   }
   
-  var body: some ReducerOf<Self> {
+  public init() {}
+  
+  public var body: some ReducerOf<Self> {
     BindingReducer()
     
     Reduce { state, action in

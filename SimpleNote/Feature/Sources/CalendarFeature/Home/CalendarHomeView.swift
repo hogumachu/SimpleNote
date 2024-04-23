@@ -7,20 +7,21 @@
 
 import SwiftData
 import SwiftUI
+import TodoFeature
 import UIFeatureKit
 
-struct CalendarHomeView: View {
+public struct CalendarHomeView: View {
   
   @Bindable private var store: StoreOf<CalendarHomeViewStore>
   
   @AppStorage(UserDefaultsKey.hideCompleteTodo.rawValue)
   private var hideCompleteTodo = false
   
-  init(store: StoreOf<CalendarHomeViewStore>) {
+  public init(store: StoreOf<CalendarHomeViewStore>) {
     self.store = store
   }
   
-  var body: some View {
+  public var body: some View {
     ZStack {
       VStack(spacing: 0) {
         navigationBar

@@ -14,6 +14,9 @@
 		F154272C2BCD0C6E0070D22C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F154272B2BCD0C6E0070D22C /* Assets.xcassets */; };
 		F154272F2BCD0C6E0070D22C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F154272E2BCD0C6E0070D22C /* Preview Assets.xcassets */; };
 		F16380EA2BD6924500BC655B /* ThirdPartyKit in Frameworks */ = {isa = PBXBuildFile; productRef = F16380E92BD6924500BC655B /* ThirdPartyKit */; };
+		F1CB24832BD7CBA7003596B2 /* CalendarFeature in Frameworks */ = {isa = PBXBuildFile; productRef = F1CB24822BD7CBA7003596B2 /* CalendarFeature */; };
+		F1CB24852BD7CBA7003596B2 /* SettingFeature in Frameworks */ = {isa = PBXBuildFile; productRef = F1CB24842BD7CBA7003596B2 /* SettingFeature */; };
+		F1CB24872BD7CBA7003596B2 /* TodoFeature in Frameworks */ = {isa = PBXBuildFile; productRef = F1CB24862BD7CBA7003596B2 /* TodoFeature */; };
 		F1DBBD5A2BCD42F900D1A58E /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD592BCD42F900D1A58E /* App.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,9 +39,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1CB24872BD7CBA7003596B2 /* TodoFeature in Frameworks */,
 				F10065E82BD6986800D8A620 /* Storage in Frameworks */,
 				F16380EA2BD6924500BC655B /* ThirdPartyKit in Frameworks */,
 				F10065E62BD695CF00D8A620 /* Entity in Frameworks */,
+				F1CB24832BD7CBA7003596B2 /* CalendarFeature in Frameworks */,
+				F1CB24852BD7CBA7003596B2 /* SettingFeature in Frameworks */,
 				F10065EB2BD69C1400D8A620 /* AllFeatures in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,6 +130,9 @@
 				F10065E52BD695CF00D8A620 /* Entity */,
 				F10065E72BD6986800D8A620 /* Storage */,
 				F10065EA2BD69C1400D8A620 /* AllFeatures */,
+				F1CB24822BD7CBA7003596B2 /* CalendarFeature */,
+				F1CB24842BD7CBA7003596B2 /* SettingFeature */,
+				F1CB24862BD7CBA7003596B2 /* TodoFeature */,
 			);
 			productName = SimpleNote;
 			productReference = F15427222BCD0C6C0070D22C /* SimpleNote.app */;
@@ -414,6 +423,18 @@
 		F16380E92BD6924500BC655B /* ThirdPartyKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ThirdPartyKit;
+		};
+		F1CB24822BD7CBA7003596B2 /* CalendarFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CalendarFeature;
+		};
+		F1CB24842BD7CBA7003596B2 /* SettingFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SettingFeature;
+		};
+		F1CB24862BD7CBA7003596B2 /* TodoFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TodoFeature;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

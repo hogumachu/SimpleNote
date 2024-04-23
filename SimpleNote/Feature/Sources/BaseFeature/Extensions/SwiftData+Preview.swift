@@ -10,7 +10,7 @@ import SwiftData
 
 extension ModelContainer {
   
-  static func preview() -> ModelContainer {
+  public static func preview() -> ModelContainer {
     do {
       let schema = Schema([
         Folder.self,

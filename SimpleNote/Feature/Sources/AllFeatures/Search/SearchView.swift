@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import TodoFeature
 import UIFeatureKit
 
 struct SearchView: View {

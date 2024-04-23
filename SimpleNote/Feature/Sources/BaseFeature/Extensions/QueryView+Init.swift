@@ -5,11 +5,12 @@
 //  Created by 홍성준 on 4/19/24.
 //
 
-import UIFeatureKit
+import Entity
 import SwiftData
 import SwiftUI
+import UIDesignKit
 
-extension QueryView where T == Todo {
+public extension QueryView where T == Todo {
   
   init(
     lessThan date: Date,
@@ -58,7 +59,7 @@ extension QueryView where T == Todo {
   
 }
 
-extension QueryView where T == Folder {
+public extension QueryView where T == Folder {
   
   init(
     searchText: String,
