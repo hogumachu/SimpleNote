@@ -13,8 +13,8 @@ let package = Package(
       targets: ["BaseFeature"]
     ),
     .library(
-      name: "FeatureKit",
-      targets: ["FeatureKit"]
+      name: "UIFeatureKit",
+      targets: ["UIFeatureKit"]
     ),
     .library(
       name: "AllFeatures",
@@ -23,7 +23,8 @@ let package = Package(
   ],
   dependencies: [
     .package(path: "../Shared"),
-    .package(path: "../Service")
+    .package(path: "../Service"),
+    .package(path: "../UI")
   ],
   targets: [
     .target(
@@ -37,15 +38,16 @@ let package = Package(
       ]
     ),
     .target(
-      name: "FeatureKit",
+      name: "UIFeatureKit",
       dependencies: [
-        "BaseFeature"
+        "BaseFeature",
+        .product(name: "UIDesignKit", package: "UI")
       ]
     ),
     .target(
       name: "AllFeatures",
       dependencies: [
-        "FeatureKit"
+        "UIFeatureKit"
       ],
       resources: [
         .process("Resources")

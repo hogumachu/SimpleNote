@@ -1,0 +1,32 @@
+// swift-tools-version: 5.9
+// The swift-tools-version declares the minimum version of Swift required to build this package.
+
+import PackageDescription
+
+let package = Package(
+  name: "UIDesignKit",
+  defaultLocalization: "en",
+  platforms: [.iOS(.v17)],
+  products: [
+    .library(
+      name: "UIDesignKit",
+      targets: ["UIDesignKit"]
+    ),
+  ],
+  dependencies: [
+    .package(path: "../Shared"),
+    .package(path: "../Service")
+  ],
+  targets: [
+    .target(
+      name: "UIDesignKit",
+      dependencies: [
+        .product(name: "Entity", package: "Service"),
+        .product(name: "ThirdPartyKit", package: "Shared")
+      ],
+      resources: [
+        .process("Resources")
+      ]
+    ),
+  ]
+)

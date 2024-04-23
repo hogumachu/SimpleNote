@@ -5,15 +5,15 @@
 //  Created by 홍성준 on 4/19/24.
 //
 
-import FeatureKit
+import Entity
 import SwiftUI
 
-struct FolderView: View {
+public struct FolderView: View {
   
   private let folder: Folder
   private var onTapped: (Folder) -> Void
   
-  init(
+  public init(
     folder: Folder,
     onTapped: @escaping (Folder) -> Void
   ) {
@@ -21,7 +21,7 @@ struct FolderView: View {
     self.onTapped = onTapped
   }
   
-  var body: some View {
+  public var body: some View {
     HStack {
       Image(.FolderFill)
         .resizable()
