@@ -21,12 +21,20 @@ let package = Package(
       targets: ["AllFeatures"]
     ),
     .library(
+      name: "CalendarFeature",
+      targets: ["CalendarFeature"]
+    ),
+    .library(
+      name: "FolderFeature",
+      targets: ["FolderFeature"]
+    ),
+    .library(
       name: "SettingFeature",
       targets: ["SettingFeature"]
     ),
     .library(
-      name: "SettingFeatureImp",
-      targets: ["SettingFeatureImp"]
+      name: "TodoFeature",
+      targets: ["TodoFeature"]
     ),
   ],
   dependencies: [
@@ -40,21 +48,43 @@ let package = Package(
       dependencies: [
         .product(name: "Storage", package: "Service"),
         .product(name: "ThirdPartyKit", package: "Shared"),
+        .product(name: "UIDesignKit", package: "UI")
       ]
     ),
     .target(
       name: "UIFeatureKit",
       dependencies: [
         "BaseFeature",
-        .product(name: "ThirdPartyKit", package: "Shared"),
-        .product(name: "UIDesignKit", package: "UI")
+        .product(name: "ThirdPartyKit", package: "Shared")
       ]
     ),
     .target(
       name: "AllFeatures",
       dependencies: [
         "UIFeatureKit",
+        "CalendarFeature",
+        "FolderFeature",
         "SettingFeature"
+      ],
+      resources: [
+        .process("Resources")
+      ]
+    ),
+    .target(
+      name: "CalendarFeature",
+      dependencies: [
+        "UIFeatureKit",
+        "TodoFeature"
+      ],
+      resources: [
+        .process("Resources")
+      ]
+    ),
+    .target(
+      name: "FolderFeature",
+      dependencies: [
+        "UIFeatureKit",
+        "TodoFeature"
       ],
       resources: [
         .process("Resources")
@@ -70,9 +100,12 @@ let package = Package(
       ]
     ),
     .target(
-      name: "SettingFeatureImp",
+      name: "TodoFeature",
       dependencies: [
-        "SettingFeature"
+        "UIFeatureKit"
+      ],
+      resources: [
+        .process("Resources")
       ]
     ),
   ]

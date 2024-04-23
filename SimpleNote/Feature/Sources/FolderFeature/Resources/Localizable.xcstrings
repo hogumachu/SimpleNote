@@ -1,0 +1,49 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@" : {
+
+    },
+    "%lld todos" : {
+
+    },
+    "%lld/%lld task done" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$lld/%2$lld task done"
+          }
+        }
+      }
+    },
+    "Cancel" : {
+
+    },
+    "Create" : {
+
+    },
+    "Delete" : {
+
+    },
+    "Delete folder" : {
+
+    },
+    "Edit" : {
+
+    },
+    "If you delete the folder, the data inside will be erased together." : {
+
+    },
+    "New folder" : {
+
+    },
+    "None" : {
+
+    },
+    "Select Color" : {
+
+    }
+  },
+  "version" : "1.0"
+}

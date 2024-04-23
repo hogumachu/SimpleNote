@@ -8,6 +8,7 @@
 import SettingFeature
 import SwiftData
 import SwiftUI
+import TodoFeature
 import UIFeatureKit
 
 struct HomeView: View {

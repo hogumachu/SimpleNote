@@ -21,7 +21,6 @@ private extension AppDelegate {
   
   func appSetup() {
     SwiftDate.defaultRegion = .local
-    CompositionRoot.assemble()
   }
   
 }
