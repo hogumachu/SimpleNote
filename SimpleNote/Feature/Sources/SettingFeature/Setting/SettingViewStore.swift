@@ -41,13 +41,68 @@ public struct SettingViewStore {
     case deleteAllTapped
   }
   
-  @Dependency(\.settingReducer) private var reducer
+  @Dependency(\.folderDatabase) private var folderDatabase
+  @Dependency(\.todoDatabase) private var todoDatabase
+  @Dependency(\.dismiss) private var dismiss
   
   public init() {}
   
   public var body: some ReducerOf<Self> {
     BindingReducer()
-    reducer.build()
+    
+    Reduce { state, action in
+      switch action {
+      case .binding:
+        return .none
+        
+      case .alert(.presented(.confirmDeletion)):
+        return .run { send in
+          try folderDatabase.deleteAll()
+          try todoDatabase.deleteAll()
+          await dismiss()
+        }
+        
+      case .alert:
+        return .none
+        
+      case .onAppear:
+        state.settingItems = [
+          .hideCompleteTodo,
+          .version,
+          .deleteAll
+        ]
+        state.appVersion = AppBundle.appVersion
+        return .none
+        
+      case .closeTapped:
+        return .run { send in
+          await dismiss()
+        }
+        
+      case .deleteAllTapped:
+        state.alert = makeDeleteAlert()
+        return .none
+      }
+    }
+  }
+  
+}
+
+private extension SettingViewStore {
+  
+  func makeDeleteAlert() -> AlertState<SettingViewStore.Alert> {
+    return AlertState {
+      TextState("Delete all data", bundle: .module)
+    } actions: {
+      ButtonState(role: .cancel) {
+        TextState("Cancel", bundle: .module)
+      }
+      ButtonState(role: .destructive, action: .confirmDeletion) {
+        TextState("Delete", bundle: .module)
+      }
+    } message: {
+      TextState("Data once deleted cannot be recovered", bundle: .module)
+    }
   }
   
 }

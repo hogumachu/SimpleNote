@@ -23,11 +23,7 @@ let package = Package(
     .library(
       name: "SettingFeature",
       targets: ["SettingFeature"]
-    ),
-    .library(
-      name: "SettingFeatureImp",
-      targets: ["SettingFeatureImp"]
-    ),
+    )
   ],
   dependencies: [
     .package(path: "../Shared"),
@@ -68,12 +64,6 @@ let package = Package(
       resources: [
         .process("Resources")
       ]
-    ),
-    .target(
-      name: "SettingFeatureImp",
-      dependencies: [
-        "SettingFeature"
-      ]
-    ),
+    )
   ]
 )
