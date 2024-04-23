@@ -7,6 +7,6 @@
 
 import Foundation
 
-enum UserDefaultsKey: String {
+public enum UserDefaultsKey: String {
   case hideCompleteTodo = "Setting.hideCompleteTodo"
 }

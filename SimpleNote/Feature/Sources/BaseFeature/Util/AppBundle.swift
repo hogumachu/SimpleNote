@@ -7,9 +7,9 @@
 
 import Foundation
 
-enum AppBundle {
+public enum AppBundle {
   
-  static var appVersion: String {
+  public static var appVersion: String {
     let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
     return version ?? ""
   }
