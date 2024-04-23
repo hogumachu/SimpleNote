@@ -5,9 +5,9 @@
 //  Created by 홍성준 on 4/18/24.
 //
 
-import FeatureKit
 import Foundation
 import SwiftData
+import UIFeatureKit
 
 @Reducer
 struct CalendarHomeViewStore {

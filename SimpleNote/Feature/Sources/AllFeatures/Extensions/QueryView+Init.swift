@@ -5,7 +5,7 @@
 //  Created by 홍성준 on 4/19/24.
 //
 
-import Entity
+import UIFeatureKit
 import SwiftData
 import SwiftUI
 

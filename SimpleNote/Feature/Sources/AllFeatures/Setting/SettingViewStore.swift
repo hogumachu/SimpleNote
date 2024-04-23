@@ -5,8 +5,8 @@
 //  Created by 홍성준 on 4/20/24.
 //
 
-import FeatureKit
 import Foundation
+import UIFeatureKit
 
 @Reducer
 struct SettingViewStore {

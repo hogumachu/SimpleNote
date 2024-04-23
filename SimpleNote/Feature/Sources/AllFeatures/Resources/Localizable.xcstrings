@@ -18,7 +18,14 @@
       }
     },
     "%lld" : {
-
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld"
+          }
+        }
+      }
     },
     "%lld todos" : {
       "localizations" : {
@@ -126,16 +133,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "편집하기"
-          }
-        }
-      }
-    },
-    "Empty" : {
-      "localizations" : {
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "비어있어요"
           }
         }
       }
@@ -250,16 +247,6 @@
         }
       }
     },
-    "There are no todos for today" : {
-      "localizations" : {
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "오늘 할 일이 없어요"
-          }
-        }
-      }
-    },
     "There is no folder" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -368,16 +355,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "다가오는 할 일"
-          }
-        }
-      }
-    },
-    "You can create folders in the folder tab" : {
-      "localizations" : {
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "폴더 탭에서 폴더를 생성할 수 있어요"
           }
         }
       }
