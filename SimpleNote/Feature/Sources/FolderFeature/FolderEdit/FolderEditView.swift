@@ -9,16 +9,16 @@ import SwiftData
 import SwiftUI
 import UIFeatureKit
 
-struct FolderEditView: View {
+public struct FolderEditView: View {
   
   @Bindable private var store: StoreOf<FolderEditViewStore>
   @FocusState private var isFocused: Bool
   
-  init(store: StoreOf<FolderEditViewStore>) {
+  public init(store: StoreOf<FolderEditViewStore>) {
     self.store = store
   }
   
-  var body: some View {
+  public var body: some View {
     VStack {
       NavigationBar(style: .close) {
         store.send(.closeTapped)

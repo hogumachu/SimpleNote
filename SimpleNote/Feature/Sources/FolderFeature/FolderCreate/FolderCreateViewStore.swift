@@ -9,20 +9,20 @@ import SwiftUI
 import UIFeatureKit
 
 @Reducer
-struct FolderCreateViewStore {
+public struct FolderCreateViewStore {
   
   @ObservableState
-  struct State: Equatable {
-    var title: String
-    var color: Color
+  public struct State: Equatable {
+    public var title: String
+    public var color: Color
     
-    init(title: String, hexColor: String) {
+    public init(title: String, hexColor: String) {
       self.title = title
       self.color = Color(hex: hexColor)
     }
   }
   
-  enum Action: BindableAction {
+  public enum Action: BindableAction {
     case binding(BindingAction<State>)
     
     case createTapped
@@ -30,14 +30,16 @@ struct FolderCreateViewStore {
     case colorChangeTapped
     case delegate(Delegate)
     
-    enum Delegate {
+    public enum Delegate {
       case create(Folder)
     }
   }
   
-  @Dependency(\.dismiss) var dismiss
+  @Dependency(\.dismiss) private var dismiss
   
-  var body: some ReducerOf<Self> {
+  public init() {}
+  
+  public var body: some ReducerOf<Self> {
     BindingReducer()
     
     Reduce { state, action in

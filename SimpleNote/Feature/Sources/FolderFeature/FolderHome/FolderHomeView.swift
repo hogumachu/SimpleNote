@@ -9,19 +9,19 @@ import SwiftData
 import SwiftUI
 import UIFeatureKit
 
-struct FolderHomeView: View {
+public struct FolderHomeView: View {
   
-  @Bindable var store: StoreOf<FolderHomeViewStore>
+  @Bindable private var store: StoreOf<FolderHomeViewStore>
   @Query private var folders: [Folder]
   @Query private var emptyFolderTodos: [Todo]
   
-  init(store: StoreOf<FolderHomeViewStore>) {
+  public init(store: StoreOf<FolderHomeViewStore>) {
     self.store = store
     self._folders = Query()
     self._emptyFolderTodos = Query(filter: Todo.predicate(folderID: nil))
   }
   
-  var body: some View {
+  public var body: some View {
     NavigationStack(
       path: $store.scope(state: \.path, action: \.path)
     ) {

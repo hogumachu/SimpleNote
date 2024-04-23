@@ -6,6 +6,7 @@
 //
 
 import CalendarFeature
+import FolderFeature
 import Foundation
 import UIFeatureKit
 

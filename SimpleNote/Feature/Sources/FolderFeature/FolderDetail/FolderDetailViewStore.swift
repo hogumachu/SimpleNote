@@ -10,22 +10,22 @@ import TodoFeature
 import UIFeatureKit
 
 @Reducer
-struct FolderDetailViewStore {
+public struct FolderDetailViewStore {
   
   @ObservableState
-  struct State: Equatable {
-    @Presents var todoCreate: TodoCreateViewStore.State?
-    @Presents var folderEdit: FolderEditViewStore.State?
-    @Presents var todoDetail: TodoDetailViewStore.State?
+  public struct State: Equatable {
+    @Presents public var todoCreate: TodoCreateViewStore.State?
+    @Presents public var folderEdit: FolderEditViewStore.State?
+    @Presents public var todoDetail: TodoDetailViewStore.State?
     
-    var folder: Folder?
+    public var folder: Folder?
     
-    init(folder: Folder?) {
+    public init(folder: Folder?) {
       self.folder = folder
     }
   }
   
-  enum Action {
+  public enum Action {
     case closeTapped
     case editTapped
     case createTapped
@@ -37,11 +37,13 @@ struct FolderDetailViewStore {
     case todoDetail(PresentationAction<TodoDetailViewStore.Action>)
   }
   
-  @Dependency(\.dismiss) var dismiss
-  @Dependency(\.todoDatabase) var todoDatabase
-  @Dependency(\.folderDatabase) var folderDatabase
+  @Dependency(\.dismiss) private var dismiss
+  @Dependency(\.todoDatabase) private var todoDatabase
+  @Dependency(\.folderDatabase) private var folderDatabase
   
-  var body: some ReducerOf<Self> {
+  public init() {}
+  
+  public var body: some ReducerOf<Self> {
     Reduce { state, action in
       switch action {
       case .closeTapped:

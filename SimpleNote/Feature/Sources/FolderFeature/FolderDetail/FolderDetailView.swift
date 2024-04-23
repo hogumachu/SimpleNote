@@ -10,18 +10,18 @@ import SwiftUI
 import TodoFeature
 import UIFeatureKit
 
-struct FolderDetailView: View {
+public struct FolderDetailView: View {
   
-  @Bindable var store: StoreOf<FolderDetailViewStore>
+  @Bindable private var store: StoreOf<FolderDetailViewStore>
   @Query private var todos: [Todo]
   
-  init(store: StoreOf<FolderDetailViewStore>) {
+  public init(store: StoreOf<FolderDetailViewStore>) {
     self.store = store
     let folderID = store.folder?.id
     self._todos = Query(filter: Todo.predicate(folderID: folderID))
   }
   
-  var body: some View {
+  public var body: some View {
     ZStack {
       VStack {
         navigationBar

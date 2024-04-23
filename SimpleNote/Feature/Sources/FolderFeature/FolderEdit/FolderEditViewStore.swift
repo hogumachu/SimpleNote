@@ -9,23 +9,23 @@ import SwiftUI
 import UIFeatureKit
 
 @Reducer
-struct FolderEditViewStore {
+public struct FolderEditViewStore {
   
   @ObservableState
-  struct State: Equatable {
-    @Presents var alert: AlertState<Action.Alert>?
-    let folder: Folder
-    var title: String
-    var color: Color
+  public struct State: Equatable {
+    @Presents public var alert: AlertState<Action.Alert>?
+    public let folder: Folder
+    public var title: String
+    public var color: Color
     
-    init(folder: Folder) {
+    public init(folder: Folder) {
       self.folder = folder
       self.title = folder.title.orEmpty
       self.color = Color(hexOrGray: folder.hexColor)
     }
   }
   
-  enum Action: BindableAction {
+  public enum Action: BindableAction {
     case binding(BindingAction<State>)
     
     case alert(PresentationAction<Alert>)
@@ -37,20 +37,22 @@ struct FolderEditViewStore {
     case delegate(Delegate)
     
     @CasePathable
-    enum Alert {
+    public enum Alert {
       case confirmDeletion
       case cancel
     }
     
-    enum Delegate {
+    public enum Delegate {
       case edit(title: String, hexColor: String)
       case delete(Folder)
     }
   }
   
-  @Dependency(\.dismiss) var dismiss
+  @Dependency(\.dismiss) private var dismiss
   
-  var body: some ReducerOf<Self> {
+  public init() {}
+  
+  public var body: some ReducerOf<Self> {
     BindingReducer()
     
     Reduce { state, action in

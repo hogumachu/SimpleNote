@@ -9,23 +9,30 @@ import Foundation
 import UIFeatureKit
 
 @Reducer
-struct FolderHomeViewStore: Reducer {
+public struct FolderHomeViewStore: Reducer {
   
   @ObservableState
-  struct State: Equatable {
-    @Presents var folderCreate: FolderCreateViewStore.State?
-    var path = StackState<FolderDetailViewStore.State>()
+  public struct State: Equatable {
+    @Presents public var folderCreate: FolderCreateViewStore.State?
+    public var path = StackState<FolderDetailViewStore.State>()
+    
+    public init(folderCreate: FolderCreateViewStore.State? = nil, path: StackState<FolderDetailViewStore.State> = StackState<FolderDetailViewStore.State>()) {
+      self.folderCreate = folderCreate
+      self.path = path
+    }
   }
   
-  enum Action {
+  public enum Action {
     case path(StackAction<FolderDetailViewStore.State, FolderDetailViewStore.Action>)
     case addButtonTapped
     case folderCreate(PresentationAction<FolderCreateViewStore.Action>)
   }
   
-  @Dependency(\.folderDatabase) var database
+  @Dependency(\.folderDatabase) private var database
   
-  var body: some ReducerOf<Self> {
+  public init() {}
+  
+  public var body: some ReducerOf<Self> {
     Reduce { state, action in
       switch action {
       case .path:
