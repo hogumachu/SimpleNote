@@ -7,17 +7,17 @@
 
 import SwiftUI
 
-struct PlusButton: View {
+public struct PlusButton: View {
   
   private let onTapped: () -> Void
   private let hexColor: String?
   
-  init(hexColor: String? = nil, onTapped: @escaping () -> Void) {
+  public init(hexColor: String? = nil, onTapped: @escaping () -> Void) {
     self.hexColor = hexColor
     self.onTapped = onTapped
   }
   
-  var body: some View {
+  public var body: some View {
     Button {
       onTapped()
     } label: {

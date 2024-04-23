@@ -5,8 +5,8 @@
 //  Created by 홍성준 on 4/20/24.
 //
 
-import FeatureKit
 import SwiftUI
+import UIFeatureKit
 
 struct SettingView: View {
   

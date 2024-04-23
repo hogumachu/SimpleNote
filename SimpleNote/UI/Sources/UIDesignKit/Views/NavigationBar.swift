@@ -7,24 +7,24 @@
 
 import SwiftUI
 
-enum NavigationBarStyle {
+public enum NavigationBarStyle {
   case back
   case close
   case titleOnly(String)
   case titleWithButton(String, ImageResource)
 }
 
-struct NavigationBar: View {
+public struct NavigationBar: View {
   
   private let style: NavigationBarStyle
   private let onTapped: (() -> Void)?
   
-  init(style: NavigationBarStyle, onTapped: (() -> Void)? = nil) {
+  public init(style: NavigationBarStyle, onTapped: (() -> Void)? = nil) {
     self.style = style
     self.onTapped = onTapped
   }
   
-  var body: some View {
+  public var body: some View {
     HStack {
       switch style {
       case .back:

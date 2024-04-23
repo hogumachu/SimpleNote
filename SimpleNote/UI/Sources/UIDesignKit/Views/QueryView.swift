@@ -8,17 +8,17 @@
 import SwiftData
 import SwiftUI
 
-struct QueryView<T: PersistentModel, Content: View>: View {
+public struct QueryView<T: PersistentModel, Content: View>: View {
   
-  @Query var query: [T]
+  @Query public var query: [T]
   
-  let content: ([T]) -> Content
+  private let content: ([T]) -> Content
   
-  var body: some View {
+  public var body: some View {
     content(query)
   }
   
-  init(
+  public init(
     descriptor: FetchDescriptor<T>,
     @ViewBuilder content: @escaping ([T]) -> Content
   ) {

@@ -8,13 +8,13 @@
 import Entity
 import SwiftUI
 
-struct TodoView: View {
+public struct TodoView: View {
   
   private let todo: Todo
   private var checkTapped: (Todo) -> Void
   private var onTapped: (Todo) -> Void
   
-  init(
+  public init(
     todo: Todo,
     checkTapped: @escaping (Todo) -> Void,
     onTapped: @escaping (Todo) -> Void
@@ -24,7 +24,7 @@ struct TodoView: View {
     self.onTapped = onTapped
   }
   
-  var body: some View {
+  public var body: some View {
     HStack {
       VStack(alignment: .leading) {
         HStack(spacing: 3) {
@@ -46,11 +46,11 @@ struct TodoView: View {
           }
         }
         
-        Text(todo.todo.orEmpty)
+        Text(todo.todo ?? "")
           .font(.body)
-          .foregroundStyle(todo.isComplete.orFalse ? .secondary : .primary)
+          .foregroundStyle((todo.isComplete ?? false) ? .secondary : .primary)
         
-        Text("\(todo.targetDate.orNow.formatted(date: .complete, time: .omitted))")
+        Text("\(todo.targetDate?.formatted(date: .complete, time: .omitted) ?? "")")
           .font(.caption)
           .foregroundStyle(.secondary)
       }
@@ -62,7 +62,7 @@ struct TodoView: View {
           checkTapped(todo)
         }
       } label: {
-        Image(todo.isComplete.orFalse ? .CheckCircleFill : .Circle)
+        Image((todo.isComplete ?? false) ? .CheckCircleFill : .Circle)
           .resizable()
           .renderingMode(.template)
           .frame(width: 30, height: 30)

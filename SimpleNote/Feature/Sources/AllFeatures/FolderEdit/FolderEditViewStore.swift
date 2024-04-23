@@ -5,8 +5,8 @@
 //  Created by 홍성준 on 4/18/24.
 //
 
-import FeatureKit
 import SwiftUI
+import UIFeatureKit
 
 @Reducer
 struct FolderEditViewStore {

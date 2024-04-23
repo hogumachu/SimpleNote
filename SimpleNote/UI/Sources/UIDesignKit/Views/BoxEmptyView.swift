@@ -5,60 +5,59 @@
 //  Created by 홍성준 on 4/18/24.
 //
 
-import BaseFeature
 import Lottie
 import SwiftUI
 
-enum EmptyViewState {
+public enum EmptyViewState {
   case emptyFolder
   case emptyFolderWithCreateDescription
   case emptyTodo
   case emptyTodoForToday
   
-  var title: String {
+  public var title: String {
     switch self {
     case .emptyFolder:
-      return LocalString("Empty", bundle: .module)
+      return NSLocalizedString("Empty", bundle: .module, comment: "")
       
     case .emptyFolderWithCreateDescription:
-      return LocalString("There is no folder", bundle: .module)
+      return NSLocalizedString("There is no folder", bundle: .module, comment: "")
       
     case .emptyTodo:
-      return LocalString("Empty", bundle: .module)
+      return NSLocalizedString("Empty", bundle: .module, comment: "")
       
     case .emptyTodoForToday:
-      return LocalString("Empty", bundle: .module)
+      return NSLocalizedString("Empty", bundle: .module, comment: "")
     }
   }
   
-  var subtitle: String {
+  public var subtitle: String {
     switch self {
     case .emptyFolder:
-      return LocalString("There is no folder", bundle: .module)
+      return NSLocalizedString("There is no folder", bundle: .module, comment: "")
       
     case .emptyFolderWithCreateDescription:
-      return LocalString("You can create folders in the folder tab", bundle: .module)
+      return NSLocalizedString("You can create folders in the folder tab", bundle: .module, comment: "")
       
     case .emptyTodo:
-      return LocalString("There is nothing todo", bundle: .module)
+      return NSLocalizedString("There is nothing todo", bundle: .module, comment: "")
       
     case .emptyTodoForToday:
-      return LocalString("There are no todos for today", bundle: .module)
+      return NSLocalizedString("There are no todos for today", bundle: .module, comment: "")
     }
   }
 }
 
-struct BoxEmptyView: View {
+public struct BoxEmptyView: View {
   
   private let state: EmptyViewState
   
-  init(state: EmptyViewState) {
+  public init(state: EmptyViewState) {
     self.state = state
   }
   
-  var body: some View {
+  public var body: some View {
     VStack {
-      LottieView(animation: .named("empty-box", bundle: .base))
+      LottieView(animation: .named("empty-box", bundle: .module))
         .playing(loopMode: .playOnce)
         .frame(maxHeight: 250)
       

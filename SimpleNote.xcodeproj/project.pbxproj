@@ -28,6 +28,7 @@
 		F16380E52BD68E1800BC655B /* Shared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Shared; path = SimpleNote/Shared; sourceTree = "<group>"; };
 		F16380EC2BD6956000BC655B /* Service */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Service; path = SimpleNote/Service; sourceTree = "<group>"; };
 		F1DBBD592BCD42F900D1A58E /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		F1EA9CBC2BD7655B00177EEB /* UI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = UI; path = SimpleNote/UI; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +49,7 @@
 		F15427192BCD0C6C0070D22C = {
 			isa = PBXGroup;
 			children = (
+				F1EA9CBC2BD7655B00177EEB /* UI */,
 				F10065E92BD69B4500D8A620 /* Feature */,
 				F16380EC2BD6956000BC655B /* Service */,
 				F16380E52BD68E1800BC655B /* Shared */,

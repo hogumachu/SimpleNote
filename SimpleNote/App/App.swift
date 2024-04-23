@@ -6,9 +6,9 @@
 //
 
 import AllFeatures
-import FeatureKit
 import SwiftData
 import SwiftUI
+import UIFeatureKit
 
 @main
 struct SimpleNoteApp: App {

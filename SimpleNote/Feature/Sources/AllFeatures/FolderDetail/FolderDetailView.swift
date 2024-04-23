@@ -5,9 +5,9 @@
 //  Created by 홍성준 on 4/15/24.
 //
 
-import FeatureKit
 import SwiftData
 import SwiftUI
+import UIFeatureKit
 
 struct FolderDetailView: View {
   
