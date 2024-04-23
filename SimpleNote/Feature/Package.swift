@@ -20,6 +20,14 @@ let package = Package(
       name: "AllFeatures",
       targets: ["AllFeatures"]
     ),
+    .library(
+      name: "SettingFeature",
+      targets: ["SettingFeature"]
+    ),
+    .library(
+      name: "SettingFeatureImp",
+      targets: ["SettingFeatureImp"]
+    ),
   ],
   dependencies: [
     .package(path: "../Shared"),
@@ -32,25 +40,39 @@ let package = Package(
       dependencies: [
         .product(name: "Storage", package: "Service"),
         .product(name: "ThirdPartyKit", package: "Shared"),
-      ],
-      resources: [
-        .process("Resources")
       ]
     ),
     .target(
       name: "UIFeatureKit",
       dependencies: [
         "BaseFeature",
+        .product(name: "ThirdPartyKit", package: "Shared"),
         .product(name: "UIDesignKit", package: "UI")
       ]
     ),
     .target(
       name: "AllFeatures",
       dependencies: [
+        "UIFeatureKit",
+        "SettingFeature"
+      ],
+      resources: [
+        .process("Resources")
+      ]
+    ),
+    .target(
+      name: "SettingFeature",
+      dependencies: [
         "UIFeatureKit"
       ],
       resources: [
         .process("Resources")
+      ]
+    ),
+    .target(
+      name: "SettingFeatureImp",
+      dependencies: [
+        "SettingFeature"
       ]
     ),
   ]

@@ -8,15 +8,15 @@
 import SwiftUI
 import UIFeatureKit
 
-enum SettingItem: Equatable, Identifiable {
+public enum SettingItem: Equatable, Identifiable {
   
-  var id: Int { hashValue }
+  public var id: Int { hashValue }
   
   case hideCompleteTodo
   case version
   case deleteAll
   
-  var title: String {
+  public var title: String {
     switch self {
     case .hideCompleteTodo:
       return LocalString("Hiding completed todos", bundle: .module)

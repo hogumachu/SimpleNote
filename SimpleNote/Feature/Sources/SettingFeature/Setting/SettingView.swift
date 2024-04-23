@@ -8,18 +8,18 @@
 import SwiftUI
 import UIFeatureKit
 
-struct SettingView: View {
+public struct SettingView: View {
   
   @Bindable private var store: StoreOf<SettingViewStore>
   
   @AppStorage(UserDefaultsKey.hideCompleteTodo.rawValue)
   private var hideCompleteTodo: Bool = false
   
-  init(store: StoreOf<SettingViewStore>) {
+  public init(store: StoreOf<SettingViewStore>) {
     self.store = store
   }
   
-  var body: some View {
+  public var body: some View {
     VStack {
       NavigationBar(style: .back) {
         store.send(.closeTapped)
@@ -69,13 +69,4 @@ private extension SettingView {
     .listStyle(.plain)
   }
   
-}
-
-#Preview {
-  SettingView(store: Store(
-    initialState: SettingViewStore.State(),
-    reducer: {
-      SettingViewStore()
-    }
-  ))
 }
