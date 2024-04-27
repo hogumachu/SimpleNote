@@ -8,6 +8,7 @@
 import CalendarFeature
 import FolderFeature
 import Foundation
+import HomeFeature
 import UIFeatureKit
 
 @Reducer

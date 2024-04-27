@@ -11,20 +11,20 @@ import TodoFeature
 import UIFeatureKit
 
 @Reducer
-struct SearchViewStore {
+public struct SearchViewStore {
   
   @ObservableState
-  struct State: Equatable {
+  public struct State: Equatable {
     var searchText: String
-    @Presents var todoDetail: TodoDetailViewStore.State?
-    @Presents var folderDetail: FolderDetailViewStore.State?
+    @Presents public var todoDetail: TodoDetailViewStore.State?
+    @Presents public var folderDetail: FolderDetailViewStore.State?
     
-    init(searchText: String = "") {
+    public init(searchText: String = "") {
       self.searchText = searchText
     }
   }
   
-  enum Action: BindableAction {
+  public enum Action: BindableAction {
     case binding(BindingAction<State>)
     
     case closeTapped
@@ -37,7 +37,9 @@ struct SearchViewStore {
   
   @Dependency(\.dismiss) private var dismiss
   
-  var body: some ReducerOf<Self> {
+  public init() {}
+  
+  public var body: some ReducerOf<Self> {
     BindingReducer()
     
     Reduce { state, action in

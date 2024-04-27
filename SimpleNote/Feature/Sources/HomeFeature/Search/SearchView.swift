@@ -10,16 +10,16 @@ import SwiftUI
 import TodoFeature
 import UIFeatureKit
 
-struct SearchView: View {
+public struct SearchView: View {
   
   @Bindable private var store: StoreOf<SearchViewStore>
   @FocusState private var isFocused: Bool
   
-  init(store: StoreOf<SearchViewStore>) {
+  public init(store: StoreOf<SearchViewStore>) {
     self.store = store
   }
   
-  var body: some View {
+  public var body: some View {
     VStack {
       navigationBar
         .padding(.horizontal, 20)

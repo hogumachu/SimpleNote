@@ -9,11 +9,15 @@
 /* Begin PBXBuildFile section */
 		F10065E62BD695CF00D8A620 /* Entity in Frameworks */ = {isa = PBXBuildFile; productRef = F10065E52BD695CF00D8A620 /* Entity */; };
 		F10065E82BD6986800D8A620 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = F10065E72BD6986800D8A620 /* Storage */; };
-		F10065EB2BD69C1400D8A620 /* AllFeatures in Frameworks */ = {isa = PBXBuildFile; productRef = F10065EA2BD69C1400D8A620 /* AllFeatures */; };
 		F15403352BD17EDB00FAF7E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15403342BD17EDB00FAF7E3 /* AppDelegate.swift */; };
 		F154272C2BCD0C6E0070D22C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F154272B2BCD0C6E0070D22C /* Assets.xcassets */; };
 		F154272F2BCD0C6E0070D22C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F154272E2BCD0C6E0070D22C /* Preview Assets.xcassets */; };
 		F16380EA2BD6924500BC655B /* ThirdPartyKit in Frameworks */ = {isa = PBXBuildFile; productRef = F16380E92BD6924500BC655B /* ThirdPartyKit */; };
+		F19499C32BDCA617008F9F8E /* HomeFeature in Frameworks */ = {isa = PBXBuildFile; productRef = F19499C22BDCA617008F9F8E /* HomeFeature */; };
+		F19499C42BDCA685008F9F8E /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B055E12BDCA49D00ADDC8A /* RootView.swift */; };
+		F19499C52BDCA685008F9F8E /* RootViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B055E22BDCA49D00ADDC8A /* RootViewStore.swift */; };
+		F19499C62BDCA685008F9F8E /* RootTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B055E32BDCA49D00ADDC8A /* RootTab.swift */; };
+		F19499CC2BDCA7E6008F9F8E /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F19499CB2BDCA7E6008F9F8E /* Localizable.xcstrings */; };
 		F1CB24832BD7CBA7003596B2 /* CalendarFeature in Frameworks */ = {isa = PBXBuildFile; productRef = F1CB24822BD7CBA7003596B2 /* CalendarFeature */; };
 		F1CB24852BD7CBA7003596B2 /* SettingFeature in Frameworks */ = {isa = PBXBuildFile; productRef = F1CB24842BD7CBA7003596B2 /* SettingFeature */; };
 		F1CB24872BD7CBA7003596B2 /* TodoFeature in Frameworks */ = {isa = PBXBuildFile; productRef = F1CB24862BD7CBA7003596B2 /* TodoFeature */; };
@@ -30,6 +34,10 @@
 		F15427312BCD0C6E0070D22C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F16380E52BD68E1800BC655B /* Shared */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Shared; path = SimpleNote/Shared; sourceTree = "<group>"; };
 		F16380EC2BD6956000BC655B /* Service */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Service; path = SimpleNote/Service; sourceTree = "<group>"; };
+		F19499CB2BDCA7E6008F9F8E /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		F1B055E12BDCA49D00ADDC8A /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		F1B055E22BDCA49D00ADDC8A /* RootViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewStore.swift; sourceTree = "<group>"; };
+		F1B055E32BDCA49D00ADDC8A /* RootTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTab.swift; sourceTree = "<group>"; };
 		F1DBBD592BCD42F900D1A58E /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		F1EA9CBC2BD7655B00177EEB /* UI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = UI; path = SimpleNote/UI; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -39,13 +47,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F19499C32BDCA617008F9F8E /* HomeFeature in Frameworks */,
 				F1CB24872BD7CBA7003596B2 /* TodoFeature in Frameworks */,
 				F10065E82BD6986800D8A620 /* Storage in Frameworks */,
 				F16380EA2BD6924500BC655B /* ThirdPartyKit in Frameworks */,
 				F10065E62BD695CF00D8A620 /* Entity in Frameworks */,
 				F1CB24832BD7CBA7003596B2 /* CalendarFeature in Frameworks */,
 				F1CB24852BD7CBA7003596B2 /* SettingFeature in Frameworks */,
-				F10065EB2BD69C1400D8A620 /* AllFeatures in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,8 +84,9 @@
 		F15427242BCD0C6C0070D22C /* SimpleNote */ = {
 			isa = PBXGroup;
 			children = (
+				F19499C82BDCA6AE008F9F8E /* Resources */,
+				F1B055E02BDCA49D00ADDC8A /* Root */,
 				F154273A2BCD0F260070D22C /* App */,
-				F154272B2BCD0C6E0070D22C /* Assets.xcassets */,
 				F15427302BCD0C6E0070D22C /* SimpleNote.entitlements */,
 				F15427312BCD0C6E0070D22C /* Info.plist */,
 				F154272D2BCD0C6E0070D22C /* Preview Content */,
@@ -109,6 +118,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F19499C82BDCA6AE008F9F8E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F154272B2BCD0C6E0070D22C /* Assets.xcassets */,
+				F19499CB2BDCA7E6008F9F8E /* Localizable.xcstrings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F1B055E02BDCA49D00ADDC8A /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				F1B055E12BDCA49D00ADDC8A /* RootView.swift */,
+				F1B055E22BDCA49D00ADDC8A /* RootViewStore.swift */,
+				F1B055E32BDCA49D00ADDC8A /* RootTab.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,10 +157,10 @@
 				F16380E92BD6924500BC655B /* ThirdPartyKit */,
 				F10065E52BD695CF00D8A620 /* Entity */,
 				F10065E72BD6986800D8A620 /* Storage */,
-				F10065EA2BD69C1400D8A620 /* AllFeatures */,
 				F1CB24822BD7CBA7003596B2 /* CalendarFeature */,
 				F1CB24842BD7CBA7003596B2 /* SettingFeature */,
 				F1CB24862BD7CBA7003596B2 /* TodoFeature */,
+				F19499C22BDCA617008F9F8E /* HomeFeature */,
 			);
 			productName = SimpleNote;
 			productReference = F15427222BCD0C6C0070D22C /* SimpleNote.app */;
@@ -181,6 +209,7 @@
 			files = (
 				F154272F2BCD0C6E0070D22C /* Preview Assets.xcassets in Resources */,
 				F154272C2BCD0C6E0070D22C /* Assets.xcassets in Resources */,
+				F19499CC2BDCA7E6008F9F8E /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +220,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F19499C42BDCA685008F9F8E /* RootView.swift in Sources */,
+				F19499C52BDCA685008F9F8E /* RootViewStore.swift in Sources */,
+				F19499C62BDCA685008F9F8E /* RootTab.swift in Sources */,
 				F15403352BD17EDB00FAF7E3 /* AppDelegate.swift in Sources */,
 				F1DBBD5A2BCD42F900D1A58E /* App.swift in Sources */,
 			);
@@ -416,13 +448,13 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Storage;
 		};
-		F10065EA2BD69C1400D8A620 /* AllFeatures */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = AllFeatures;
-		};
 		F16380E92BD6924500BC655B /* ThirdPartyKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ThirdPartyKit;
+		};
+		F19499C22BDCA617008F9F8E /* HomeFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = HomeFeature;
 		};
 		F1CB24822BD7CBA7003596B2 /* CalendarFeature */ = {
 			isa = XCSwiftPackageProductDependency;

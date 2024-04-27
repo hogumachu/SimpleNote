@@ -15,9 +15,9 @@ enum RootTab {
   
   var title: String {
     switch self {
-    case .home: return LocalString("Home", bundle: .module)
-    case .calendar: return LocalString("Calendar", bundle: .module)
-    case .folder: return LocalString("Folder", bundle: .module)
+    case .home: return LocalString("Home", bundle: .main)
+    case .calendar: return LocalString("Calendar", bundle: .main)
+    case .folder: return LocalString("Folder", bundle: .main)
     }
   }
   

@@ -11,22 +11,28 @@ import TodoFeature
 import UIFeatureKit
 
 @Reducer
-struct HomeViewStore: Reducer {
+public struct HomeViewStore: Reducer {
   
   @Reducer(state: .equatable)
-  enum Path {
+  public enum Path {
     case search(SearchViewStore)
     case setting(SettingViewStore)
   }
   
   @ObservableState
-  struct State: Equatable {
-    @Presents var todoDetail: TodoDetailViewStore.State?
-    @Presents var todoCreate: TodoCreateViewStore.State?
-    var path = StackState<Path.State>()
+  public struct State: Equatable {
+    @Presents public var todoDetail: TodoDetailViewStore.State?
+    @Presents public var todoCreate: TodoCreateViewStore.State?
+    public var path: StackState<Path.State>
+    
+    public init(todoDetail: TodoDetailViewStore.State? = nil, todoCreate: TodoCreateViewStore.State? = nil, path: StackState<Path.State> = StackState<Path.State>()) {
+      self.todoDetail = todoDetail
+      self.todoCreate = todoCreate
+      self.path = path
+    }
   }
   
-  enum Action {
+  public enum Action {
     case searchTapped
     case todoTapped(Todo)
     case checkTapped(Todo)
@@ -37,7 +43,9 @@ struct HomeViewStore: Reducer {
     case path(StackAction<Path.State, Path.Action>)
   }
   
-  var body: some ReducerOf<Self> {
+  public init() {}
+  
+  public var body: some ReducerOf<Self> {
     Reduce { state, action in
       switch action {
       case .searchTapped:

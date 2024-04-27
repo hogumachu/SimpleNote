@@ -5,7 +5,6 @@
 //  Created by 홍성준 on 4/15/24.
 //
 
-import AllFeatures
 import SwiftData
 import SwiftUI
 import UIFeatureKit
@@ -18,7 +17,10 @@ struct SimpleNoteApp: App {
   
   var body: some Scene {
     WindowGroup {
-      RootBuilder.build()
+      RootView(store: Store(
+        initialState: RootViewStore.State(),
+        reducer: { RootViewStore() }
+      ))
     }
     .modelContext(try! database.context())
   }
