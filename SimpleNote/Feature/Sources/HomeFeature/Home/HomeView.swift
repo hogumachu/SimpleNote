@@ -11,18 +11,18 @@ import SwiftUI
 import TodoFeature
 import UIFeatureKit
 
-struct HomeView: View {
+public struct HomeView: View {
   
   @Bindable private var store: StoreOf<HomeViewStore>
   
   @AppStorage(UserDefaultsKey.hideCompleteTodo.rawValue)
   private var hideCompleteTodo = false
   
-  init(store: StoreOf<HomeViewStore>) {
+  public init(store: StoreOf<HomeViewStore>) {
     self.store = store
   }
   
-  var body: some View {
+  public var body: some View {
     NavigationStack(
       path: $store.scope(state: \.path, action: \.path)
     ) {

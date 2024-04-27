@@ -29,6 +29,10 @@ let package = Package(
       targets: ["FolderFeature"]
     ),
     .library(
+      name: "HomeFeature",
+      targets: ["HomeFeature"]
+    ),
+    .library(
       name: "SettingFeature",
       targets: ["SettingFeature"]
     ),
@@ -84,6 +88,17 @@ let package = Package(
       name: "FolderFeature",
       dependencies: [
         "UIFeatureKit",
+        "TodoFeature"
+      ],
+      resources: [
+        .process("Resources")
+      ]
+    ),
+    .target(
+      name: "HomeFeature",
+      dependencies: [
+        "UIFeatureKit",
+        "SettingFeature",
         "TodoFeature"
       ],
       resources: [

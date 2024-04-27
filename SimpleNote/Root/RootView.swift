@@ -7,6 +7,7 @@
 
 import CalendarFeature
 import FolderFeature
+import HomeFeature
 import SwiftUI
 import UIFeatureKit
 

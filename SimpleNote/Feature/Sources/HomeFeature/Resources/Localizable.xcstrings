@@ -2,14 +2,7 @@
   "sourceLanguage" : "en",
   "strings" : {
     "Folder" : {
-      "extractionState" : "manual",
       "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Folder"
-          }
-        },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
@@ -29,46 +22,72 @@
         }
       }
     },
-    "None" : {
-      "extractionState" : "manual",
+    "Please enter a search term" : {
       "localizations" : {
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "없음"
+            "value" : "검색어를 입력해 주세요"
           }
         }
       }
     },
-    "Selected folder" : {
-      "extractionState" : "manual",
+    "There is no matching folder" : {
       "localizations" : {
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "선택된 폴더"
+            "value" : "일치하는 폴더가 없어요"
           }
         }
       }
     },
-    "There is no folder" : {
-      "extractionState" : "manual",
+    "There is no matching todos" : {
       "localizations" : {
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "폴더가 없어요"
+            "value" : "일치하는 할 일이 없어요"
           }
         }
       }
     },
-    "There is nothing todo" : {
-      "extractionState" : "manual",
+    "Today's todos" : {
       "localizations" : {
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "할 일이 없어요"
+            "value" : "오늘의 할 일"
+          }
+        }
+      }
+    },
+    "Todo" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "할 일"
+          }
+        }
+      }
+    },
+    "Uncompleted previous todos" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "완료하지 않은 지난 할 일"
+          }
+        }
+      }
+    },
+    "Upcoming todos" : {
+      "localizations" : {
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "다가오는 할 일"
           }
         }
       }
