@@ -17,10 +17,6 @@ let package = Package(
       targets: ["UIFeatureKit"]
     ),
     .library(
-      name: "AllFeatures",
-      targets: ["AllFeatures"]
-    ),
-    .library(
       name: "CalendarFeature",
       targets: ["CalendarFeature"]
     ),
@@ -63,18 +59,6 @@ let package = Package(
       ]
     ),
     .target(
-      name: "AllFeatures",
-      dependencies: [
-        "UIFeatureKit",
-        "CalendarFeature",
-        "FolderFeature",
-        "SettingFeature"
-      ],
-      resources: [
-        .process("Resources")
-      ]
-    ),
-    .target(
       name: "CalendarFeature",
       dependencies: [
         "UIFeatureKit",
@@ -99,7 +83,8 @@ let package = Package(
       dependencies: [
         "UIFeatureKit",
         "SettingFeature",
-        "TodoFeature"
+        "TodoFeature",
+        "FolderFeature"
       ],
       resources: [
         .process("Resources")
