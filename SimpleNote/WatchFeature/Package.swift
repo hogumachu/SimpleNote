@@ -4,30 +4,34 @@
 import PackageDescription
 
 let package = Package(
-  name: "UIDesignKit",
-  defaultLocalization: "en",
-  platforms: [.iOS(.v17)],
+  name: "WatchFeature",
+  platforms: [.watchOS(.v10)],
   products: [
     .library(
-      name: "UIDesignKit",
-      targets: ["UIDesignKit"]
+      name: "WatchFeatureKit",
+      targets: ["WatchFeatureKit"]
+    ),
+    .library(
+      name: "WatchHomeFeature",
+      targets: ["WatchHomeFeature"]
     ),
   ],
   dependencies: [
     .package(path: "../Shared"),
     .package(path: "../Service"),
-    .package(url: "https://github.com/airbnb/lottie-spm.git", .upToNextMajor(from: "4.4.3")),
   ],
   targets: [
     .target(
-      name: "UIDesignKit",
+      name: "WatchFeatureKit",
       dependencies: [
-        .product(name: "Entity", package: "Service"),
+        .product(name: "Storage", package: "Service"),
         .product(name: "ThirdPartyKit", package: "Shared"),
-        .product(name: "Lottie", package: "lottie-spm"),
-      ],
-      resources: [
-        .process("Resources")
+      ]
+    ),
+    .target(
+      name: "WatchHomeFeature",
+      dependencies: [
+        "WatchFeatureKit"
       ]
     ),
   ]
