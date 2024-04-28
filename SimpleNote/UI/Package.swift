@@ -15,14 +15,16 @@ let package = Package(
   ],
   dependencies: [
     .package(path: "../Shared"),
-    .package(path: "../Service")
+    .package(path: "../Service"),
+    .package(url: "https://github.com/airbnb/lottie-spm.git", .upToNextMajor(from: "4.4.3")),
   ],
   targets: [
     .target(
       name: "UIDesignKit",
       dependencies: [
         .product(name: "Entity", package: "Service"),
-        .product(name: "ThirdPartyKit", package: "Shared")
+        .product(name: "ThirdPartyKit", package: "Shared"),
+        .product(name: "Lottie", package: "lottie-spm"),
       ],
       resources: [
         .process("Resources")

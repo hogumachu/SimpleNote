@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		F10065E62BD695CF00D8A620 /* Entity in Frameworks */ = {isa = PBXBuildFile; productRef = F10065E52BD695CF00D8A620 /* Entity */; };
 		F10065E82BD6986800D8A620 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = F10065E72BD6986800D8A620 /* Storage */; };
+		F104F6252BDE43DB003E7598 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F104F6242BDE43DB003E7598 /* Assets.xcassets */; };
+		F104F6282BDE43DB003E7598 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F104F6272BDE43DB003E7598 /* Preview Assets.xcassets */; };
+		F104F62B2BDE43DB003E7598 /* SimpleNoteWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = F104F61E2BDE43D9003E7598 /* SimpleNoteWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F116631C2BDE49230066FE43 /* Entity in Frameworks */ = {isa = PBXBuildFile; productRef = F116631B2BDE49230066FE43 /* Entity */; };
+		F116631E2BDE49230066FE43 /* Storage in Frameworks */ = {isa = PBXBuildFile; productRef = F116631D2BDE49230066FE43 /* Storage */; };
+		F127C4922BDE4CDD00CC4200 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD592BCD42F900D1A58E /* App.swift */; };
 		F15403352BD17EDB00FAF7E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15403342BD17EDB00FAF7E3 /* AppDelegate.swift */; };
 		F154272C2BCD0C6E0070D22C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F154272B2BCD0C6E0070D22C /* Assets.xcassets */; };
 		F154272F2BCD0C6E0070D22C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F154272E2BCD0C6E0070D22C /* Preview Assets.xcassets */; };
@@ -18,14 +24,44 @@
 		F19499C52BDCA685008F9F8E /* RootViewStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B055E22BDCA49D00ADDC8A /* RootViewStore.swift */; };
 		F19499C62BDCA685008F9F8E /* RootTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B055E32BDCA49D00ADDC8A /* RootTab.swift */; };
 		F19499CC2BDCA7E6008F9F8E /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F19499CB2BDCA7E6008F9F8E /* Localizable.xcstrings */; };
+		F1C633DE2BDE4F6100B5BD08 /* ThirdPartyKit in Frameworks */ = {isa = PBXBuildFile; productRef = F1C633DD2BDE4F6100B5BD08 /* ThirdPartyKit */; };
+		F1C633E42BDE543000B5BD08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15403342BD17EDB00FAF7E3 /* AppDelegate.swift */; };
+		F1C633E72BDE576F00B5BD08 /* WatchHomeFeature in Frameworks */ = {isa = PBXBuildFile; productRef = F1C633E62BDE576F00B5BD08 /* WatchHomeFeature */; };
 		F1CB24832BD7CBA7003596B2 /* CalendarFeature in Frameworks */ = {isa = PBXBuildFile; productRef = F1CB24822BD7CBA7003596B2 /* CalendarFeature */; };
 		F1CB24852BD7CBA7003596B2 /* SettingFeature in Frameworks */ = {isa = PBXBuildFile; productRef = F1CB24842BD7CBA7003596B2 /* SettingFeature */; };
 		F1CB24872BD7CBA7003596B2 /* TodoFeature in Frameworks */ = {isa = PBXBuildFile; productRef = F1CB24862BD7CBA7003596B2 /* TodoFeature */; };
 		F1DBBD5A2BCD42F900D1A58E /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DBBD592BCD42F900D1A58E /* App.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F104F6292BDE43DB003E7598 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F154271A2BCD0C6C0070D22C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F104F61D2BDE43D9003E7598;
+			remoteInfo = "SimpleNoteWatch Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F104F62C2BDE43DB003E7598 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				F104F62B2BDE43DB003E7598 /* SimpleNoteWatch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		F10065E92BD69B4500D8A620 /* Feature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Feature; path = SimpleNote/Feature; sourceTree = "<group>"; };
+		F104F61E2BDE43D9003E7598 /* SimpleNoteWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SimpleNoteWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F104F6242BDE43DB003E7598 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F104F6272BDE43DB003E7598 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F15403342BD17EDB00FAF7E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F15427222BCD0C6C0070D22C /* SimpleNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F154272B2BCD0C6E0070D22C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,11 +74,23 @@
 		F1B055E12BDCA49D00ADDC8A /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		F1B055E22BDCA49D00ADDC8A /* RootViewStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewStore.swift; sourceTree = "<group>"; };
 		F1B055E32BDCA49D00ADDC8A /* RootTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTab.swift; sourceTree = "<group>"; };
+		F1C633E52BDE55D500B5BD08 /* WatchFeature */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = WatchFeature; path = SimpleNote/WatchFeature; sourceTree = "<group>"; };
 		F1DBBD592BCD42F900D1A58E /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		F1EA9CBC2BD7655B00177EEB /* UI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = UI; path = SimpleNote/UI; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F104F61B2BDE43D9003E7598 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1C633E72BDE576F00B5BD08 /* WatchHomeFeature in Frameworks */,
+				F1C633DE2BDE4F6100B5BD08 /* ThirdPartyKit in Frameworks */,
+				F116631E2BDE49230066FE43 /* Storage in Frameworks */,
+				F116631C2BDE49230066FE43 /* Entity in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F154271F2BCD0C6C0070D22C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -60,14 +108,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F104F61F2BDE43D9003E7598 /* SimpleNoteWatch Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				F104F6242BDE43DB003E7598 /* Assets.xcassets */,
+				F104F6262BDE43DB003E7598 /* Preview Content */,
+			);
+			path = "SimpleNoteWatch Watch App";
+			sourceTree = "<group>";
+		};
+		F104F6262BDE43DB003E7598 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F104F6272BDE43DB003E7598 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		F15427192BCD0C6C0070D22C = {
 			isa = PBXGroup;
 			children = (
+				F1C633E52BDE55D500B5BD08 /* WatchFeature */,
 				F1EA9CBC2BD7655B00177EEB /* UI */,
 				F10065E92BD69B4500D8A620 /* Feature */,
 				F16380EC2BD6956000BC655B /* Service */,
 				F16380E52BD68E1800BC655B /* Shared */,
 				F15427242BCD0C6C0070D22C /* SimpleNote */,
+				F104F61F2BDE43D9003E7598 /* SimpleNoteWatch Watch App */,
 				F15427232BCD0C6C0070D22C /* Products */,
 				F16380E62BD68E8400BC655B /* Frameworks */,
 			);
@@ -77,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				F15427222BCD0C6C0070D22C /* SimpleNote.app */,
+				F104F61E2BDE43D9003E7598 /* SimpleNoteWatch Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,6 +208,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F104F61D2BDE43D9003E7598 /* SimpleNoteWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F104F62F2BDE43DB003E7598 /* Build configuration list for PBXNativeTarget "SimpleNoteWatch Watch App" */;
+			buildPhases = (
+				F104F61A2BDE43D9003E7598 /* Sources */,
+				F104F61B2BDE43D9003E7598 /* Frameworks */,
+				F104F61C2BDE43D9003E7598 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SimpleNoteWatch Watch App";
+			packageProductDependencies = (
+				F116631B2BDE49230066FE43 /* Entity */,
+				F116631D2BDE49230066FE43 /* Storage */,
+				F1C633DD2BDE4F6100B5BD08 /* ThirdPartyKit */,
+				F1C633E62BDE576F00B5BD08 /* WatchHomeFeature */,
+			);
+			productName = "SimpleNoteWatch Watch App";
+			productReference = F104F61E2BDE43D9003E7598 /* SimpleNoteWatch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
 		F15427212BCD0C6C0070D22C /* SimpleNote */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F15427342BCD0C6E0070D22C /* Build configuration list for PBXNativeTarget "SimpleNote" */;
@@ -147,10 +238,12 @@
 				F154271E2BCD0C6C0070D22C /* Sources */,
 				F154271F2BCD0C6C0070D22C /* Frameworks */,
 				F15427202BCD0C6C0070D22C /* Resources */,
+				F104F62C2BDE43DB003E7598 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F104F62A2BDE43DB003E7598 /* PBXTargetDependency */,
 			);
 			name = SimpleNote;
 			packageProductDependencies = (
@@ -176,6 +269,9 @@
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					F104F61D2BDE43D9003E7598 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
 					F15427212BCD0C6C0070D22C = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
@@ -198,11 +294,21 @@
 			projectRoot = "";
 			targets = (
 				F15427212BCD0C6C0070D22C /* SimpleNote */,
+				F104F61D2BDE43D9003E7598 /* SimpleNoteWatch Watch App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F104F61C2BDE43D9003E7598 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F104F6282BDE43DB003E7598 /* Preview Assets.xcassets in Resources */,
+				F104F6252BDE43DB003E7598 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F15427202BCD0C6C0070D22C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -216,6 +322,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F104F61A2BDE43D9003E7598 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1C633E42BDE543000B5BD08 /* AppDelegate.swift in Sources */,
+				F127C4922BDE4CDD00CC4200 /* App.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F154271E2BCD0C6C0070D22C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -230,7 +345,77 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F104F62A2BDE43DB003E7598 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F104F61D2BDE43D9003E7598 /* SimpleNoteWatch Watch App */;
+			targetProxy = F104F6292BDE43DB003E7598 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		F104F62D2BDE43DB003E7598 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SimpleNoteWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 62ZLDXLZ77;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = SimpleNoteWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = hogumachu.SimpleNote;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = hogumachu.SimpleNote.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Debug;
+		};
+		F104F62E2BDE43DB003E7598 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SimpleNoteWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = 62ZLDXLZ77;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = SimpleNoteWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = hogumachu.SimpleNote;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = hogumachu.SimpleNote.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.0;
+			};
+			name = Release;
+		};
 		F15427322BCD0C6E0070D22C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -353,6 +538,7 @@
 		F15427352BCD0C6E0070D22C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SimpleNote/SimpleNote.entitlements;
@@ -386,6 +572,7 @@
 		F15427362BCD0C6E0070D22C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = SimpleNote/SimpleNote.entitlements;
@@ -419,6 +606,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F104F62F2BDE43DB003E7598 /* Build configuration list for PBXNativeTarget "SimpleNoteWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F104F62D2BDE43DB003E7598 /* Debug */,
+				F104F62E2BDE43DB003E7598 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F154271D2BCD0C6C0070D22C /* Build configuration list for PBXProject "SimpleNote" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -448,6 +644,14 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = Storage;
 		};
+		F116631B2BDE49230066FE43 /* Entity */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Entity;
+		};
+		F116631D2BDE49230066FE43 /* Storage */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Storage;
+		};
 		F16380E92BD6924500BC655B /* ThirdPartyKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = ThirdPartyKit;
@@ -455,6 +659,14 @@
 		F19499C22BDCA617008F9F8E /* HomeFeature */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = HomeFeature;
+		};
+		F1C633DD2BDE4F6100B5BD08 /* ThirdPartyKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ThirdPartyKit;
+		};
+		F1C633E62BDE576F00B5BD08 /* WatchHomeFeature */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WatchHomeFeature;
 		};
 		F1CB24822BD7CBA7003596B2 /* CalendarFeature */ = {
 			isa = XCSwiftPackageProductDependency;
