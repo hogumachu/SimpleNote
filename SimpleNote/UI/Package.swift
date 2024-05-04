@@ -24,6 +24,7 @@ let package = Package(
       dependencies: [
         .product(name: "Entity", package: "Service"),
         .product(name: "ThirdPartyKit", package: "Shared"),
+        .product(name: "ImageResourceKit", package: "Shared"),
         .product(name: "Lottie", package: "lottie-spm"),
       ],
       resources: [

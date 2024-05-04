@@ -5,11 +5,19 @@ import PackageDescription
 
 let package = Package(
   name: "Shared",
-  platforms: [.iOS(.v17)],
+  platforms: [
+    .iOS(.v17),
+    .watchOS(.v10),
+  ],
   products: [
     .library(
       name: "ThirdPartyKit",
-      targets: ["ThirdPartyKit"]),
+      targets: ["ThirdPartyKit"]
+    ),
+    .library(
+      name: "ImageResourceKit",
+      targets: ["ImageResourceKit"]
+    ),
   ],
   dependencies: [
     .package(url: "https://github.com/pointfreeco/swift-composable-architecture", .upToNextMajor(from: "1.9.3")),
@@ -21,6 +29,13 @@ let package = Package(
       dependencies: [
         .product(name: "ComposableArchitecture", package: "swift-composable-architecture"),
         "SwiftDate"
+      ]
+    ),
+    .target(
+      name: "ImageResourceKit",
+      dependencies: [],
+      resources: [
+        .process("Resources")
       ]
     ),
   ]

@@ -62,6 +62,9 @@
 		F104F61E2BDE43D9003E7598 /* SimpleNoteWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SimpleNoteWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F104F6242BDE43DB003E7598 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F104F6272BDE43DB003E7598 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F12A07522BE5C5EE00702B1F /* SimpleNoteWatch Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SimpleNoteWatch Watch App.entitlements"; sourceTree = "<group>"; };
+		F12A07532BE5C65900702B1F /* SimpleNoteWatch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SimpleNoteWatch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		F12A07542BE5C85800702B1F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS10.0.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		F15403342BD17EDB00FAF7E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F15427222BCD0C6C0070D22C /* SimpleNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F154272B2BCD0C6E0070D22C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -111,6 +114,8 @@
 		F104F61F2BDE43D9003E7598 /* SimpleNoteWatch Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				F12A07532BE5C65900702B1F /* SimpleNoteWatch-Watch-App-Info.plist */,
+				F12A07522BE5C5EE00702B1F /* SimpleNoteWatch Watch App.entitlements */,
 				F104F6242BDE43DB003E7598 /* Assets.xcassets */,
 				F104F6262BDE43DB003E7598 /* Preview Content */,
 			);
@@ -182,6 +187,7 @@
 		F16380E62BD68E8400BC655B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F12A07542BE5C85800702B1F /* CloudKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -359,12 +365,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "SimpleNoteWatch Watch App/SimpleNoteWatch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SimpleNoteWatch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = 62ZLDXLZ77;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SimpleNoteWatch-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = SimpleNoteWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = hogumachu.SimpleNote;
@@ -390,12 +398,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "SimpleNoteWatch Watch App/SimpleNoteWatch Watch App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SimpleNoteWatch Watch App/Preview Content\"";
 				DEVELOPMENT_TEAM = 62ZLDXLZ77;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SimpleNoteWatch-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = SimpleNoteWatch;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = hogumachu.SimpleNote;

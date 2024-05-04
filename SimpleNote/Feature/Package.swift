@@ -48,7 +48,8 @@ let package = Package(
       dependencies: [
         .product(name: "Storage", package: "Service"),
         .product(name: "ThirdPartyKit", package: "Shared"),
-        .product(name: "UIDesignKit", package: "UI")
+        .product(name: "ImageResourceKit", package: "Shared"),
+        .product(name: "UIDesignKit", package: "UI"),
       ]
     ),
     .target(
