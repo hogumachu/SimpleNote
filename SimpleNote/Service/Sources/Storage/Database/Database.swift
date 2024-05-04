@@ -26,7 +26,7 @@ private let appContext: ModelContext = {
     let configuration = ModelConfiguration(
       schema: schema,
       isStoredInMemoryOnly: false,
-      cloudKitDatabase: .automatic
+      cloudKitDatabase: .private("iCloud.hogumachu.SimpleNote.Folder")
     )
     let container = try ModelContainer(
       for: schema,
