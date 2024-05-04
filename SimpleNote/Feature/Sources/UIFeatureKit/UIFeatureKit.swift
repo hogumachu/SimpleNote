@@ -2,6 +2,7 @@
 /// 공통으로 사용되는 것들만 추가
 @_exported import BaseFeature
 @_exported import Entity
+@_exported import ImageResourceKit
 @_exported import Lottie
 @_exported import Storage
 @_exported import ThirdPartyKit
