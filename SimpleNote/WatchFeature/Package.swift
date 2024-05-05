@@ -24,6 +24,7 @@ let package = Package(
     .target(
       name: "WatchFeatureKit",
       dependencies: [
+        .product(name: "DesignKit", package: "Shared"),
         .product(name: "ImageResourceKit", package: "Shared"),
         .product(name: "Storage", package: "Service"),
         .product(name: "ThirdPartyKit", package: "Shared"),
