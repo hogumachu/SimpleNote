@@ -5,3 +5,4 @@
 @_exported import ImageResourceKit
 @_exported import Storage
 @_exported import ThirdPartyKit
+@_exported import WatchBaseFeature
