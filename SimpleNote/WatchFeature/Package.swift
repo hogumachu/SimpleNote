@@ -5,8 +5,13 @@ import PackageDescription
 
 let package = Package(
   name: "WatchFeature",
+  defaultLocalization: "en",
   platforms: [.watchOS(.v10)],
   products: [
+    .library(
+      name: "WatchBaseFeature",
+      targets: ["WatchBaseFeature"]
+    ),
     .library(
       name: "WatchFeatureKit",
       targets: ["WatchFeatureKit"]
@@ -22,10 +27,17 @@ let package = Package(
   ],
   targets: [
     .target(
-      name: "WatchFeatureKit",
+      name: "WatchBaseFeature",
       dependencies: [
+        .product(name: "DesignKit", package: "Shared"),
         .product(name: "ImageResourceKit", package: "Shared"),
         .product(name: "Storage", package: "Service"),
+      ]
+    ),
+    .target(
+      name: "WatchFeatureKit",
+      dependencies: [
+        "WatchBaseFeature",
         .product(name: "ThirdPartyKit", package: "Shared"),
       ]
     ),
@@ -33,6 +45,9 @@ let package = Package(
       name: "WatchHomeFeature",
       dependencies: [
         "WatchFeatureKit"
+      ],
+      resources: [
+        .process("Resources")
       ]
     ),
   ]

@@ -11,6 +11,10 @@ let package = Package(
   ],
   products: [
     .library(
+      name: "DesignKit",
+      targets: ["DesignKit"]
+    ),
+    .library(
       name: "ThirdPartyKit",
       targets: ["ThirdPartyKit"]
     ),
@@ -24,6 +28,10 @@ let package = Package(
     .package(url: "https://github.com/malcommac/SwiftDate", .upToNextMajor(from: "7.0.0")),
   ],
   targets: [
+    .target(
+      name: "DesignKit",
+      dependencies: []
+    ),
     .target(
       name: "ThirdPartyKit",
       dependencies: [

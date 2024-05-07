@@ -22,6 +22,7 @@ let package = Package(
     .target(
       name: "UIDesignKit",
       dependencies: [
+        .product(name: "DesignKit", package: "Shared"),
         .product(name: "Entity", package: "Service"),
         .product(name: "ThirdPartyKit", package: "Shared"),
         .product(name: "ImageResourceKit", package: "Shared"),
