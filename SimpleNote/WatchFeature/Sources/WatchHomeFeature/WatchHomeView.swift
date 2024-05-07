@@ -23,8 +23,18 @@ public struct WatchHomeView: View {
   }
   
   public var body: some View {
-    ScrollView {
-      todayTodoListView(todos)
+    List {
+      Section {
+        ForEach(todos) { todo in
+          todoView(todo)
+        }
+        .onDelete(perform: delete)
+      } header: {
+        Text("Today's todos", bundle: .module)
+          .font(.headline)
+          .frame(maxWidth: .infinity, alignment: .leading)
+          .padding(.vertical, 5)
+      }
     }
   }
   
@@ -32,20 +42,44 @@ public struct WatchHomeView: View {
 
 private extension WatchHomeView {
   
-  // TODO: - Update UI
-  func todayTodoListView(_ todos: [Todo]) -> some View {
-    LazyVStack {
-      Text("Today's todos")
-        .font(.headline)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.top, 20)
-      
-      ForEach(todos) { todo in
-        VStack {
-          Text(todo.todo ?? "")
-          Text(todo.folder?.title ?? "")
+  func todoView(_ todo: Todo) -> some View {
+    HStack {
+      VStack(alignment: .leading) {
+        HStack {
+          Image(.FolderFill)
+            .resizable()
+            .renderingMode(.template)
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 20, height: 20)
+            .foregroundStyle(Color(hexOrGray: todo.folder?.hexColor))
+          
+          if let title = todo.folder?.title {
+            Text(title)
+              .foregroundStyle(Color(hexOrGray: todo.folder?.hexColor))
+          } else {
+            Text("None", bundle: .module)
+              .foregroundStyle(Color(hexOrGray: todo.folder?.hexColor))
+          }
         }
+        Text(todo.todo ?? "")
       }
+      Spacer()
+      
+      Image((todo.isComplete ?? false) ? .CheckCircleFill : .Circle)
+        .resizable()
+        .renderingMode(.template)
+        .frame(width: 30, height: 30)
+        .foregroundStyle(.foreground)
+    }
+    .onTapGesture {
+      store.send(.todoTapped(todo))
+    }
+  }
+  
+  func delete(at offsets: IndexSet) {
+    if let first = offsets.first {
+      let todo = todos[first]
+      store.send(.todoDelete(todo))
     }
   }
   
