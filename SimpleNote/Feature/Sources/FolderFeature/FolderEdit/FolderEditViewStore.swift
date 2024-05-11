@@ -71,16 +71,16 @@ public struct FolderEditViewStore {
         
       case .deleteTapped:
         state.alert = AlertState {
-          TextState("Delete folder")
+          TextState("Delete folder", bundle: .module)
         } actions: {
           ButtonState(role: .cancel) {
-            TextState("Cancel")
+            TextState("Cancel", bundle: .module)
           }
           ButtonState(role: .destructive, action: .confirmDeletion) {
-            TextState("Delete")
+            TextState("Delete", bundle: .module)
           }
         } message: {
-          TextState("If you delete the folder, the data inside will be erased together.")
+          TextState("If you delete the folder, the data inside will be erased together.", bundle: .module)
         }
         return .none
         
