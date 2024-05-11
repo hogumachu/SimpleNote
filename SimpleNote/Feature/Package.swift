@@ -69,6 +69,12 @@ let package = Package(
         .process("Resources")
       ]
     ),
+    .testTarget(
+      name: "CalendarFeatureTests",
+      dependencies: [
+        "CalendarFeature"
+      ]
+    ),
     .target(
       name: "FolderFeature",
       dependencies: [
