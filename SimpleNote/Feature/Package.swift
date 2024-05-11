@@ -91,6 +91,12 @@ let package = Package(
         .process("Resources")
       ]
     ),
+    .testTarget(
+      name: "HomeFeatureTests",
+      dependencies: [
+        "HomeFeature"
+      ]
+    ),
     .target(
       name: "SettingFeature",
       dependencies: [
