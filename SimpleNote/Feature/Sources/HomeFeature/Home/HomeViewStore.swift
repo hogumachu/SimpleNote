@@ -61,9 +61,10 @@ public struct HomeViewStore: Reducer {
         return .none
         
       case .createTapped:
+        @Dependency(\.date.now) var now
         state.todoCreate = .init(
           todo: "",
-          targetDate: .now,
+          targetDate: now,
           folder: nil
         )
         return .none
