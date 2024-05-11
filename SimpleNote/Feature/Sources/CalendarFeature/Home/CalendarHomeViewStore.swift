@@ -64,10 +64,11 @@ public struct CalendarHomeViewStore {
         return .none
         
       case let .dateTapped(selectedDate):
+        @Dependency(\.date.now) var now
         state.focusDate = selectedDate
         state.dayItems = makeDayItems(selectedDate: selectedDate)
         state.title = makeTitle(selectedDate: selectedDate)
-        state.isToday = selectedDate.compare(.isSameDay(Date.now))
+        state.isToday = selectedDate.compare(.isSameDay(now))
         return .none
         
       case let .checkTapped(todo):
@@ -87,11 +88,12 @@ public struct CalendarHomeViewStore {
         return .none
         
       case .todayTapped:
-        let selectedDate = Date.now
+        @Dependency(\.date.now) var now
+        let selectedDate = now
         state.focusDate = selectedDate
         state.dayItems = makeDayItems(selectedDate: selectedDate)
         state.title = makeTitle(selectedDate: selectedDate)
-        state.isToday = selectedDate.compare(.isSameDay(Date.now))
+        state.isToday = true
         return .none
         
       case .todoDetail:
